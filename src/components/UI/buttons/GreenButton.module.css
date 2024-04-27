@@ -1,0 +1,11 @@
+button {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    background-color: #426B1F;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 7px 16px;
+}

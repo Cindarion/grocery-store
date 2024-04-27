@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Newsreader';
+    src: url(./fonts/Newsreader/Newsreader-VariableFont_opsz\,wght.ttf);
+    font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url(./fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+    font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+}
+
+* {
+    box-sizing: border-box;
+    line-height: 1.42857143;
+}
+
+.container {
+    width: 1170px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}

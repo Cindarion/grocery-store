@@ -1,0 +1,70 @@
+.contentWrapper {
+    font-family: Inter, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-top: 140px;
+}
+
+.titleWrapper {
+    align-self: center;
+}
+
+.titleWrapper div {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 700px;
+}
+
+.titleText { 
+    font-family: Newsreader, sans-serif;
+    font-size: 46px;
+    font-weight: 450;
+    padding-bottom: 26px;
+    text-wrap: balance;
+    text-align: center;
+}
+
+.titleWrapper button{
+    padding: 14px 16px;
+}
+
+.imagesWrapper {
+    display: flex;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.leftImageWrapper {
+    padding-right: 40px;
+}
+
+.rightImageWrapper {
+    font-size: 14px;
+    font-weight: 300;
+    align-self: center;
+}
+
+.leftImage {
+    height: 640px;
+    width: 480px;
+}
+
+.rightImage {
+    height: 360px;
+    width: 100%;
+}
+
+footer {
+    display: flex;
+}
+
+footer .footerLeftTitle {
+    font-weight: 400;
+    margin-right: 40px;
+    width: 200px;
+}
+
+footer .footerRightText {
+    width: 700px;
+}

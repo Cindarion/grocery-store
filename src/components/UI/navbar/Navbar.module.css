@@ -1,0 +1,44 @@
+* {
+    outline: 0;
+}
+
+header {
+    display: flex;
+    padding-top: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.companyTitle a {
+    font-family: Newsreader, sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 28px;
+    color: #426B1F;
+}
+
+.navPanel {
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+}
+
+ul {
+    margin: 0;
+}
+
+li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+li a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+li a:hover {
+    color: #426B1F;
+}
