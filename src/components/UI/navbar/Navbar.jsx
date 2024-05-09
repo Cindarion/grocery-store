@@ -1,29 +1,40 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import classes from "./Navbar.module.css"
-import GreenButton from '../buttons/GreenButton'
+import GreenButton from '../buttons/GreenButton/GreenButton'
 
 const Navbar = () => {
   return (
     <header>
-      <div className={classes.companyTitle}><a href='#'><span>BloomBasket</span></a></div>
+      <div className={classes.companyTitle}><Link to='/general'><span>BloomBasket</span></Link></div>
       <nav className={classes.navPanel}>
         <ul>
           <li>
-            <a href='#'><span>Shop</span></a>
+            <Link to="/products">
+              Shop
+            </Link>
           </li>
           <li>
-            <a href='#'><span>Newstand</span></a>
+            <Link to="/news">
+              Newstand
+            </Link>
           </li>
           <li>
-            <a href='#'><span>Who we are</span></a>
+            <Link to="/general">
+              Who we are
+            </Link>
           </li>
           <li>
-            <a href='#'><span>My profile</span></a>
+            <Link to="/profile">
+              My profile
+            </Link>
           </li>
           <li>
-            <a href='#'>
-              <GreenButton>Basket</GreenButton>
-            </a>
+            <Link to="/cart">
+              <GreenButton>
+                Basket
+              </GreenButton>
+            </Link>
           </li>
         </ul>
       </nav>

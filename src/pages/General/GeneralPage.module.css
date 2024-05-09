@@ -13,20 +13,24 @@
     display: flex;
     justify-content: center;
     align-self: center;
-    width: 700px;
+    width: 900px;
 }
 
 .titleText { 
     font-family: Newsreader, sans-serif;
-    font-size: 46px;
-    font-weight: 450;
+    font-size: 54px;
+    font-weight: 420;
     padding-bottom: 26px;
-    text-wrap: balance;
     text-align: center;
 }
 
 .titleWrapper button{
     padding: 14px 16px;
+}
+
+.titleWrapper button a {
+    text-decoration: none;
+    color: white;
 }
 
 .imagesWrapper {
@@ -46,13 +50,17 @@
 }
 
 .leftImage {
+    border-radius: 2px;
     height: 640px;
     width: 480px;
+    filter: drop-shadow(0 0 0.15rem rgba(0, 0, 0, 0.30));
 }
 
 .rightImage {
+    border-radius: 2px;
     height: 360px;
     width: 100%;
+    filter: drop-shadow(0 0 0.15rem rgba(0, 0, 0, 0.30));
 }
 
 footer {
@@ -67,4 +75,8 @@ footer .footerLeftTitle {
 
 footer .footerRightText {
     width: 700px;
+}
+
+footer p {
+    padding-bottom: 6px;
 }

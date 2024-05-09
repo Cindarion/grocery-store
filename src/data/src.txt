@@ -1,0 +1,2 @@
+source of images and json:
+https://github.com/wedeploy-examples/supermarket-web-example

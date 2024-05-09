@@ -1,0 +1,22 @@
+.WhiteButton {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 300;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #C2C2C2;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 7px 16px;
+    transition: 0.15s;
+}
+
+.WhiteButton:hover {
+    transition: 0.1s;
+    background-color: #c2c2c227;
+}
+
+.WhiteButton:active {
+    opacity: 0.6;
+    transition: 0.15s;
+}

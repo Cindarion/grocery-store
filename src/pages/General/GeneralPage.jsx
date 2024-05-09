@@ -1,6 +1,7 @@
 import React from 'react'
-import GreenButton from '../../components/UI/buttons/GreenButton'
-import classes from './HomePage.module.css'
+import {Link} from 'react-router-dom'
+import GreenButton from '../../components/UI/buttons/GreenButton/GreenButton'
+import classes from './GeneralPage.module.css'
 import chardPNG from '../../components/images/chard.png'
 import foodArtPNG from '../../components/images/foodArt.png'
 
@@ -10,10 +11,16 @@ const HomePage = () => {
     <div className={classes.contentWrapper}>
       <div className={classes.titleWrapper}>
         <div className={classes.titleText}>
-          <span>We’re <i>farmers</i>, <i>purveyors</i>, and <i>eaters</i> of organically grown food.</span>
+          <span>
+            We’re <i>farmers</i>, <i>purveyors</i>, and <i>eaters</i><br/>of organically grown food.
+          </span>
         </div>
         <div>
-          <GreenButton>Browse our shop</GreenButton>
+          <Link to="/products">
+            <GreenButton>
+              Browse our shop
+            </GreenButton>
+          </Link>
         </div>
       </div>
       <div className={classes.imagesWrapper}>
