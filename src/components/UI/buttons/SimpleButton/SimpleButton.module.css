@@ -1,22 +1,22 @@
-.WhiteButton {
+.SimpleButton {
     font-family: Inter;
     font-size: 18px;
     font-weight: 300;
-    color: #000000;
-    background-color: #ffffff;
-    border: 1px solid #C2C2C2;
+    color: #fff;
+    background-color: #426B1F;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     padding: 7px 16px;
     transition: 0.15s;
 }
 
-.WhiteButton:hover {
+.SimpleButton:hover {
     transition: 0.1s;
-    background-color: #c2c2c227;
+    background-color: #436b1feb;
 }
 
-.WhiteButton:active {
-    opacity: 0.6;
+.SimpleButton:active {
+    opacity: 0.9;
     transition: 0.15s;
 }

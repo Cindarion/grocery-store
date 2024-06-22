@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './ProductsPage.module.css'
-import GreenButton from '../../components/UI/buttons/GreenButton/GreenButton'
-import WhiteButton from '../../components/UI/buttons/WhiteRoundedButton/WhiteButton'
-import ShopProduct from '../../components/UI/products/ShopProduct/ShopProduct'
+import SortOptionButton from '../../components/UI/buttons/FilterButton/SortOptionButton'
+import ShopProducts from '../../components/UI/products/ShopProduct/ShopProducts'
+import Pagination from '../../components/UI/pagination/Pagination'
 
 const ProductsPage = () => {
+  const sortProps = ["Default", "A-Z", "Price"];
+
+  const [sortOption, setSortOption] = useState("Default");
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemCount = 50;
+  const itemsPerPage = 10;
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className={classes.contentWrapper}>
       <div className={classes.pageHeadingWrapper}>
@@ -12,26 +25,37 @@ const ProductsPage = () => {
           <span className={classes.produceTitle}>Produce</span>
           <span><b>Fresh</b> — August 21, 2023</span>
         </div>
-        <div className={classes.pageSortContainer}>
+        <div className={classes.productSortContainer}>
           <ul>
-            <GreenButton>
-              Default
-            </GreenButton>
-            <WhiteButton>
-              A-Z
-            </WhiteButton>
-            <WhiteButton>
-              List view
-            </WhiteButton>
+            {sortProps.map((sort) => (
+              <SortOptionButton 
+                children={sort}
+                sortOption={sortOption}
+                setSortOption={setSortOption}
+                key={crypto.randomUUID()}
+              />
+            ))}
           </ul>
         </div>
       </div>
       <hr/>
       <div className={classes.productsContainer}>
-        <ShopProduct/>
+        <ShopProducts
+          itemCount={itemCount}
+          itemsPerPage={itemsPerPage}
+          currentPage={currentPage}
+          sortOption={sortOption}
+        />
       </div>
+      <Pagination
+        onPageChange={handlePageChange}
+        totalCount={itemCount}
+        currentPage={currentPage}
+        siblingCount={1}
+        pageSize={itemsPerPage}
+      />
     </div>
   )
 }
 
-export default ProductsPage
+export default (ProductsPage)

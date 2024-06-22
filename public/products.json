@@ -5,10 +5,10 @@
   "filename": "0.jpg",
   "height": 600,
   "width": 400,
-  "price": [{
+  "price": {
     "price_per_unit": 5.55,
-    "unit_measure": "lb"
-  }],
+    "unit_measure": "dz"
+  },
   "rating": 4
 }, {
   "title": "Sweet fresh stawberry",
@@ -17,7 +17,10 @@
   "filename": "1.jpg",
   "height": 450,
   "width": 299,
-  "price": 29.45,
+  "price": {
+    "price_per_unit": 4.99,
+    "unit_measure": "lb"
+  },
   "rating": 4
 }, {
   "title": "Asparagus",
@@ -26,7 +29,10 @@
   "filename": "2.jpg",
   "height": 450,
   "width": 299,
-  "price": 18.95,
+  "price": {
+    "price_per_unit": 2.98,
+    "unit_measure": "lb"
+  },
   "rating": 3
 }, {
   "title": "Green smoothie",
@@ -35,7 +41,10 @@
   "filename": "3.jpg",
   "height": 600,
   "width": 399,
-  "price": 17.68,
+  "price": {
+    "price_per_unit": 6.99,
+    "unit_measure": "l"
+  },
   "rating": 4
 }, {
   "title": "Raw legums",

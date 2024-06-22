@@ -3,9 +3,16 @@
 }
 
 header {
+    position: sticky;
+    z-index: 10;
+    background-color: white;
+    top: 0;
+
     display: flex;
-    width: 1170px;
-    padding-top: 24px;
+    flex-direction: row;
+    max-width: 1170px;
+    padding-top: 28px;
+    padding-bottom: 14px;
     justify-content: space-between;
     align-items: center;
     margin-right: auto; 
@@ -30,23 +37,23 @@ header {
     display: flex;
 }
 
-ul {
+.navPanel ul {
     margin: 0;
 }
 
-li {
+.navPanel ul li {
     display: inline-block;
     vertical-align: middle;
 }
 
-li a {
+.navPanel ul li a {
     margin-left: 30px;
     text-decoration: none;
     color: black;
     transition: 0.2s;
 }
 
-li a:hover {
+.navPanel ul li a:hover {
     color: #426B1F;
     transition: 0.2s;
     text-decoration: underline;
@@ -54,7 +61,7 @@ li a:hover {
     transition: 0.2s;
 }
 
-li a:active {
+.navPanel ul li a:active {
     opacity: 0.7;
     transition: 0.1s;
 }

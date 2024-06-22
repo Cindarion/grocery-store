@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { memo } from 'react'
 import {Link} from 'react-router-dom'
 import classes from "./Navbar.module.css"
-import GreenButton from '../buttons/GreenButton/GreenButton'
+import SimpleButton from '../buttons/SimpleButton/SimpleButton'
 
-const Navbar = () => {
+const Navbar = memo(() => {
   return (
-    <header>
-      <div className={classes.companyTitle}><Link to='/general'><span>BloomBasket</span></Link></div>
+    <header className={classes.header}>
+      <div className={classes.companyTitle}>
+        <Link to='/general'>
+          <span>
+            BloomBasket
+          </span>
+        </Link>
+      </div>
+
       <nav className={classes.navPanel}>
         <ul>
           <li>
             <Link to="/products">
               Shop
-            </Link>
+            </Link> 
           </li>
           <li>
             <Link to="/news">
@@ -31,15 +38,15 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/cart">
-              <GreenButton>
+              <SimpleButton>
                 Basket
-              </GreenButton>
+              </SimpleButton>
             </Link>
           </li>
         </ul>
       </nav>
     </header>
   )
-}
+})
 
-export default Navbar
+export default Navbar;

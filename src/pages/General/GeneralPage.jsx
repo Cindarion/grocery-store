@@ -1,9 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import GreenButton from '../../components/UI/buttons/GreenButton/GreenButton'
+import SimpleButton from '../../components/UI/buttons/SimpleButton/SimpleButton'
 import classes from './GeneralPage.module.css'
-import chardPNG from '../../components/images/chard.png'
-import foodArtPNG from '../../components/images/foodArt.png'
+import chardPNG from '../../data/images/chard.png'
+import foodArtPNG from '../../data/images/foodArt.png'
 
 
 const HomePage = () => {
@@ -17,9 +17,9 @@ const HomePage = () => {
         </div>
         <div>
           <Link to="/products">
-            <GreenButton>
+            <SimpleButton>
               Browse our shop
-            </GreenButton>
+            </SimpleButton>
           </Link>
         </div>
       </div>
@@ -34,7 +34,7 @@ const HomePage = () => {
           </span>
         </div>
       </div>
-      <footer>
+      <footer className={classes.footer}>
         <div className={classes.footerLeftTitle}>
           <p><b>WHAT WE BELIEVE</b></p>
         </div>
