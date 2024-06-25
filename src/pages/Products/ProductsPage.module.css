@@ -18,13 +18,13 @@
     padding-right: 16px;
 }
 
-.productSortContainer ul {
+.productSortWrapper ul {
     display: flex;
     justify-content: flex-end;
     padding: 0;
 }
 
-.productSortContainer ul button {
+.productSortWrapper ul button {
     font-size: 12px;
     font-weight: 600;
     border-radius: 24px;
@@ -38,7 +38,7 @@ hr {
     background: #E6E6E6;
 }
 
-.productsContainer {
+.productsWrapper {
     align-self: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -48,29 +48,29 @@ hr {
 }
 
 @media (min-width: 1024px) and (max-width: 1180px) {
-    .productsContainer {
+    .productsWrapper {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (min-width: 880px) and (max-width: 1024px) {
-    .productsContainer {
+    .productsWrapper {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 750px) and (max-width: 880px) {
-    .productsContainer {
+    .productsWrapper {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 0px) and (max-width: 750px) {
-    .productsContainer {
+    .productsWrapper {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .productSortContainer {
+    .productSortWrapper {
         display: none;
     }
 }

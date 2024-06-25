@@ -1,18 +1,22 @@
 import React, { useState } from 'react'
 import classes from './ProductsPage.module.css'
-import SortOptionButton from '../../components/UI/buttons/FilterButton/SortOptionButton'
+import SearchBar from '../../components/UI/searchBar/SearchBar'
+import SortOptionButton from '../../components/UI/buttons/SortButton/SortOptionButton'
 import ShopProducts from '../../components/UI/products/ShopProduct/ShopProducts'
 import Pagination from '../../components/UI/pagination/Pagination'
 
 const ProductsPage = () => {
   const sortProps = ["Default", "A-Z", "Price"];
-
   const [sortOption, setSortOption] = useState("Default");
-
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [searchResults, setSearchResults] = useState([])
   const itemCount = 50;
-  const itemsPerPage = 10;
+  const itemsPerPage = 15;
+
+  const handleSearch = (query) => {
+    const result = [];
+    setSearchResults(result);
+  };
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -25,7 +29,8 @@ const ProductsPage = () => {
           <span className={classes.produceTitle}>Produce</span>
           <span><b>Fresh</b> — August 21, 2023</span>
         </div>
-        <div className={classes.productSortContainer}>
+        <SearchBar onSearch={handleSearch}/>
+        <div className={classes.productSortWrapper}>
           <ul>
             {sortProps.map((sort) => (
               <SortOptionButton 
@@ -39,7 +44,7 @@ const ProductsPage = () => {
         </div>
       </div>
       <hr/>
-      <div className={classes.productsContainer}>
+      <div className={classes.productsWrapper}>
         <ShopProducts
           itemCount={itemCount}
           itemsPerPage={itemsPerPage}

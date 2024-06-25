@@ -1,0 +1,14 @@
+.productSearchWrapper {
+    display: flex;
+}
+
+.productSearchWrapper .productSearchBar {
+    font-family: inter;
+    font-size: 14px;
+    font-weight: 450;
+    width: 400px;
+    height: 36px;
+    border: 1.5px solid #E6E6E6;
+    border-radius: 10px;
+    padding: 12px;
+}

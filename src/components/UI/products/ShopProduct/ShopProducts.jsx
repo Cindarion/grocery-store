@@ -4,7 +4,7 @@ import { useFetch } from '../../../../hooks/useFetch';
 
 const ShopProducts = ({currentPage, itemsPerPage, sortOption}) => {
   const { loading, error, data } = useFetch('./products.json'); 
-  let sortedAndSlicedProducts;
+  const [sortedAndSlicedProducts, setSortedAndSlicedProducts] = useState();
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
@@ -14,7 +14,7 @@ const ShopProducts = ({currentPage, itemsPerPage, sortOption}) => {
   const slicedProducts = data.slice(indexOfFirstProduct, indexOfLastProduct);
 
   if (sortOption === "Default") {
-    sortedAndSlicedProducts = slicedProducts;
+    setSortedAndSlicedProducts(slicedProducts);
     console.log(`(useFilter) - Current sort method: "Default"`);
   };
 
@@ -27,6 +27,7 @@ const ShopProducts = ({currentPage, itemsPerPage, sortOption}) => {
     sortedAndSlicedProducts = slicedProducts.sort((a, b) => a.price.price_per_unit - b.price.price_per_unit);
     console.log(`Current sort method: "Price"`);
   };
+
 
   return (
     <>
