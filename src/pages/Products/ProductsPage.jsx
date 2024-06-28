@@ -5,13 +5,15 @@ import SearchBar from '../../components/UI/searchBar/SearchBar'
 import SortOptionButton from '../../components/UI/buttons/SortButton/SortOptionButton'
 import ShopProducts from '../../components/UI/products/ShopProduct/ShopProducts'
 import Pagination from '../../components/UI/pagination/Pagination'
+import { useFetch } from '../../hooks/useFetch'
 
 const ProductsPage = () => {
-  const sortProps = ["Default", "A-Z", "Price"];
-  const currentDate = getCurrentDateFormatted();
   const [sortOption, setSortOption] = useState("Default");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("")
+  const { loading, error, data } = useFetch('./products.json'); 
+  const sortProps = ["Default", "A-Z", "Price"];
+  const currentDate = getCurrentDateFormatted();
   const itemCount = 50;
   const itemsPerPage = 15;
 
@@ -22,6 +24,10 @@ const ProductsPage = () => {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  if (!data) return <div>Loading...</div>;
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div className={classes.contentWrapper}>
@@ -52,6 +58,7 @@ const ProductsPage = () => {
           currentPage={currentPage}
           sortOption={sortOption}
           searchQuery={searchQuery}
+          data={data}
         />
       </div>
       <Pagination

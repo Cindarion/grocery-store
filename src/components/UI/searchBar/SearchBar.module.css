@@ -1,5 +1,9 @@
 .productSearchWrapper {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+
 }
 
 .productSearchWrapper .productSearchBar {
@@ -12,3 +16,27 @@
     border-radius: 10px;
     padding: 12px;
 }
+
+@media (max-width: 1300px) {
+    .productSearchWrapper .productSearchBar {
+        width: 420px;
+     }
+   }
+
+@media (max-width: 1140px) {
+    .productSearchWrapper .productSearchBar {
+        width: 220px;
+     }
+   }
+
+   @media (max-width: 940px) {
+    .productSearchWrapper .productSearchBar {
+        width: 220px;
+     }
+   }
+
+@media (max-width: 800px) {
+    .productSearchWrapper .productSearchBar {
+        width: 100px;
+     }
+   }
