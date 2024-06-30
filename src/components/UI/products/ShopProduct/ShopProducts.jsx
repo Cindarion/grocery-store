@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import classes from './ShopProducts.module.css'
 import { useSort } from '../../../../hooks/useSort';
 import { useFilter } from '../../../../hooks/useFilter';
@@ -8,11 +8,21 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, itemsPerPage}
   const sortedProducts = useSort(data, sortOption);
   const filteredSortedProducts = useFilter(sortedProducts, searchQuery);
   const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, itemsPerPage)
+  const [animate, setAnimate] = useState(false);
+
+  const toggleAnimation = (index) => {
+    setAnimate(index);
+  }
 
   return (
     <>
-      {slicedFilteredSortedProducts.map(item => (
-        <div className={classes.productWrapper} key={item.filename}>
+      {slicedFilteredSortedProducts.map((item, index) => (
+        <div 
+        className={`${classes.productWrapper} ${animate === index ?`${classes.animate}` : ''} `} 
+        key={index} 
+        id={index + 1}
+        onClick={() => toggleAnimation(index)}
+        >
           <div className={classes.imageWrapper}>
             <img src={require(`../../../../data/images/${item.filename}`)}/>
           </div>

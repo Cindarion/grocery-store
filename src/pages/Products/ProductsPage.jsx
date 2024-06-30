@@ -36,7 +36,9 @@ const ProductsPage = () => {
           <span className={classes.produceTitle}>Produce</span>
           <span><b>Fresh</b> — {currentDate}</span>
         </div>
-        <SearchBar onSearch={handleSearch}/>
+        <SearchBar 
+          onSearch={handleSearch}
+        />
         <div className={classes.productSortWrapper}>
           <ul>
             {sortProps.map((sort) => (

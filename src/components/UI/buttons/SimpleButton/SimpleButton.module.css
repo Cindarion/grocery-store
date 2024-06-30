@@ -9,6 +9,7 @@
     cursor: pointer;
     padding: 7px 16px;
     transition: 0.15s;
+    white-space: nowrap;
 }
 
 .SimpleButton:hover {

@@ -17,26 +17,21 @@
     padding: 12px;
 }
 
-@media (max-width: 1300px) {
+
+@media (max-width: 1086px) {
     .productSearchWrapper .productSearchBar {
-        width: 420px;
+        width: 340px;
      }
    }
 
-@media (max-width: 1140px) {
+@media (max-width: 1050px) {
     .productSearchWrapper .productSearchBar {
-        width: 220px;
-     }
-   }
+        width: 440px;
+    }
+}
 
-   @media (max-width: 940px) {
+@media (max-width: 1000px) {
     .productSearchWrapper .productSearchBar {
-        width: 220px;
-     }
-   }
-
-@media (max-width: 800px) {
-    .productSearchWrapper .productSearchBar {
-        width: 100px;
-     }
-   }
+        width: 380px;
+    }
+}

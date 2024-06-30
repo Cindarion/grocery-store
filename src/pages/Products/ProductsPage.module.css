@@ -74,3 +74,11 @@ hr {
         display: none;
     }
 }
+
+
+@media (max-width: 1050px) {
+    .pageHeadingTitle .produceTitle{
+        display: flex;
+        flex-direction: column;
+    }
+}
