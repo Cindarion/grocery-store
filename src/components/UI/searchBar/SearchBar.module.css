@@ -3,10 +3,10 @@
     justify-content: center;
     align-items: center;
     max-width: 400px;
-
+    min-width: 100px;
 }
 
-.productSearchWrapper .productSearchBar {
+.productSearchBar {
     font-family: inter;
     font-size: 14px;
     font-weight: 450;
@@ -15,6 +15,19 @@
     border: 1.5px solid #E6E6E6;
     border-radius: 10px;
     padding: 12px;
+    transition: 0.25s;
+}
+
+.productSearchBar:hover, .productSearchBar:focus {
+    border: 1.5px solid #436b1feb;
+    transition: 0.25s;
+}
+
+.searchIcon {
+    padding-right: 4px;
+    width: 14px;
+    height: 100%;
+    align-self: center;
 }
 
 

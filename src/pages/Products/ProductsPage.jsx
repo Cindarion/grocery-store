@@ -15,7 +15,7 @@ const ProductsPage = () => {
   const sortProps = ["Default", "A-Z", "Price"];
   const currentDate = getCurrentDateFormatted();
   const itemCount = 50;
-  const itemsPerPage = 15;
+  const productsPerPage = 15;
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -56,7 +56,7 @@ const ProductsPage = () => {
       <div className={classes.productsWrapper}>
         <ShopProducts
           itemCount={itemCount}
-          itemsPerPage={itemsPerPage}
+          productsPerPage={productsPerPage}
           currentPage={currentPage}
           sortOption={sortOption}
           searchQuery={searchQuery}
@@ -68,7 +68,7 @@ const ProductsPage = () => {
         totalCount={itemCount}
         currentPage={currentPage}
         siblingCount={1}
-        pageSize={itemsPerPage}
+        pageSize={productsPerPage}
       />
     </div>
   )

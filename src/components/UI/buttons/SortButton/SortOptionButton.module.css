@@ -6,13 +6,13 @@ button {
     border-radius: 8px;
     cursor: pointer;
     padding: 7px 16px;
-    transition: 0.15s;
     white-space: nowrap;
+    transition: 0.15s;
 }
 
 button:active {
     opacity: 0.6;
-    transition: 0.15s;
+    transition: 0.1s;
 }
 
 .SortButton {
@@ -22,7 +22,7 @@ button:active {
 }
 
 .SortButton:hover {
-    transition: 0.1s;
+    transition: 0.15s;
     background-color: #c2c2c227;
 }
 
@@ -34,6 +34,6 @@ button:active {
 }
 
 .ActiveSortButton:hover {
-    transition: 0.1s;
+    transition: 0.15s;
     background-color: #436b1feb;
 }

@@ -1,42 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import classes from './SearchBar.module.css'
-import { debounce } from '../../../utils/applyDebounce'
+import { useDebounce } from '../../../hooks/useDebounce';
 
 const SearchBar = ( {onSearch} ) => {
   const [searchTerm, setSearchTerm] = useState('');
-
-  const handleInputChange = (searchTerm) => {
-    setSearchTerm(searchTerm);
-    console.log("SET:", searchTerm);
-
-    const applySearch = () => {
-      if (onSearch) {
-        onSearch(searchTerm)
-        console.log("GET:", searchTerm);
-      }
-    }
-    
-    setTimeout(() => {
-      applySearch()
-    }, 300)
-  }
+  const debouncedSearchTerm = useDebounce(searchTerm, 300)
+  console.log('search test:', debouncedSearchTerm);
 
   useEffect(() => {
-    handleInputChange(searchTerm)
-  }, [searchTerm])
+    setSearchTerm(debouncedSearchTerm);
+
+    if (onSearch) {
+      onSearch(debouncedSearchTerm)
+    }
+  }, [onSearch, debouncedSearchTerm]);
 
   return (
     <div className={classes.productSearchWrapper}>
-      <form action="#">
-        <input 
-          type='search' 
-          name='productSearch' 
-          value={searchTerm}
-          placeholder='Search for products' 
-          onChange={e => setSearchTerm(e.target.value)}
-          className={classes.productSearchBar} 
-        />
-      </form>
+      <img className={classes.searchIcon} src={require("../../../data/icons/search.png")}/>
+      <input 
+        type='search' 
+        name='productSearch' 
+        value={searchTerm}
+        placeholder='Search for products' 
+        onChange={e => setSearchTerm(e.target.value)}
+        className={classes.productSearchBar} 
+      />
     </div>
   )
 }

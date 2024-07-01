@@ -4,37 +4,45 @@ import { useSort } from '../../../../hooks/useSort';
 import { useFilter } from '../../../../hooks/useFilter';
 import { useSlice } from '../../../../hooks/useSlice';
 
-const ShopProducts = ({data, sortOption, searchQuery, currentPage, itemsPerPage}) => {
+const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPage}) => {
   const sortedProducts = useSort(data, sortOption);
   const filteredSortedProducts = useFilter(sortedProducts, searchQuery);
-  const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, itemsPerPage)
-  const [animate, setAnimate] = useState(false);
+  const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, productsPerPage)
+  const [selectedProduct, setSelectedProduct] = useState(false);
 
-  const toggleAnimation = (index) => {
-    setAnimate(index);
+  const handleProductAnimations = (index) => {
+    let timeoutId;
+
+    if (!selectedProduct) {
+      setSelectedProduct(index)
+      timeoutId = setTimeout(() => {
+        setSelectedProduct(false);
+        timeoutId = null;
+      }, 500);
+    }
+    return
   }
 
   return (
     <>
-      {slicedFilteredSortedProducts.map((item, index) => (
+      {slicedFilteredSortedProducts.map((product, index) => (
         <div 
-        className={`${classes.productWrapper} ${animate === index ?`${classes.animate}` : ''} `} 
+        className={`${classes.productWrapper} ${selectedProduct === index ?`${classes.animate}` : ''} `} 
         key={index} 
-        id={index + 1}
-        onClick={() => toggleAnimation(index)}
+        onClick={() => handleProductAnimations(index)}
         >
           <div className={classes.imageWrapper}>
-            <img src={require(`../../../../data/images/${item.filename}`)}/>
+            <img src={require(`../../../../data/images/${product.filename}`)}/>
           </div>
           <div className={classes.titleWrapper}>
             <span className={classes.productName}>
-              {item.title}
+              {product.title}
             </span>
             <span className={classes.productPrice}>
-              ${item.price.price_per_unit} / {item.price.unit_measure}
+              ${product.price.price_per_unit} / {product.price.unit_measure}
             </span>
             <div className={classes.productDescription}>
-              {item.description}
+              {product.description}
             </div>
           </div>
         </div>
@@ -43,4 +51,4 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, itemsPerPage}
   )
 }
 
-export default ShopProducts;
+export default React.memo(ShopProducts);

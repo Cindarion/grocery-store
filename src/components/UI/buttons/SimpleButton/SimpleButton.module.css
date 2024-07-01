@@ -8,16 +8,16 @@
     border-radius: 8px;
     cursor: pointer;
     padding: 7px 16px;
-    transition: 0.15s;
     white-space: nowrap;
+    transition: 0.15s;
 }
 
 .SimpleButton:hover {
-    transition: 0.1s;
     background-color: #436b1feb;
+    transition: 0.15s;
 }
 
 .SimpleButton:active {
     opacity: 0.9;
-    transition: 0.15s;
+    transition: 0.1s;
 }

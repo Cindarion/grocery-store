@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 const DOTS = '...';
 
 const range = (start, end) => {

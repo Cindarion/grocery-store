@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 
-export function useAsync(callback, dependencies = []) {
+export const useAsync = (callback, dependencies = []) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState()
   const isFirstRender = useRef(true);

@@ -4,7 +4,7 @@ const DEFAULT_OPTIONS = {
   headers: { "Content-Type": "application/json" },
 }
 
-export function useFetch(url, options = {}, dependencies = []) {
+export const useFetch = (url, options = {}, dependencies = []) => {
   return useAsync(() => {
     return fetch(url, { ...DEFAULT_OPTIONS, ...options }).then(res => {
       if (res.ok) return res.json()
