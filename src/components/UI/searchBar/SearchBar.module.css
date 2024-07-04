@@ -1,35 +1,42 @@
-.productSearchWrapper {
+.productSearchContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 400px;
     min-width: 100px;
-}
-
-.productSearchBar {
-    font-family: inter;
-    font-size: 14px;
-    font-weight: 450;
-    width: 400px;
-    height: 36px;
     border: 1.5px solid #E6E6E6;
     border-radius: 10px;
-    padding: 12px;
-    transition: 0.25s;
 }
 
-.productSearchBar:hover, .productSearchBar:focus {
-    border: 1.5px solid #436b1feb;
-    transition: 0.25s;
+.searchIconWrapper {
+    display: flex;
+    padding-left: 6px;
 }
 
 .searchIcon {
-    padding-right: 4px;
-    width: 14px;
-    height: 100%;
+    display: flex;
+    width: 20px;
+    height: 18px;
     align-self: center;
 }
 
+.productSearchBar {
+    display: flex;
+    font-family: inter;
+    font-size: 14px;
+    font-weight: 450;
+    width: 370px;
+    height: 36px;
+    padding: 6px;
+    transition: 0.25s;
+    border: none;
+    background-color: transparent;
+}
+
+.productSearchContainer:hover, .productSearchContainer:focus {
+    border: 1.5px solid #436b1feb;
+    transition: 0.25s;
+}
 
 @media (max-width: 1086px) {
     .productSearchWrapper .productSearchBar {

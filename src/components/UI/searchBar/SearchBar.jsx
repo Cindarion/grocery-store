@@ -16,8 +16,10 @@ const SearchBar = ( {onSearch} ) => {
   }, [onSearch, debouncedSearchTerm]);
 
   return (
-    <div className={classes.productSearchWrapper}>
-      <img className={classes.searchIcon} src={require("../../../data/icons/search.png")}/>
+    <div className={classes.productSearchContainer}>
+      <div className={classes.searchIconWrapper}>
+        <img className={classes.searchIcon} src={require("../../../data/icons/search-icon-gray.png")}/>
+      </div>
       <input 
         type='search' 
         name='productSearch' 
