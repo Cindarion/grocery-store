@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import classes from './ShopProducts.module.css'
 import { useSort } from '../../../../hooks/useSort';
 import { useFilter } from '../../../../hooks/useFilter';
 import { useSlice } from '../../../../hooks/useSlice';
+import ActionButton from '../../buttons/ActionButton/ActionButton';
+import { CartContext } from '../../../context/cartContext';
 
 const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPage}) => {
   const sortedProducts = useSort(data, sortOption);
   const filteredSortedProducts = useFilter(sortedProducts, searchQuery);
-  const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, productsPerPage)
+  const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, productsPerPage);
   const [selectedProduct, setSelectedProduct] = useState(false);
+  const { addToCart } = useContext(CartContext);
 
   const handleProductAnimations = (index) => {
     let timeoutId;
-
     if (!selectedProduct) {
       setSelectedProduct(index)
       timeoutId = setTimeout(() => {
@@ -21,7 +23,11 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPa
       }, 500);
     }
     return
-  }
+  };
+
+  const handleAddToCart = (product) => {
+    addToCart(product)
+  };
 
   return (
     <>
@@ -29,7 +35,7 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPa
         <div 
         className={`${classes.productWrapper} ${selectedProduct === index ?`${classes.animate}` : ''} `} 
         key={index} 
-        onClick={() => handleProductAnimations(index)}
+        // onClick={() => handleProductAnimations(index)} 
         >
           <div className={classes.imageWrapper}>
             <img src={require(`../../../../data/images/${product.filename}`)}/>
@@ -41,8 +47,15 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPa
             <span className={classes.productPrice}>
               ${product.price.price_per_unit} / {product.price.unit_measure}
             </span>
-            <div className={classes.productDescription}>
-              {product.description}
+            <div className={classes.productBottomContainer}>
+              <div className={classes.productDescription}>
+                {product.description}
+              </div>
+              <ActionButton 
+                onClick={() => handleAddToCart(product)}
+                key={index}
+                children={"+"}
+              />
             </div>
           </div>
         </div>

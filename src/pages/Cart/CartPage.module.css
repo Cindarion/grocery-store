@@ -1,0 +1,51 @@
+.contentContainer {
+    font-family: Inter, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-top: 36px;
+}
+
+.pageHeadingContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.pageHeadingTitleWrapper .pageHeadingTitle{
+    font-family: Newsreader, sans-serif;
+    font-size: 54px;
+    padding-right: 16px;
+}
+
+.pageHeadingTitleWrapper span {
+    font-size: 24px;
+}
+
+hr {
+    width: 100%;
+    border: 0;
+    height: 2px;
+    background: #E6E6E6;
+}
+
+.cartContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.cartProductsWrapper {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+}
+
+.cartTotalWrapper {
+    display: flex;
+    min-width: 250px;
+    width: 300px;
+    height: 180px;  
+    border: 1px solid #E6E6E6;
+    border-radius: 12px;
+}

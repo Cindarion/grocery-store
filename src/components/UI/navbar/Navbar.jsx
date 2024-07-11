@@ -1,9 +1,12 @@
-import React, { memo } from 'react'
+import React, { memo, useContext, useState } from 'react'
 import {Link} from 'react-router-dom'
 import classes from "./Navbar.module.css"
-import SimpleButton from '../buttons/SimpleButton/SimpleButton'
+import ActionButton from '../buttons/ActionButton/ActionButton'
+import { CartContext } from '../../context/cartContext'
 
 const Navbar = memo(() => {
+  const { cart, dislpayQuantity } = useContext(CartContext)
+
   return (
     <header className={classes.header}>
       <div className={classes.companyTitle}>
@@ -38,9 +41,9 @@ const Navbar = memo(() => {
           </li>
           <li>
             <Link to="/cart">
-              <SimpleButton>
-                Basket
-              </SimpleButton>
+              <ActionButton>
+                Basket {dislpayQuantity && <span>({cart.length})</span>}
+              </ActionButton>
             </Link>
           </li>
         </ul>

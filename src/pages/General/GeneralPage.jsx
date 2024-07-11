@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import SimpleButton from '../../components/UI/buttons/SimpleButton/SimpleButton'
+import ActionButton from '../../components/UI/buttons/ActionButton/ActionButton'
 import classes from './GeneralPage.module.css'
 import chardPNG from '../../data/images/chard.png'
 import foodArtPNG from '../../data/images/foodArt.png'
@@ -17,9 +17,9 @@ const HomePage = () => {
         </div>
         <div>
           <Link to="/products">
-            <SimpleButton>
+            <ActionButton>
               Browse our shop
-            </SimpleButton>
+            </ActionButton>
           </Link>
         </div>
       </div>
