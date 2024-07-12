@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import classes from './CartPage.module.css'
 import { CartContext } from '../../components/context/cartContext'
 import CartProduct from '../../components/UI/products/CartProducts/CartProduct'
+import ActionButton from '../../components/UI/buttons/ActionButton/ActionButton'
 
 const CartPage = () => {
   const { cart } = useContext(CartContext)
@@ -37,7 +38,27 @@ const CartPage = () => {
           {renderCartProducts(cart)}
         </div>
         <div className={classes.cartTotalWrapper}>
-          total price: ...
+          <span>
+            Order summary:
+          </span>
+          <div className={classes.cartTotalDetailsWrapper}>
+            <span>
+              Subtotal
+            </span>
+            <span>
+              Shipping
+            </span>
+            <span>
+              Tax
+            </span>
+            <span>
+              Total
+            </span>
+          </div>
+          <ActionButton 
+            className={classes.paymentButton} 
+            children={"Continue to payment ->"}
+          />
         </div>
       </div>
     </div> 

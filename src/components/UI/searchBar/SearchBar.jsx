@@ -17,15 +17,18 @@ const SearchBar = ( {onSearch} ) => {
   return (
     <div className={classes.productSearchContainer}>
       <div className={classes.searchIconWrapper}>
-        <img className={classes.searchIcon} src={require("../../../data/icons/search-icon-gray.png")}/>
+        <img 
+          className={classes.searchIcon} 
+          src={require("../../../data/icons/search-icon-gray.png")}
+        />
       </div>
       <input 
         type='search' 
         name='productSearch' 
         value={searchTerm}
         placeholder='Search for products' 
-        onChange={e => setSearchTerm(e.target.value)}
         className={classes.productSearchBar} 
+        onChange={e => setSearchTerm(e.target.value)}
       />
     </div>
   )
