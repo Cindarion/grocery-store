@@ -37,22 +37,22 @@ const CartPage = () => {
           {renderEmptyMessage()}
           {renderCartProducts(cart)}
         </div>
-        <div className={classes.cartTotalWrapper}>
-          <span>
-            Order summary:
+        <div className={classes.OrderSummaryWrapper}>
+          <span className={classes.cartOrderSummaryHeader}>
+            Order summary
           </span>
           <div className={classes.cartTotalDetailsWrapper}>
             <span>
-              Subtotal
+              Subtotal:
             </span>
             <span>
-              Shipping
+              Shipping:
             </span>
             <span>
-              Tax
+              Tax:
             </span>
-            <span>
-              Total
+            <span className={classes.cartTotalTitle}>
+              Total:
             </span>
           </div>
           <ActionButton 

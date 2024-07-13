@@ -11,7 +11,7 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPa
   const filteredSortedProducts = useFilter(sortedProducts, searchQuery);
   const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, productsPerPage);
   const [selectedProduct, setSelectedProduct] = useState(false);
-  const { addToCart } = useContext(CartContext);
+  const { addProductToCart, decreaseCartProducts} = useContext(CartContext);
 
   const handleProductAnimations = (index) => {
     let timeoutId;
@@ -26,8 +26,12 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPa
   };
 
   const handleAddToCart = (product) => {
-    addToCart(product)
+    addProductToCart(product)
   };
+
+  const handleDecreaseQuantity = (productId) => {
+    decreaseCartProducts(productId)
+  }
 
   return (
     <>
@@ -53,8 +57,11 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPa
               </div>
               <ActionButton 
                 onClick={() => handleAddToCart(product)}
-                key={index}
                 children={"+"}
+              />
+              <ActionButton 
+                onClick={() => handleDecreaseQuantity(product.id)}
+                children={"-"}
               />
             </div>
           </div>

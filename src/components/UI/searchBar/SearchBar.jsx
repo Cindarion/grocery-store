@@ -19,7 +19,7 @@ const SearchBar = ( {onSearch} ) => {
       <div className={classes.searchIconWrapper}>
         <img 
           className={classes.searchIcon} 
-          src={require("../../../data/icons/search-icon-gray.png")}
+          src={require("../../../data/icons/search-dark-gray-icon.png")}
         />
       </div>
       <input 
