@@ -1,6 +1,6 @@
 import {BrowserRouter} from 'react-router-dom'
 import {CartProvider} from './components/context/cartContext';
-import Navbar from './components/UI/navbar/Navbar';
+import Navbar from './components/UI/Navbar/Navbar';
 import AppRouter from './components/AppRouter';
 import './styles/global.css'
 

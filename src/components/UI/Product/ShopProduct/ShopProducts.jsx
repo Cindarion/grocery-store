@@ -3,15 +3,17 @@ import classes from './ShopProducts.module.css'
 import { useSort } from '../../../../hooks/useSort';
 import { useFilter } from '../../../../hooks/useFilter';
 import { useSlice } from '../../../../hooks/useSlice';
-import ActionButton from '../../buttons/ActionButton/ActionButton';
 import { CartContext } from '../../../context/cartContext';
+import ActionButton from '../../Buttons/ActionButton/ActionButton';
 
 const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPage}) => {
   const sortedProducts = useSort(data, sortOption);
   const filteredSortedProducts = useFilter(sortedProducts, searchQuery);
   const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, productsPerPage);
   const [selectedProduct, setSelectedProduct] = useState(false);
-  const { addProductToCart, decreaseCartProducts} = useContext(CartContext);
+  const {cart, addProductToCart, decreaseCartProducts} = useContext(CartContext);
+
+  console.log(cart);
 
   const handleProductAnimations = (index) => {
     let timeoutId;
@@ -63,6 +65,7 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPa
                 onClick={() => handleDecreaseQuantity(product.id)}
                 children={"-"}
               />
+
             </div>
           </div>
         </div>

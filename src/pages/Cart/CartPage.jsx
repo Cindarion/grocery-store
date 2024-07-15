@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import classes from './CartPage.module.css'
 import { CartContext } from '../../components/context/cartContext'
-import CartProduct from '../../components/UI/products/CartProducts/CartProduct'
-import ActionButton from '../../components/UI/buttons/ActionButton/ActionButton'
+import CartProduct from '../../components/UI/Product/CartProduct/CartProduct'
+import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'
 
 const CartPage = () => {
   const { cart } = useContext(CartContext)

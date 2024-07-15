@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import classes from './ProductsPage.module.css'
 import { getCurrentDateFormatted } from '../../utils/currentDate'
-import SearchBar from '../../components/UI/searchBar/SearchBar'
-import SortOptionButton from '../../components/UI/buttons/SortButton/SortOptionButton'
-import ShopProducts from '../../components/UI/products/ShopProduct/ShopProducts'
-import Pagination from '../../components/UI/pagination/Pagination'
+import SearchBar from '../../components/UI/SearchBar/SearchBar'
+import SortOptionButton from '../../components/UI/Buttons/SortButton/SortOptionButton'
+import ShopProducts from '../../components/UI/Product/ShopProduct/ShopProducts'
+import Pagination from '../../components/UI/Pagination/Pagination'
 import { useFetch } from '../../hooks/useFetch'
 
 const ProductsPage = () => {

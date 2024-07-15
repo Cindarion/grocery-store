@@ -1,7 +1,7 @@
 import React, { memo, useContext, useState } from 'react'
 import {Link} from 'react-router-dom'
 import classes from "./Navbar.module.css"
-import ActionButton from '../buttons/ActionButton/ActionButton'
+import ActionButton from '../Buttons/ActionButton/ActionButton'
 import { CartContext } from '../../context/cartContext'
 
 const Navbar = memo(() => {
