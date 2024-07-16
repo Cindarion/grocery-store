@@ -23,44 +23,46 @@ const CartPage = () => {
 
   return (
     <div className={classes.contentContainer}>
-      <div className={classes.pageHeadingContainer}>
+      <section>
         <div className={classes.pageHeadingTitleWrapper}>
           <span className={classes.pageHeadingTitle}>
             Basket
           </span>
           <span> ({cart.length}) items </span>
         </div>
-      </div>
+      </section>
       <hr/>
-      <div className={classes.cartContainer}>
-        <div className={classes.cartProductsWrapper}>
-          {renderEmptyMessage()}
-          {renderCartProducts(cart)}
-        </div>
-        <div className={classes.OrderSummaryWrapper}>
-          <span className={classes.cartOrderSummaryHeader}>
-            Order summary
-          </span>
-          <div className={classes.cartTotalDetailsWrapper}>
-            <span>
-              Subtotal:
-            </span>
-            <span>
-              Shipping:
-            </span>
-            <span>
-              Tax:
-            </span>
-            <span className={classes.cartTotalTitle}>
-              Total:
-            </span>
+      <main>
+        <div className={classes.cartContainer}>
+          <div className={classes.cartProductsWrapper}>
+            {renderEmptyMessage()}
+            {renderCartProducts(cart)}
           </div>
-          <ActionButton 
-            className={classes.paymentButton} 
-            children={"Continue to payment ->"}
-          />
+          <div className={classes.OrderSummaryWrapper}>
+            <span className={classes.cartOrderSummaryHeader}>
+              Order summary
+            </span>
+            <div className={classes.cartTotalDetailsWrapper}>
+              <span>
+                Subtotal:
+              </span>
+              <span>
+                Shipping:
+              </span>
+              <span>
+                Tax:
+              </span>
+              <span className={classes.cartTotalTitle}>
+                Total:
+              </span>
+            </div>
+            <ActionButton 
+              className={classes.paymentButton} 
+              children={"Continue to payment ->"}
+            />
+          </div>
         </div>
-      </div>
+      </main>
     </div> 
   )
 }

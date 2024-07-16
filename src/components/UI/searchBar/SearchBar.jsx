@@ -12,7 +12,7 @@ const SearchBar = ( {onSearch} ) => {
     if (onSearch) {
       onSearch(debouncedSearchTerm)
     }
-  }, [onSearch, debouncedSearchTerm]);
+  }, [debouncedSearchTerm]);
 
   return (
     <div className={classes.productSearchContainer}>

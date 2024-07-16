@@ -5,11 +5,13 @@
     padding-top: 36px;
 }
 
-.pageHeadingContainer {
+.contentContainer section {
     display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
+    margin: 0;
+    padding: 0;
 }
 
 .pageHeadingTitleWrapper .pageHeadingTitle{
@@ -22,17 +24,20 @@
     font-size: 24px;
 }
 
-hr {
+.contentContainer hr {
     width: 100%;
     border: 0;
     height: 2px;
     background: #E6E6E6;
 }
 
+.contentContainer main {
+    padding-top: 20px;
+}
+
 .cartContainer {
     display: flex;
     justify-content: space-between;
-    padding-top: 20px;
 }
 
 .cartProductsWrapper {

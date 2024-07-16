@@ -8,6 +8,15 @@
     transition: transform 0.3s ease;
 }
 
+.productWrapper:hover {
+    transform: scale(1.05);
+    transition: 0.25s;
+}
+
+.productWrapper:active {
+    transform: scale(1.25);
+}
+
 .imageWrapper {
     display: flex;
     height: 65%;
@@ -53,7 +62,24 @@
     justify-content: space-between;
 }
 
-.productBottomContainer button {
+.titleWrapper .productDescription {
+    display: block;
+    font-size: 12px;
+    color: #6D6D6D;
+    margin-top: 6px;
+    max-width: 55%;
+
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.titleWrapper .productButtonsWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.productButtonsWrapper button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,15 +88,9 @@
     height: 34px;
 }
 
-.titleWrapper .productDescription {
-    display: block;
-    font-size: 12px;
-    color: #6D6D6D;
-    margin-top: 6px;
-    max-width: 80%;
-
-    white-space: nowrap;
-    overflow: hidden;
+.productButtonsWrapper > span {
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 .productBottomContainer .productDescription:hover {

@@ -9,8 +9,8 @@ import { useFetch } from '../../hooks/useFetch'
 
 const ProductsPage = () => {
   const [sortOption, setSortOption] = useState("Default");
-  const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("")
+  const [currentPage, setCurrentPage] = useState(1);
   const { loading, error, data } = useFetch('./products.json'); 
   const sortProps = ["Default", "A-Z", "Price"];
   const currentDate = getCurrentDateFormatted();
@@ -30,8 +30,8 @@ const ProductsPage = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className={classes.contentWrapper}>
-      <div className={classes.pageHeadingWrapper}>
+    <div className={classes.contentContainer}>
+      <section>
         <div className={classes.pageHeadingTitle}>
           <span className={classes.produceTitle}>Produce</span>
           <span><b>Fresh</b> — {currentDate}</span>
@@ -41,35 +41,37 @@ const ProductsPage = () => {
         />
         <div className={classes.productSortWrapper}>
           <ul>
-            {sortProps.map((sort) => (
+            {sortProps.map((sort, index) => (
               <SortOptionButton 
                 children={sort}
                 sortOption={sortOption}
                 setSortOption={setSortOption}
-                key={crypto.randomUUID()}
+                key={index}
               />
             ))}
           </ul>
         </div>
-      </div>
+      </section>
       <hr/>
-      <div className={classes.productsWrapper}>
-        <ShopProducts
-          itemCount={itemCount}
-          productsPerPage={productsPerPage}
+      <main>
+        <div className={classes.productsWrapper}>
+          <ShopProducts
+            itemCount={itemCount}
+            productsPerPage={productsPerPage}
+            currentPage={currentPage}
+            sortOption={sortOption}
+            searchQuery={searchQuery}
+            data={data}
+          />
+        </div>
+        <Pagination
+          onPageChange={handlePageChange}
+          totalCount={itemCount}
           currentPage={currentPage}
-          sortOption={sortOption}
-          searchQuery={searchQuery}
-          data={data}
+          siblingCount={1}
+          pageSize={productsPerPage}
         />
-      </div>
-      <Pagination
-        onPageChange={handlePageChange}
-        totalCount={itemCount}
-        currentPage={currentPage}
-        siblingCount={1}
-        pageSize={productsPerPage}
-      />
+      </main>
     </div>
   )
 }

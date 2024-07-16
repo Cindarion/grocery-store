@@ -1,8 +1,17 @@
-.contentWrapper {
+.contentContainer {
     font-family: Inter, sans-serif;
+    padding-top: 128px;
+}
+
+.contentContainer main {
     display: flex;
     flex-direction: column;
-    padding-top: 128px;
+}
+
+.contentContainer section {
+    margin: 0;
+    padding: 0;
+    align-self: center;
 }
 
 .titleWrapper {
@@ -63,20 +72,20 @@
     filter: drop-shadow(0 0 0.15rem rgba(0, 0, 0, 0.30));
 }
 
-.footer {
+.footerContainer {
     display: flex;
 }
 
-.footer .footerLeftTitle {
+.footerLeftTitle {
     font-weight: 400;
     margin-right: 40px;
     width: 200px;
 }
 
-.footer .footerRightText {
+.footerRightText {
     width: 700px;
 }
 
-.footer p {
+.footerContainer p {
     padding-bottom: 6px;
 }

@@ -30,7 +30,7 @@ const CartProduct = ({product}) => {
             />
             <img 
               className={classes.editQuantityIcon} 
-              src={require("../../../../data/icons/edit-input.png")}
+              src={require("../../../../data/icons/edit-input-gray.png")}
             />
           </span>
         </div>
@@ -42,7 +42,7 @@ const CartProduct = ({product}) => {
             <img 
               onClick={() => handleDelete(product.id)}
               className={classes.deleteProductIcon} 
-              src={require("../../../../data/icons/delete-from-cart.png")}
+              src={require("../../../../data/icons/remove-from-cart-dark-gray.png")}
             />
           </div>
         </div>

@@ -32,24 +32,26 @@ const Pagination = ({
   let lastPage = paginationRange[paginationRange.length - 1];
 
   return (
-    <ul className={classes.paginationContainer}>
-      <li className={classes.paginationItem} onClick={onPrevious}>
-        <div className={classes.arrowLeft}>←</div>
-      </li>
-      {paginationRange.map((pageNumber, index) => {
-        if (pageNumber === DOTS) {
-          return <li key={index} className={classes.paginationItemDots}>&#8230;</li>;
-        }
-        return (
-          <li key={index} className={classes.paginationItem} onClick={() => onPageChange(pageNumber)}>
-            {pageNumber}
-          </li>
-        );
-      })}
-      <li className={classes.paginationItem} onClick={onNext}>
-        <div className={classes.arrowRight}>→</div>
-      </li>
-    </ul>
+    <div className={classes.paginationContainer}>
+      <ul>
+        <li className={classes.paginationItem} onClick={onPrevious}>
+          <div className={classes.arrowLeft}>←</div>
+        </li>
+        {paginationRange.map((pageNumber, index) => {
+          if (pageNumber === DOTS) {
+            return <li key={index} className={classes.paginationItemDots}>&#8230;</li>;
+          }
+          return (
+            <li key={index} className={classes.paginationItem} onClick={() => onPageChange(pageNumber)}>
+              {pageNumber}
+            </li>
+          );
+        })}
+        <li className={classes.paginationItem} onClick={onNext}>
+          <div className={classes.arrowRight}>→</div>
+        </li>
+      </ul>
+    </div>
   );
 };
 

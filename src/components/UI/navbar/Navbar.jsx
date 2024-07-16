@@ -8,7 +8,7 @@ const Navbar = memo(() => {
   const { cart, dislpayQuantity } = useContext(CartContext)
 
   return (
-    <header className={classes.header}>
+    <header>
       <div className={classes.companyTitle}>
         <Link to='/general'>
           <span>
@@ -16,7 +16,6 @@ const Navbar = memo(() => {
           </span>
         </Link>
       </div>
-
       <nav className={classes.navPanel}>
         <ul>
           <li>

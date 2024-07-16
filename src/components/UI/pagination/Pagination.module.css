@@ -3,8 +3,12 @@
   font-size: 16px;
   flex-direction: row;
   font-weight: 500;
-  padding: 12px 12px;
+  margin-top: 20px;
   margin-bottom: 32px;
+}
+
+.paginationContainer ul {
+  padding: 0;
 }
 
 .paginationItem {

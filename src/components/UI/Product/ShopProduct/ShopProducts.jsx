@@ -13,8 +13,6 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPa
   const [selectedProduct, setSelectedProduct] = useState(false);
   const {cart, addProductToCart, decreaseCartProducts} = useContext(CartContext);
 
-  console.log(cart);
-
   const handleProductAnimations = (index) => {
     let timeoutId;
     if (!selectedProduct) {
@@ -57,15 +55,17 @@ const ShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPa
               <div className={classes.productDescription}>
                 {product.description}
               </div>
-              <ActionButton 
-                onClick={() => handleAddToCart(product)}
-                children={"+"}
-              />
-              <ActionButton 
-                onClick={() => handleDecreaseQuantity(product.id)}
-                children={"-"}
-              />
-
+              <div className={classes.productButtonsWrapper}>
+                <ActionButton 
+                  onClick={() => handleDecreaseQuantity(product.id)}
+                  children={"-"}
+                />
+                <span>0</span>
+                <ActionButton 
+                  onClick={() => handleAddToCart(product)}
+                  children={"+"}
+                />
+              </div>
             </div>
           </div>
         </div>

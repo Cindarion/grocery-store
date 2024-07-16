@@ -42,7 +42,7 @@
 }
 
 .productPrice {
-    color: #426B1F;;
+    color: #426B1F;
     font-weight: 600;
     padding-bottom: 10px;
 }
@@ -73,9 +73,9 @@
 
 .editQuantityIcon {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    right: 8px;
+    width: 16px;
+    height: 16px;
+    right: 10px;
     cursor: pointer;
     z-index: 10;
 }
