@@ -14,8 +14,8 @@ const ProductsPage = () => {
   const { loading, error, data } = useFetch('./products.json'); 
   const sortProps = ["Default", "A-Z", "Price"];
   const currentDate = getCurrentDateFormatted();
-  const itemCount = 50;
-  const productsPerPage = 15;
+  const itemCount = data ? data.length : 50;
+  const productsPerPage = 16;
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -36,7 +36,7 @@ const ProductsPage = () => {
           <span className={classes.produceTitle}>Produce</span>
           <span><b>Fresh</b> — {currentDate}</span>
         </div>
-        <SearchBar 
+        <SearchBar
           onSearch={handleSearch}
         />
         <div className={classes.productSortWrapper}>
