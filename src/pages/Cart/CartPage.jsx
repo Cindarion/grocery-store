@@ -5,21 +5,24 @@ import CartProduct from '../../components/UI/Product/CartProduct/CartProduct'
 import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'
 
 const CartPage = () => {
-  const { cart } = useContext(CartContext)
+  const { cartItems, cartQuantity } = useContext(CartContext)
+
+  console.log(cartItems);
 
   const renderEmptyMessage = () => {
-    if (cart.length === 0) {
+    if (cartItems.length === 0) {
       return <p>Your cart is empty</p>
     }
     return null;
   };
   
-  const renderCartProducts = (cart) => (
-    cart.map((product) => <CartProduct 
+  const renderCartProducts = () => {
+    console.log(cartItems)
+    cartItems.map((product) => <CartProduct 
       key={product.filename} 
       product={product} 
       />)
-  );
+  };
 
   return (
     <div className={classes.contentContainer}>
@@ -28,15 +31,14 @@ const CartPage = () => {
           <span className={classes.pageHeadingTitle}>
             Basket
           </span>
-          <span> ({cart.length}) items </span>
+          <span>{cartQuantity} items </span>
         </div>
       </section>
       <hr/>
       <main>
         <div className={classes.cartContainer}>
           <div className={classes.cartProductsWrapper}>
-            {renderEmptyMessage()}
-            {renderCartProducts(cart)}
+            {renderCartProducts()}
           </div>
           <div className={classes.OrderSummaryWrapper}>
             <span className={classes.cartOrderSummaryHeader}>
@@ -67,4 +69,4 @@ const CartPage = () => {
   )
 }
 
-export default CartPage
+export default React.memo(CartPage);

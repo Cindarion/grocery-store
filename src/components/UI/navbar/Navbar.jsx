@@ -5,7 +5,7 @@ import ActionButton from '../Buttons/ActionButton/ActionButton'
 import { CartContext } from '../../context/cartContext'
 
 const Navbar = memo(() => {
-  const { cart, dislpayQuantity } = useContext(CartContext)
+  const {cartQuantity} = useContext(CartContext)
 
   return (
     <header>
@@ -41,7 +41,7 @@ const Navbar = memo(() => {
           <li>
             <Link to="/cart">
               <ActionButton>
-                Basket {dislpayQuantity && <span>({cart.length})</span>}
+                Basket {cartQuantity > 0 && <span>({cartQuantity})</span>}
               </ActionButton>
             </Link>
           </li>
@@ -51,4 +51,4 @@ const Navbar = memo(() => {
   )
 })
 
-export default Navbar;
+export default React.memo(Navbar);

@@ -1,39 +1,71 @@
 import React, { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext({
-  cart: {},
-  setCart: () => {},
+  cartItems: {},
+  setCartItems: () => {},
   addProductToCart: () => {},
 });
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  const [dislpayQuantity, setDislpayQuantity] = useState();
+  const [cartItems, setCartItems] = useState([]);
 
-  const addProductToCart = (product) => {
-    setCart([...cart, product]);
+  const cartQuantity = cartItems.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  )
+
+  function getItemQuantity(id) {
+    return cartItems.find(item => item.id === id)?.quantity || 0;
   };
 
-  const deleteFromCart = (productId) => {
-    setCart((prevState) => prevState.filter((item) => item.id !== productId));
+  function increaseCartQuantity(id) {
+    setCartItems(currItems => {
+      if (currItems.find(item => item.id === id) == null) {
+        return [...currItems, {id, quantity: 1}]
+      } else {
+        return currItems.map(item => {
+          if (item.id === id) {
+            return {...item, quantity: item.quantity + 1}
+          } else {
+            return item
+          }
+        })
+      }
+    })
   };
 
-  const decreaseCartProducts = (productId) => {
-    setCart((prevState) => 
-      prevState.map((item) =>
-        item.id === productId && item.qty > 1
-          ? {...item, qty: item.qty - 1}
-          : item
-      ).filter((item) => item.id !== productId || item.qty > 0)
-    );
+  function decreaseCartQuantity(id) {
+    setCartItems(currItems => {
+      if (currItems.find(item => item.id === id)?.quantity === 1) {
+        return currItems.filter(item => item.id !== id)
+      } else {
+        return currItems.map(item => {
+          if (item.id === id) {
+            return {...item, quantity: item.quantity - 1}
+          } else {
+            return item
+          }
+        })
+      }
+    })
   }
 
-  useEffect(() => {
-    setDislpayQuantity(cart.length > 0)
-  }, [cart])
+  function removeFromCart(id) {
+    setCartItems(currItems => {
+      return currItems.filter(item => item.id !== id)
+    })
+  }
 
   return (
-    <CartContext.Provider value={{ cart, addProductToCart, deleteFromCart, decreaseCartProducts, dislpayQuantity }}>
+    <CartContext.Provider 
+      value={{ 
+        cartItems,
+        cartQuantity,
+        getItemQuantity,
+        increaseCartQuantity,
+        decreaseCartQuantity,
+        removeFromCart
+      }}>
       {children}
     </CartContext.Provider>
   )
