@@ -12,6 +12,7 @@ const RenderShopProducts = ({data, sortOption, searchQuery, currentPage, product
   const renderProducts = () => (
     slicedFilteredSortedProducts.map((product, index) => <ShopProduct
       id={product.id} 
+      key={product.id}
       index={index}
       name={product.title}
       filename={product.filename}

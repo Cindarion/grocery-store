@@ -26,3 +26,4 @@ export const useSort = ([...data], sortOption) => {
 
   return sortedProducts;
 };
+
