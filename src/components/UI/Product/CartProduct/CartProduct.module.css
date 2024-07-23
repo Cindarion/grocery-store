@@ -6,6 +6,12 @@
     border: 2px solid #E6E6E6;
     margin-bottom: 20px;
     border-radius: 12px;
+    transition: 0.25s;
+}
+
+.productContainer:hover {
+    transform: scale(1.01);
+    transition: 0.25s;
 }
 
 .imageWrapper {
@@ -80,6 +86,10 @@
     z-index: 10;
 }
 
+.editQuantityIcon:hover {
+    filter: brightness(110%) contrast(120%);
+}
+
 .productRigthInfoWrapper {
     display: flex;
     flex-direction: column;
@@ -97,5 +107,9 @@
     height: 24px;
     align-self: last baseline;
     cursor: pointer;
+}
+
+.deleteProductIcon:hover {
+    filter: brightness(110%) contrast(120%);
 }
 
