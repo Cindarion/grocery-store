@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage"
 
 export const CartContext = createContext({
@@ -16,7 +16,7 @@ export const CartProvider = ({ children }) => {
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
     0
-  )
+  );
 
   function getItemQuantity(id) {
     return cartItems.find(item => item.id === id)?.quantity || 0;
@@ -52,13 +52,32 @@ export const CartProvider = ({ children }) => {
         })
       }
     })
-  }
+  };
+  
+  function setCustomQuantity(id, newQuantity) {
+    console.log("started");
+    setCartItems(currItems => {
+      if (currItems.find(item => item.id === id) && newQuantity === 0) {
+        return currItems.filter(item => item.id !== id)
+      } else {
+        return currItems.map(item => {
+          if (item.id === id) {
+            console.log("New quantity:", newQuantity);
+            return {... item, quantity: newQuantity}
+          } else {
+            return item
+          }
+        })
+      }
+    })
+  };
+
 
   function removeFromCart(id) {
     setCartItems(currItems => {
       return currItems.filter(item => item.id !== id)
     })
-  }
+  };
 
   return (
     <CartContext.Provider 
@@ -68,7 +87,8 @@ export const CartProvider = ({ children }) => {
         getItemQuantity,
         increaseCartQuantity,
         decreaseCartQuantity,
-        removeFromCart
+        removeFromCart,
+        setCustomQuantity
       }}>
       {children}
     </CartContext.Provider>

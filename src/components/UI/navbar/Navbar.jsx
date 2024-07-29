@@ -20,22 +20,30 @@ const Navbar = memo(() => {
         <ul>
           <li>
             <Link to="/products">
-              Shop
+              <span>
+                Shop
+              </span>
             </Link> 
           </li>
           <li>
             <Link to="/news">
-              Newstand
+              <span>
+                Newstand
+              </span>
             </Link>
           </li>
           <li>
             <Link to="/general">
-              Who we are
+              <span>
+                Who we are
+              </span>
             </Link>
           </li>
           <li>
             <Link to="/profile">
-              My profile
+              <span>
+                My profile
+              </span>
             </Link>
           </li>
           <li>

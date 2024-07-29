@@ -5,12 +5,22 @@ import storeProducts from '../../../../data/products.json'
 import { formatCurrency } from '../../../../utils/formatCurrency';
 
 const CartProduct = ({id, quantity}) => {
-  const { removeFromCart } = useContext(CartContext);
+  const { removeFromCart, setCustomQuantity } = useContext(CartContext);
   const product = storeProducts.find(i => i.id === id);
   if (product == null) return null;
   
-  const handleDelete = (product) => {
-    removeFromCart(product)
+  const handleDelete = (productId) => {
+    removeFromCart(productId)
+  }
+
+  const handleSelect = (inputField) => {
+    inputField.select()
+  }
+
+  const handleInputChange = (inputValue) => {
+    if (isNaN(inputValue)) return
+    const newQuantity = parseInt(inputValue, 10)
+    setCustomQuantity(id, newQuantity >= 0 ? newQuantity : 0)
   }
   
   return (
@@ -31,7 +41,8 @@ const CartProduct = ({id, quantity}) => {
               className={classes.productQuantityInput} 
               placeholder="quantity"
               value={quantity}
-              type="text" 
+              onClick={(e) => handleSelect(e.target)}
+              onChange={(e) => handleInputChange(e.target.value)}
             />
             <img 
               className={classes.editQuantityIcon} 
