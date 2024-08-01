@@ -1,9 +1,9 @@
-.ActionButton {
+.ActionButton, .ActionButton_darker {
     font-family: Inter;
     font-size: 18px;
     font-weight: 300;
-    color: #fff;
-    background-color: #426B1F;
+    color: var(--secondary-color-lighter, #FFF);
+    background-color: var(--main-color, #426B1F);
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -12,12 +12,22 @@
     transition: 0.15s;
 }
 
+.ActionButton_darker {
+    color: var(--secondary-color-lighter, #FFF);
+    background-color: var(--secondary-color-darker, #d7d7d7);
+}
+
 .ActionButton:hover {
-    background-color: #436b1feb;
+    opacity: 0.9;
     transition: 0.15s;
 }
 
-.ActionButton:active {
-    opacity: 0.8;
+.ActionButton_darker:hover {
+    opacity: 0.9;
+    transition: 0.15s;
+}
+
+.ActionButton:active, .ActionButton_darker:active {
+    opacity: 0.78;
     transition: 0.15s;
 }

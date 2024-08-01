@@ -55,14 +55,12 @@ export const CartProvider = ({ children }) => {
   };
   
   function setCustomQuantity(id, newQuantity) {
-    console.log("started");
     setCartItems(currItems => {
       if (currItems.find(item => item.id === id) && newQuantity === 0) {
         return currItems.filter(item => item.id !== id)
       } else {
         return currItems.map(item => {
           if (item.id === id) {
-            console.log("New quantity:", newQuantity);
             return {... item, quantity: newQuantity}
           } else {
             return item

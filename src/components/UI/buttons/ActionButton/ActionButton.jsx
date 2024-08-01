@@ -5,7 +5,7 @@ const SimpleButton = ({onClick, children}) => {
   return (
     <button
       onClick={onClick} 
-      className={classes.ActionButton}
+      className={children == "-" ? classes.ActionButton_darker : classes.ActionButton}
     >
       {children}
     </button>

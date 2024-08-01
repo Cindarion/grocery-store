@@ -28,7 +28,10 @@ html {
 
 :root {
     --main-color: #426B1F;
+    --main-color-lighter: #436b1feb;
     --secondary-color: #E6E6E6;
+    --secondary-color-lighter: #FFF;
+    --secondary-color-darker: #d7d7d7;
     --third-color: #6D6D6D;
 }
 

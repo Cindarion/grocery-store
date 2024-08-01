@@ -19,6 +19,8 @@ const CartProduct = ({id, quantity}) => {
 
   const handleInputChange = (inputValue) => {
     if (isNaN(inputValue)) return
+    if (inputValue === "") return
+    if (inputValue >= 100) inputValue = 99;
     const newQuantity = parseInt(inputValue, 10)
     setCustomQuantity(id, newQuantity >= 0 ? newQuantity : 0)
   }
