@@ -2,27 +2,51 @@ import React, { useContext } from 'react'
 import classes from './CartPage.module.css'
 import { CartContext } from '../../components/context/cartContext'
 import CartProduct from '../../components/UI/Product/CartProduct/CartProduct'
+import OrderSummary from '../../components/UI/OrderSummary/OrderSummary'
 import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'
-import { formatCurrency } from '../../utils/formatCurrency'
-import storeProducts from '../../data/products.json'
+import { Link } from 'react-router-dom'
 
 
 const CartPage = () => {
-  const { cartItems, cartQuantity } = useContext(CartContext)
+  const { cartItems, cartQuantity } = useContext(CartContext);
 
-  const renderCartProducts = () => (
-    cartItems.map((product) => <CartProduct
-      key={product.id} {...product}
-    />)
-  );
+  const renderQuantityTitle = () => {
+    if (cartQuantity > 0) {
+      return (
+        <span>{cartQuantity} items</span>
+      )
+    } 
+  };
 
-  // if statement making this impossible to render. WHY??
+  const renderCartProducts = () => {
+    return (
+      cartItems.map((product) => <CartProduct
+        key={product.id} {...product}
+      />)
+    )
+  };
+
   const renderEmptyMessage = () => {
-    if (cartItems.length <= 0) {
-      return <p>Your cart is empty</p>
-    }
-  }
-   
+    return (
+      <div className={classes.emptyMessageContainer}>
+        <img 
+          src={require("../../data/icons/cart-is-empty.png")}
+          alt='cart is empty'
+          />
+        <span>Your cart is empty...</span>
+        <Link to="/products">
+          <ActionButton children={"Back to shopping"}/>
+        </Link>
+      </div>
+    ) 
+  };
+
+  const renderOrderSummary = () => {
+    return (
+      <OrderSummary/>
+    )
+  };
+
   return (
     <div className={classes.contentContainer}>
       <section>
@@ -30,45 +54,16 @@ const CartPage = () => {
           <span className={classes.pageHeadingTitle}>
             Basket
           </span>
-          <span>{cartQuantity} items </span>
+          {renderQuantityTitle()}
         </div>
       </section>
       <hr/>
       <main>
         <div className={classes.cartContainer}>
           <div className={classes.cartProductsWrapper}>
-            {renderCartProducts()}
+            {cartQuantity? renderCartProducts() : renderEmptyMessage()}
           </div>
-          <div className={classes.OrderSummaryWrapper}>
-            <span className={classes.cartOrderSummaryHeader}>
-              Order summary
-            </span>
-            <div className={classes.cartTotalDetailsWrapper}>
-              <span>
-                Subtotal:
-              </span>
-              <span>
-                Shipping:
-              </span>
-              <span>
-                Tax:
-              </span>
-              <span className={classes.cartTotalTitle}>
-                Total: {" "} 
-                {formatCurrency(
-                  cartItems.reduce((total, cartItem) => {
-                      const product = storeProducts.find(i => i.id === cartItem.id)
-                      return total + (product?.price.price_per_unit || 0) * cartItem.quantity
-                    }, 0)
-                  )
-                }
-              </span>
-            </div>
-            <ActionButton 
-              className={classes.paymentButton} 
-              children={"Continue to payment ->"}
-            />
-          </div>
+          {cartQuantity? renderOrderSummary() : ""}
         </div>
       </main>
     </div> 

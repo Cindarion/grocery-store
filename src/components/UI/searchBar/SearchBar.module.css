@@ -24,7 +24,7 @@
     height: 40px;
     width: 460px;
     
-    border: 1.5px solid #E6E6E6;
+    border: 1.5px solid var(--secondary-color, #E6E6E6);
     border-radius: 10px;
 
     display: flex;
@@ -39,6 +39,6 @@
 }
 
 .productSearchBar:hover, .productSearchBar:focus {
-    border: 1.5px solid #436b1feb;
+    border: var(--hover-focus-outline);
     transition: 0.25s;
 }

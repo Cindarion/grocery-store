@@ -11,7 +11,7 @@ const ShopProduct = ({id, index, name, filename, price, unit_measure, descriptio
     decreaseCartQuantity, 
     removeFromCart
   } = useContext(CartContext);
-  const quantity = getItemQuantity(id);
+  const productQuantity = getItemQuantity(id);
 
   const handleIncreaseQuantity = (product) => {
     increaseCartQuantity(product)
@@ -21,13 +21,41 @@ const ShopProduct = ({id, index, name, filename, price, unit_measure, descriptio
     decreaseCartQuantity(productId)
   }
 
+  const renderActionButtons = () => {
+    if (productQuantity === 0) {
+      return (
+        <div className={classes.productButtonsWrapper}>
+          <ActionButton 
+          onClick={() => increaseCartQuantity(id)}
+          children={"+"}
+          />
+        </div>
+      )
+    };
+
+    if (productQuantity > 0) {
+      return ( 
+        <div className={classes.productButtonsWrapper}>
+          <ActionButton 
+            onClick={() => handleDecreaseQuantity(id)}
+            children={"-"}
+          />
+          <span>
+            {productQuantity}
+          </span>
+          <ActionButton 
+            onClick={() => handleIncreaseQuantity(id)}
+            children={"+"}
+          />
+        </div>
+      )
+    };
+  };
+
   return (
-    <div 
-    className={classes.productWrapper} 
-    key={index} 
-    >
+    <div className={classes.productWrapper} key={index}>
       <div className={classes.imageWrapper}>
-        <img src={require(`../../../../data/images/${filename}`)}/>
+        <img src={require(`../../../../data/images/${filename}`)} alt='product'/>
       </div>
       <div className={classes.titleWrapper}>
         <span className={classes.productName}>
@@ -40,26 +68,7 @@ const ShopProduct = ({id, index, name, filename, price, unit_measure, descriptio
           <div className={classes.productDescription}>
             {description}
           </div>
-            {quantity === 0 ? (
-              <div className={classes.productButtonsWrapper}>
-                <ActionButton 
-                onClick={() => increaseCartQuantity(id)}
-                children={"+"}
-                />
-              </div>
-              ) : (
-              <div className={classes.productButtonsWrapper}>
-                <ActionButton 
-                  onClick={() => handleDecreaseQuantity(id)}
-                  children={"-"}
-                />
-                <span>{quantity}</span>
-                <ActionButton 
-                  onClick={() => handleIncreaseQuantity(id)}
-                  children={"+"}
-                />
-              </div>
-            )}
+          {renderActionButtons()}
         </div>
       </div>
     </div>

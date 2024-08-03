@@ -1,20 +1,16 @@
 .productWrapper {
     width: 266px;
     height: 296px;
-    background-color: #FAFAF5;
-    border: 2px solid #E6E6E6;
+    background-color: var(--background-color, #FAFAF5);
+    border: 2px solid var(--secondary-color, #E6E6E6);
     border-radius: 16px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.25s ease;
 }
 
 .productWrapper:hover {
     transform: scale(1.05);
     transition: 0.25s;
-}
-
-.productWrapper:active {
-    transform: scale(1.06);
 }
 
 .imageWrapper {
@@ -52,7 +48,7 @@
 
 .titleWrapper .productPrice {
     display: block;
-    color: #426B1F;
+    color: var(--main-text-color-green, #426B1F);
     font-weight: 650;
     margin-top: 2px;
 }
@@ -89,34 +85,15 @@
 }
 
 .productButtonsWrapper > span {
-    margin-left: 2px;
-    margin-right: 2px;
+    text-align: center;
+    width: 24px;
 }
 
-.darkerButton {
-    background-color: #bcbcbc;
-}
 
 .productBottomContainer .productDescription:hover {
     white-space: pre-line;
     overflow: auto;
     background-color: #bcbcbc;
-}
-
-.animate {
-    animation: scaleUp 0.5s;
-}
-  
-@keyframes scaleUp {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.08);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 @media (min-width: 1024px) and (max-width: 1180px) {
@@ -163,7 +140,5 @@
         width: 166px;
         height: 250px;
     }
-
-
 }
 

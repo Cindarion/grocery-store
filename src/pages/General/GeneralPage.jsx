@@ -19,9 +19,7 @@ const HomePage = () => {
             </div>
             <div>
               <Link to="/products">
-                <ActionButton>
-                  Browse our shop
-                </ActionButton>
+                <ActionButton children={"Browse our shop"}/>
               </Link>
             </div>
           </div>

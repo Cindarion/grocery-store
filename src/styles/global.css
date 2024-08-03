@@ -19,7 +19,7 @@
 
 * {
     box-sizing: border-box;
-    line-height: 1.42857143;
+    line-height: 1.42;
 }
 
 html {
@@ -27,12 +27,19 @@ html {
 }
 
 :root {
-    --main-color: #426B1F;
-    --main-color-lighter: #436b1feb;
+    --primary-color: #426B1F;
+    --primary-color-lighter: #436b1feb;
     --secondary-color: #E6E6E6;
-    --secondary-color-lighter: #FFF;
-    --secondary-color-darker: #d7d7d7;
+    --secondary-color-lighter: #ffffff;
     --third-color: #6D6D6D;
+    --background-color: #FAFAF5;
+
+    --hover-focus-outline: 1.5px solid var(--primary-color-lighter);
+    --warning-color: #fa9a14;
+    --attention-color: #E32636;
+    --main-text-color-black: #000000;
+    --main-text-color-white: #ffffff;
+    --main-text-color-green: #426B1F;
 }
 
 body {

@@ -1,0 +1,40 @@
+.cartSummaryWrapper {
+    display: flex;
+    position: sticky;
+    top: 10%;
+    font-size: 20px;
+    flex-direction: column;
+    width: 30%;
+    min-width: 30%;
+    max-height: 286px;
+    padding: 16px;
+    background-color: #FAFAF5;
+    border: 2px solid #E6E6E6;
+    border-radius: 10px;
+    z-index: 5;
+}
+
+.orderSummaryHeader {
+    font-weight: 600;
+}
+
+.orderDetailsWrapper {
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.orderDetailsWrapper span{
+    padding-bottom: 12px;
+}
+
+.orderTotal {
+    font-weight: 600;
+}
+
+.orderTotal button {
+    font-weight: 600;
+    font-size: 16px;
+}

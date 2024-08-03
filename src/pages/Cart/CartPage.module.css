@@ -42,49 +42,26 @@
 
 .cartProductsWrapper {
     display: flex;
-    width: 70%;
+    width: 100%;
     min-width: 400px;
     flex-direction: column;
     margin-right: 20px;
 }
 
-.OrderSummaryWrapper {
+.emptyMessageContainer {
     display: flex;
-    position: sticky;
-    top: 10%;
-    font-size: 20px;
     flex-direction: column;
-    width: 30%;
-    min-width: 30%;
-    max-height: 286px;
-    padding: 16px;
-    background-color: #FAFAF5;
-    border: 2px solid #E6E6E6;
-    border-radius: 10px;
-    z-index: 5;
-}
-
-.cartOrderSummaryHeader {
-    font-weight: 600;
-}
-
-.cartTotalDetailsWrapper {
-    display: flex;
-    font-size: 16px;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
-.cartTotalDetailsWrapper span{
-    padding-bottom: 12px;
+.emptyMessageContainer img {
+    width: 100px;
+    height: 100px;
 }
 
-.cartTotalTitle {
-    font-weight: 600;
+.emptyMessageContainer span {
+    margin: 12px;
 }
 
-.OrderSummaryWrapper button {
-    font-weight: 600;
-    font-size: 16px;
-}

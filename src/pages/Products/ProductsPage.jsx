@@ -76,4 +76,4 @@ const ProductsPage = () => {
   )
 }
 
-export default (ProductsPage)
+export default React.memo(ProductsPage)

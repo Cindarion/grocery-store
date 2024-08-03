@@ -45,7 +45,7 @@
     width: 100%;
     border: 0;
     height: 2px;
-    background: #E6E6E6;
+    background: var(--secondary-color, #E6E6E6);
 }
 
 .contentContainer main {
@@ -100,7 +100,6 @@
         display: none;
     }
 }
-
 
 @media (max-width: 1050px) {
     .pageHeadingTitle .produceTitle{

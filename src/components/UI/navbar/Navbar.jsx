@@ -1,11 +1,19 @@
-import React, { memo, useContext, useState } from 'react'
+import React, { memo, useContext } from 'react'
 import {Link} from 'react-router-dom'
 import classes from "./Navbar.module.css"
 import ActionButton from '../Buttons/ActionButton/ActionButton'
 import { CartContext } from '../../context/cartContext'
 
 const Navbar = memo(() => {
-  const {cartQuantity} = useContext(CartContext)
+  const {cartQuantity} = useContext(CartContext);
+
+  const renderCartQuantity = () => {
+    if (cartQuantity > 0) {
+      return (
+       <span className={classes.cartQuantityContainer}>{cartQuantity}</span>
+      )
+    }
+  };
 
   return (
     <header>
@@ -16,42 +24,16 @@ const Navbar = memo(() => {
           </span>
         </Link>
       </div>
-      <nav className={classes.navPanel}>
+      <nav>
         <ul>
-          <li>
-            <Link to="/products">
-              <span>
-                Shop
-              </span>
-            </Link> 
-          </li>
-          <li>
-            <Link to="/news">
-              <span>
-                Newstand
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/general">
-              <span>
-                Who we are
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/profile">
-              <span>
-                My profile
-              </span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/cart">
-              <ActionButton>
-                Basket {cartQuantity > 0 && <span>({cartQuantity})</span>}
-              </ActionButton>
-            </Link>
+          <li><Link to="/products">Shop</Link> </li>
+          <li><Link to="/news">Newstand</Link></li>
+          <li><Link to="/general">Who we are</Link></li>
+          <li><Link to="/profile">My profile</Link></li>
+          <li><Link to="/cart">
+            <ActionButton children={"Basket"}/>
+            {renderCartQuantity()}
+          </Link>
           </li>
         </ul>
       </nav>
