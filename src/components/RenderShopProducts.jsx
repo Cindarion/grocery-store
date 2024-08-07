@@ -20,12 +20,12 @@ const RenderShopProducts = ({data, sortOption, searchQuery, currentPage, product
       unit_measure={product.price.unit_measure}
       description={product.description}
     />)
-  )
+  );
   
   return (
     <>
       {renderProducts()}
     </>
-  )
+  );
 }
 export default React.memo(RenderShopProducts);

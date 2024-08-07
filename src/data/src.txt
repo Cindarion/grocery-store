@@ -1,2 +1,2 @@
-source of images and json:
+source of images of the json:
 https://github.com/wedeploy-examples/supermarket-web-example

@@ -18,7 +18,7 @@ const Navbar = memo(() => {
   return (
     <header>
       <div className={classes.companyTitle}>
-        <Link to='/general'>
+        <Link to='/introduction'>
           <span>
             BloomBasket
           </span>
@@ -28,7 +28,7 @@ const Navbar = memo(() => {
         <ul>
           <li><Link to="/products">Shop</Link> </li>
           <li><Link to="/news">Newstand</Link></li>
-          <li><Link to="/general">Who we are</Link></li>
+          <li><Link to="/introduction">Who we are</Link></li>
           <li><Link to="/profile">My profile</Link></li>
           <li><Link to="/cart">
             <ActionButton children={"Basket"}/>

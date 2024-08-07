@@ -1,12 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'
-import classes from './GeneralPage.module.css'
+import classes from './IntroductionPage.module.css'
 import chardPNG from '../../data/images/chard.png'
 import foodArtPNG from '../../data/images/foodArt.png'
 
 
-const HomePage = () => {
+const IntroductionPage = () => {
   return (  
     <div className={classes.contentContainer}>
       <main>
@@ -65,4 +65,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default IntroductionPage
