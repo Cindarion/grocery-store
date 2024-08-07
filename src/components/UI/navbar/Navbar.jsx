@@ -29,7 +29,7 @@ const Navbar = memo(() => {
           <li><Link to="/products">Shop</Link> </li>
           <li><Link to="/news">Newstand</Link></li>
           <li><Link to="/introduction">Who we are</Link></li>
-          <li><Link to="/profile">My profile</Link></li>
+          <li><Link to="/login">My profile</Link></li>
           <li><Link to="/cart">
             <ActionButton children={"Basket"}/>
             {renderCartQuantity()}
