@@ -12,7 +12,7 @@
     width: 20px;
     height: 20px;
     left: 12px;
-    z-index: 100;
+    z-index: 90;
 }
 
 .searchIcon {
@@ -35,7 +35,7 @@
     padding-left: 38px;
     transition: 0.25s;
     background-color: transparent;
-    z-index: 200;
+    z-index: 90;
 }
 
 .productSearchBar:hover, .productSearchBar:focus {

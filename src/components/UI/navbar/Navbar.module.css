@@ -4,10 +4,9 @@
 
 header {
     position: sticky;
-    z-index: 9000;
-    background-color: white;
+    z-index: 100;
+    background-color: var(--secondary-color-lighter, #ffffff);
     top: 0;
-
     display: flex;
     flex-direction: row;
     max-width: 1170px;
@@ -25,7 +24,7 @@ header {
     letter-spacing: -0.5px;
     text-decoration: none;
     font-size: 32px;
-    color: #426B1F;
+    color: var(--main-text-color-green, #426B1F);
 }
 
 nav {
@@ -52,7 +51,7 @@ ul li a {
 }
 
 ul li a:hover {
-    color: #426B1F;
+    color: var(--main-text-color-green, #426B1F);
     transition: 0.2s;
     text-decoration: underline;
     text-underline-offset: 8px;
