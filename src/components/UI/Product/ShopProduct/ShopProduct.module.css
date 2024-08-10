@@ -33,7 +33,6 @@
 .titleWrapper .productName {
     display: block;
     font-weight: 650;
-
     white-space: nowrap;
     overflow: hidden;
 }
