@@ -17,16 +17,6 @@
     font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
 }
 
-* {
-    box-sizing: border-box;
-    line-height: 1.42;
-}
-
-html {
-    height: 100%;
-    scrollbar-gutter: stable both-edges;
-}
-
 :root {
     --primary-color: #426B1F;
     --primary-color-lighter: #436b1feb;
@@ -45,6 +35,16 @@ html {
     --main-text-color-green: #426B1F;
 }
 
+* {
+    box-sizing: border-box;
+    line-height: 1.42;
+}
+
+html {
+    height: 100%;
+    scrollbar-gutter: stable both-edges;
+}
+
 body {
     height: 100%;
     margin-top: 0px;
@@ -52,6 +52,7 @@ body {
 }
 
 body > div {
+    overscroll-behavior: none;
     height: 100%;
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './LoginPage.module.css'
 import { Link } from 'react-router-dom';
 import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'
+import news_test_img from '../../data/images/news-img.png'
 
 const LoginPage = () => {
   return (
@@ -32,7 +33,7 @@ const LoginPage = () => {
                   <input type="text" />
                 </div>
               </div>
-              <div className={classes.additionalOptionsWrapper}>
+              <div className={classes.authOptionsWrapper}>
                 <div>
                   <input type="checkbox" name="" value="true" />
                   <span>Remember me</span>
@@ -44,23 +45,35 @@ const LoginPage = () => {
               <div>
                 <ActionButton children={"Sign-in"}/>
               </div>
-              <div className={classes.orSeparator}>
+              <div className={classes.breakLineWrapper}>
                 <hr />
                 <span>OR</span>
                 <hr />
               </div>
-              <div className={classes.otherLoginMethod}>
+              <div className={classes.otherAuthMethods}>
                 <ActionButton children={"Continue with Google"} />
                 <ActionButton children={"Continue with VK"} />
               </div>
             </div>
           </form>
-          <div className={classes.contentRight}>
-            <div className={classes.previewImgWrapper}></div>
+          <div className={classes.previewContentContainer}>
+            <div className={classes.previewImgWrapper}>
+              <span />
+              <img src={news_test_img} alt="news test img" />
+            </div>
             <div className={classes.previewTitleWrapper}>
               <h1>Introducing new features</h1>
-              <span>Dive deeper into the products you love. 
-                Our detailed product pages now offer comprehensive information</span>
+              <span>
+                Dive deeper into the products you love. 
+                Our detailed product pages now offer comprehensive information
+              </span>
+            </div>
+            <div className={classes.newsPaginationWrapper}>
+              <span>&lt;</span>
+              <li>○</li>
+              <li>●</li>
+              <li>○</li>
+              <span>&gt;</span>
             </div>
           </div>
         </div>
