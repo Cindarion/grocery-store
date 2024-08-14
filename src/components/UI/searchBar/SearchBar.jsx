@@ -12,12 +12,13 @@ const SearchBar = ( {onSearch} ) => {
     if (onSearch) {
       onSearch(debouncedSearchTerm)
     }
-  }, [debouncedSearchTerm]);
+  }, [onSearch, debouncedSearchTerm]);
 
   return (
     <div className={classes.productSearchContainer}>
       <div className={classes.searchIconWrapper}>
         <img 
+          alt='search-icon'
           className={classes.searchIcon} 
           src={require("../../../data/icons/search-dark-gray-icon.png")}
         />

@@ -1,9 +1,4 @@
-.contentContainer {
-    height: 100%;
-    width: 100%;
-}
-
-.contentContainer main {
+.mainContainer {
     display: flex;
     height: 100%;
     width: 100%;
@@ -20,20 +15,28 @@
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
 }
 
-.contentWrapper form {
+.formContainer {
     display: flex;
     flex-direction: column;
     width: 47%;
     padding: 12px 24px;
 }
 
-.companyTitle a {
+.companyLogo {
+    display: flex;
     font-family: Newsreader, sans-serif;
     font-weight: 500;
     letter-spacing: -0.5px;
-    text-decoration: none;
     font-size: 26px;
+}
+
+.companyLogo a {
     color: var(--main-text-color-green, #426B1F);
+    text-decoration: none;
+}
+
+.companyLogo a:hover {
+    text-decoration: a;
 }
 
 .authContentWrapper {
@@ -64,10 +67,7 @@
 .formTitle {
     display: flex;
     flex-direction: column;
-}
-
-.formTitle a {
-    margin-left: 6px;
+    margin-bottom: 14px;
 }
 
 .formTitle h1 {
@@ -75,18 +75,8 @@
     margin: 0 0 12px 0;
 }
 
-.formTitle span {
-    margin-bottom: 14px;
-    color: var(--third-color, #6D6D6D);
-}
-
-.formTitle span b {
-    font-size: 30px;
-}
-
-.inputsWrapper div {
-    margin-bottom: 6px;
-    transition: 0.15s;
+.formTitle a {
+    margin-left: 2px;
 }
 
 .inputsWrapper > div {
@@ -94,15 +84,18 @@
 }
 
 .inputsWrapper input {
+    font-size: 1rem;
     width: 100%;
     height: 2.4rem;
     border: var(--main-input-border);
     border-radius: 8px;
-    padding: 12px;
+    padding: 0.5rem 0.75rem;
+    margin-top: 8px;
+    transition: 0.15s;
 }
 
 .inputsWrapper input:focus {
-    border-color: #426B1F;
+    border-color: var(--main-text-color-green, #426B1F);
     transition: 0.15s;
 }
 
@@ -115,6 +108,22 @@
     margin-bottom: 18px;
 }
 
+.passwordInputContainer {
+    position: relative;
+}
+
+.hidePasswordWrapper {
+    position: absolute;
+    right: 0.8rem;
+    top: 59%;
+}
+
+.hidePasswordIcon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
 .authOptionsWrapper {
     display: flex;
     flex-direction: row;
@@ -122,36 +131,47 @@
     margin-bottom: 18px;
 }
 
-.breakLineWrapper {
+.rememberMeOption {
+    cursor: pointer;
+    user-select: none;
+}
+
+.rememberMeOption > input {
+    cursor: pointer;
+}
+
+.orDivider {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: row;
-    margin-bottom: 18px;
+    margin: 0 2px 18px 2px;
 }
 
-.breakLineWrapper hr {
+.orDivider::before {
+    margin-right: 0.5rem;
+}
+
+.orDivider::after {
+    margin-left: 0.5rem;
+}
+
+.orDivider::before, .orDivider::after {
+    content: "";
+    display: inline-block;
     width: 50%;
-    border: 0;
     height: 1px;
     background: var(--third-color, #6D6D6D);
-    margin: 0;
-}
-
-.breakLineWrapper span {
-    margin: 0 12px;
-    font-weight: 500;
-    font-size: 0.8rem;
 }
 
 .otherAuthMethods button {
+    width: 100%;
     font-weight: 500;
-    background-color: transparent;
     color: var(--third-color, #6D6D6D);
-    border-radius: 24px;
     border: 1px solid var(--third-color, #6D6D6D);
+    background-color: transparent;
+    border-radius: 24px;
+    margin-bottom: 18px;
 }
-
 
 .previewContentContainer {
     display: flex;
@@ -209,6 +229,7 @@
 .newsPaginationWrapper {
     align-self: center;
     color: var(--main-text-color-white-darker, #CFD9E0);
+    user-select: none;
 }
 
 .newsPaginationWrapper > span {
