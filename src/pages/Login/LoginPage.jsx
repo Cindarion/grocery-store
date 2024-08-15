@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import classes from './LoginPage.module.css'
 import { Link } from 'react-router-dom';
 
@@ -9,6 +9,10 @@ import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'
 import news_test_img from '../../data/images/news-img.png'
 
 const LoginPage = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={classes.mainContainer}>
       <div className={classes.contentWrapper}>
@@ -23,15 +27,15 @@ const LoginPage = () => {
               <h1>Sign in</h1>
               <span>Don’t have an account? <a href="#">Create new</a> </span>
             </div>
-            <form>
-              <div className={classes.inputsWrapper}>
-                <div>
+            <form onSubmit={handleSubmit}>
+              <div className={classes.authInputsContainer}>
+                <div className={classes.emailInputContainer}>
                   <label for="userEmail">E-mail</label>
-                  <input type="text" id="userEmail" />
+                  <input type="email" id="userEmail" required/>
                 </div>
                 <div className={classes.passwordInputContainer}>
                   <label for="userPassword">Password</label>
-                  <input type="password" id="userPassword">
+                  <input type="password" id="userPassword" minLength={6} maxLength={54} required >
                   </input>
                   <div className={classes.hidePasswordWrapper}>
                     <img 
@@ -42,7 +46,7 @@ const LoginPage = () => {
                   </div>
                 </div>
               </div>
-              <div className={classes.authOptionsWrapper}>
+              <div className={classes.authOptionsContainer}>
                 <label className={classes.rememberMeOption}>
                   <input type="checkbox" id="rememberMe" />
                   <span>Remember me</span>
@@ -59,8 +63,12 @@ const LoginPage = () => {
             </form>
             <p className={classes.orDivider}>OR</p>
             <div className={classes.otherAuthMethods}>
-              <ActionButton children={"Continue with Google"} />
-              <ActionButton children={"Continue with VK"} />
+              <ActionButton 
+                children={"Continue with Google"} 
+              />
+              <ActionButton 
+                children={"Continue with VK"} 
+              />
             </div>
           </div>
         </div>
