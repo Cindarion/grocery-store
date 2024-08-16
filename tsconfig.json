@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Target ECMAScript version
+    "lib": ["dom", "dom.iterable", "esnext"], // Library files to include
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "esModuleInterop": true, // Enables CJS/AMD/UMD style imports
+    "allowSyntheticDefaultImports": true, // Allows default imports from modules with no default export
+    "strict": true, // Enable all strict type-checking options
+    "forceConsistentCasingInFileNames": true, // Enforces consistent casing in filenames
+    "module": "esnext", // Module code generation
+    "moduleResolution": "node", // Resolve modules using Node.js style
+    "isolatedModules": true, // Emit imports for unresolved files
+    "resolveJsonModule": true, // Include modules imported with .json extension
+    "noEmit": true, // Do not emit output (only perform type checking)
+    "jsx": "react-jsx", // Support JSX in .tsx files
+    "sourceMap": true, // Generate corresponding .map file
+    "declaration": true, // Generate corresponding .d.ts file
+    "noUnusedLocals": true, // Report errors on unused locals
+    "noUnusedParameters": true, // Report errors on unused parameters
+    "incremental": true, // Enable incremental compilation
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement
+  },
+  "include": [
+    "src/**/*"
+, "src/pages/Introduction/IntroductionPage.tsx"  ], // Files TypeScript should type check
+  "exclude": [
+    "node_modules", "build" // Files to not type check
+  ]
+}

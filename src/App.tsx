@@ -5,7 +5,7 @@ import './styles/global.css'
 function App() {
   return (
     <CartProvider>
-      <div class="mainContainer">
+      <div className="mainContainer">
         <AppRouter/>
       </div>
     </CartProvider>
