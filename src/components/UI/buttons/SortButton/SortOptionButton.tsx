@@ -1,8 +1,14 @@
-import React, {useEffect, useRef} from 'react'
+import React, { useEffect, useRef } from 'react'
 import classes from './SortOptionButton.module.css'
 
-const SortOptionButton = ({children, sortOption, setSortOption}) => {
-  const SortOptionButtonRef = useRef(null);
+type sortOptionProps = {
+  children: string, 
+  sortOption: string, 
+  setSortOption: Function
+}
+
+const SortOptionButton = ({children, sortOption, setSortOption}: sortOptionProps) => {
+  const SortOptionButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleSort = () => {
@@ -13,13 +19,14 @@ const SortOptionButton = ({children, sortOption, setSortOption}) => {
     if (currentButton) {
       currentButton.addEventListener('click', handleSort);
     };
+    
 
-  }, []);
+  }, [children, setSortOption]);
 
   return (
     <button 
       ref={SortOptionButtonRef} 
-      className={sortOption == children ? 
+      className={sortOption === children ? 
       classes.ActiveSortButton : 
       classes.SortButton}
     >

@@ -1,8 +1,9 @@
-export const getCurrentDateFormatted = () => {
+export const getCurrentDateFormatted = ():string => {
   const monthNames = [
-  "January", "February", "March", "April", 
-  "May", "June", "July", "August", "September", 
-  "October", "November", "December"];
+    "January", "February", "March", "April", 
+    "May", "June", "July", "August", "September", 
+    "October", "November", "December"
+  ];
 
   const now = new Date();
 
@@ -13,4 +14,4 @@ export const getCurrentDateFormatted = () => {
   const monthName = monthNames[monthIndex];
 
   return `${monthName} ${day}, ${year}`;
-}
+};

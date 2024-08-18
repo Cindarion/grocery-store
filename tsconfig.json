@@ -1,5 +1,12 @@
 {
   "compilerOptions": {
+    //intellisense config for VSCode
+    "baseUrl": "./",
+    "paths": {
+      //none-js-ts files is not supported by intellisense. Use 'path-intellisense.mappings' in .vscode/settings.json instead
+      //this is should be sync with aliases in webpack
+      "@src/*": ["src/*"],
+    },
     "target": "es5", // Target ECMAScript version
     "lib": ["dom", "dom.iterable", "esnext"], // Library files to include
     "allowJs": true, // Allow JavaScript files to be compiled
@@ -23,7 +30,7 @@
   },
   "include": [
     "src/**/*"
-, "src/pages/Introduction/IntroductionPage.tsx"  ], // Files TypeScript should type check
+, "src/pages/Introduction/IntroductionPage.jsx"  ], // Files TypeScript should type check
   "exclude": [
     "node_modules", "build" // Files to not type check
   ]

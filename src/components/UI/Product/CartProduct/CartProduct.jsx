@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect } from 'react'
+import React, { useContext } from 'react'
 import classes from './CartProduct.module.css'
 import { CartContext } from '../../../context/cartContext';
 import storeProducts from '../../../../data/products.json'
@@ -28,7 +28,10 @@ const CartProduct = ({id, quantity}) => {
   return (
     <div className={classes.productContainer}>
       <div className={classes.imageWrapper}>
-        <img src={require(`../../../../data/images/${product.filename}`)}/>
+        <img 
+          alt='product'
+          src={require(`../../../../data/images/${product.filename}`)}
+        />
       </div>
       <div className={classes.productInfoWrapper}>
         <div className={classes.productDetailsWrapper}>
@@ -47,6 +50,7 @@ const CartProduct = ({id, quantity}) => {
               onChange={(e) => handleInputChange(e.target.value)}
             />
             <img 
+              alt='edit input'
               className={classes.editQuantityIcon} 
               src={require("../../../../data/icons/edit-input-gray.png")}
             />
@@ -57,6 +61,7 @@ const CartProduct = ({id, quantity}) => {
             {formatCurrency(quantity * product?.price.price_per_unit || 0)}
           </span>
           <img 
+            alt='delete product'
             onClick={() => handleDelete(product.id)}
             className={classes.deleteProductIcon} 
             src={require("../../../../data/icons/remove-from-cart-dark-gray.png")}

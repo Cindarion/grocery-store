@@ -26,10 +26,18 @@ const IntroductionPage = () => {
         </section>
         <div className={classes.imagesWrapper}>
           <div className={classes.leftImageWrapper}>
-            <img src={chardPNG} className={classes.leftImage}/>
+            <img
+              alt='chard'
+              src={chardPNG} 
+              className={classes.leftImage}
+            />
           </div>
           <div className={classes.rightImageWrapper}>
-            <img src={foodArtPNG} className={classes.rightImage}/>
+            <img 
+              alt='food preview'
+              src={foodArtPNG} 
+              className={classes.rightImage}
+            />
             <span>
               <b>Central California</b> — The person who grew these was located in Central California and, er, hopefully very well-compensated.
             </span>

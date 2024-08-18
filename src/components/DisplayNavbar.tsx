@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 
-const DisplayNavbar = ({children}) => {
+const DisplayNavbar = ({children}:{children:React.ReactNode}) => {
   const location = useLocation();
 
   const [showNavbar, setShowNavbar] = useState(false);

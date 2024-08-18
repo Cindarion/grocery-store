@@ -26,8 +26,8 @@ const ShopProduct = ({id, index, name, filename, price, unit_measure, descriptio
       return (
         <div className={classes.productButtonsWrapper}>
           <ActionButton 
-          onClick={() => increaseCartQuantity(id)}
-          children={"+"}
+            onClick={() => handleIncreaseQuantity(id)}
+            children={"+"}
           />
         </div>
       )
