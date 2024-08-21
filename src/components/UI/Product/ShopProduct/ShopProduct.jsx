@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classes from './ShopProduct.module.css'
-import { CartContext } from '../../../context/cartContext';
+import { CartContext } from "../../../context/cartContext";
 import ActionButton from '../../Buttons/ActionButton/ActionButton';
 
 const ShopProduct = ({id, index, name, filename, price, unit_measure, description}) => {

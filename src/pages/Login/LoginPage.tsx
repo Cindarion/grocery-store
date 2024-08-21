@@ -1,4 +1,3 @@
-import React from 'react'
 import classes from './LoginPage.module.css'
 import { Link } from 'react-router-dom';
 
@@ -9,7 +8,7 @@ import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'
 import news_test_img from '../../data/images/news-img.png'
 
 const LoginPage = () => {
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
   };
 
@@ -30,11 +29,11 @@ const LoginPage = () => {
             <form onSubmit={handleSubmit}>
               <div className={classes.authInputsContainer}>
                 <div className={classes.emailInputContainer}>
-                  <label for="userEmail">E-mail</label>
+                  <label htmlFor="userEmail">E-mail</label>
                   <input type="email" id="userEmail" required/>
                 </div>
                 <div className={classes.passwordInputContainer}>
-                  <label for="userPassword">Password</label>
+                  <label htmlFor="userPassword">Password</label>
                   <input type="password" id="userPassword" minLength={6} maxLength={54} required >
                   </input>
                   <div className={classes.hidePasswordWrapper}>

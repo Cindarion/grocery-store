@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import classes from './CartPage.module.css'
-import { CartContext } from '../../components/context/cartContext'
+import { CartContext } from "../../components/context/cartContext"
 import CartProduct from '../../components/UI/Product/CartProduct/CartProduct'
 import OrderSummary from '../../components/UI/OrderSummary/OrderSummary'
 import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'
@@ -8,19 +8,24 @@ import { Link } from 'react-router-dom'
 
 
 const CartPage = () => {
-  const { cartItems, cartQuantity } = useContext(CartContext);
-
+  const cartContext = useContext(CartContext);
+  if (!cartContext) {
+    throw new Error('CartContext must be used within a TodoProvider');
+  };
+  const { cartItems } = cartContext
+  const { getCartQuantity } = cartContext;
+  
   const renderQuantityTitle = () => {
-    if (cartQuantity > 0) {
+    if (getCartQuantity() > 0) {
       return (
-        <span>{cartQuantity} items</span>
+        <span>{getCartQuantity()} items</span>
       )
     } 
   };
 
   const renderCartProducts = () => {
     return (
-      cartItems.map((product) => <CartProduct
+      cartItems.map((product: { id: number; quantity: number }) => <CartProduct
         key={product.id} {...product}
       />)
     )
@@ -61,9 +66,9 @@ const CartPage = () => {
       <main>
         <div className={classes.cartContainer}>
           <div className={classes.cartProductsWrapper}>
-            {cartQuantity? renderCartProducts() : renderEmptyMessage()}
+            {getCartQuantity() ? renderCartProducts() : renderEmptyMessage()}
           </div>
-          {cartQuantity? renderOrderSummary() : ""}
+          {getCartQuantity() ? renderOrderSummary() : ""}
         </div>
       </main>
     </div> 

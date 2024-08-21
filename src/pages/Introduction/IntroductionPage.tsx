@@ -1,4 +1,3 @@
-import React from 'react'
 import {Link} from 'react-router-dom'
 import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'
 import classes from './IntroductionPage.module.css'
@@ -19,7 +18,9 @@ const IntroductionPage = () => {
             </div>
             <div>
               <Link to="/products">
-                <ActionButton children={"Browse our shop"}/>
+                <ActionButton 
+                  children={"Browse our shop"}
+                />
               </Link>
             </div>
           </div>

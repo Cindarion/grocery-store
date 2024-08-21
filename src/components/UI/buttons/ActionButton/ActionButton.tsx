@@ -1,8 +1,9 @@
 import classes from './ActionButton.module.css'
 
 type actionButtonProps = {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
   children: string;
+  className?: string
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 const ActionButton = ({onClick, children}:actionButtonProps) => {
   const buttonColor = children === "-" ? classes.ActionButton_darker : classes.ActionButton;

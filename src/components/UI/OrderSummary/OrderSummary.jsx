@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import classes from './OrderSummary.module.css'
 import { formatCurrency } from '../../../utils/formatCurrency'
-import { CartContext } from '../../context/cartContext'
+import { CartContext } from "../../context/cartContext"
 import ActionButton from '../Buttons/ActionButton/ActionButton'
 import storeProducts from '../../../data/products.json'
 

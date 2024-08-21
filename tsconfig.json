@@ -29,8 +29,8 @@
     "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement
   },
   "include": [
-    "src/**/*"
-, "src/pages/Introduction/IntroductionPage.jsx"  ], // Files TypeScript should type check
+    "src/**/*", 
+    "src/pages/Introduction/IntroductionPage.tsx"  ], // Files TypeScript should type check
   "exclude": [
     "node_modules", "build" // Files to not type check
   ]
