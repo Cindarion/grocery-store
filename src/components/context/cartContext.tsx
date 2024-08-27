@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { createContext, FC } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage"
 
 interface CartContextType {
@@ -13,7 +13,7 @@ interface CartContextType {
 
 export const CartContext = createContext<CartContextType | undefined> (undefined);
 
-export const CartProvider = ({ children }: {children : React.ReactElement}) => {
+export const CartProvider: FC<{children: React.ReactNode}> = ({ children }) => {
   const [cartItems, setCartItems] = useLocalStorage(
     "shopping-cart",
     []

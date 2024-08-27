@@ -1,23 +1,37 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import classes from './CartProduct.module.css'
 import { CartContext } from "../../../context/cartContext";
 import storeProducts from '../../../../data/products.json'
 import { formatCurrency } from '../../../../utils/formatCurrency';
 
-const CartProduct = ({id, quantity}) => {
-  const { removeFromCart, setCustomQuantity } = useContext(CartContext);
-  const product = storeProducts.find(i => i.id === id);
-  if (product == null) return null;
+type CartProductProps = {
+  id: number;
+  quantity: number;
+  removeFromCart?: (id: number) => void;
+  setCustomQuantity?: (id: number, newQuantity: number) => void;
+}
+
+const CartProduct = ({id, quantity}: CartProductProps) => {
+  const cartContext = useContext(CartContext);
+
+  if (!cartContext) {
+    throw new Error('CartContext must be used within a TodoProvider');
+  };
   
-  const handleDelete = (productId) => {
+  const { removeFromCart, setCustomQuantity } = cartContext;
+  const product: any = storeProducts.find(i => Number(i.id) == id);
+
+  if (!product) return null;
+
+  const handleDelete = (productId: number) => {
     removeFromCart(productId)
   }
 
-  const handleSelect = (inputField) => {
+  const handleSelect = (inputField: any) => {
     inputField.select()
   }
 
-  const handleInputChange = (inputValue) => {
+  const handleInputChange = (inputValue: any) => {
     if (isNaN(inputValue)) return
     if (inputValue === "") return
     if (inputValue >= 100) inputValue = 99;

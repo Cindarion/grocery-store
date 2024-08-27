@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
-export const useFilter = ([...data], searchQuery) => {
+export const useFilter = ([...data], searchQuery: string) => {
   const [filteredProducts, setFilteredProducts] = useState(data)
 
   function filterData() {
     const result = data.filter(item => 
       item.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    setFilteredProducts(result)
+    setFilteredProducts(result);
   };
 
   useEffect(() => {
-    filterData()
-  }, [...data, searchQuery])
+    filterData();
+  }, [...data, searchQuery]);
 
   return filteredProducts;
 };
