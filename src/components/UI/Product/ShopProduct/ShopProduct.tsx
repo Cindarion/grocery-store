@@ -3,21 +3,33 @@ import classes from './ShopProduct.module.css'
 import { CartContext } from "../../../context/cartContext";
 import ActionButton from '../../Buttons/ActionButton/ActionButton';
 
-const ShopProduct = ({id, index, name, filename, price, unit_measure, description}) => {
+type ShopProductProps = {
+  id: number,
+  index: number,
+  name: string,
+  filename: string, 
+  price: number, 
+  unit_measure: string, 
+  description: string
+}
+const ShopProduct = ({id, index, name, filename, price, unit_measure, description}: ShopProductProps) => {
+  const cartContext = useContext(CartContext);
+  if (!cartContext) {
+    throw new Error('CartContext must be used within a TodoProvider');
+  };
   const {
-    cartQuantity,
     getItemQuantity, 
     increaseCartQuantity, 
     decreaseCartQuantity, 
-    removeFromCart
-  } = useContext(CartContext);
+  } = cartContext;
+  
   const productQuantity = getItemQuantity(id);
 
-  const handleIncreaseQuantity = (product) => {
-    increaseCartQuantity(product)
+  const handleIncreaseQuantity = (productId: number) => {
+    increaseCartQuantity(productId)
   };
 
-  const handleDecreaseQuantity = (productId) => {
+  const handleDecreaseQuantity = (productId: number) => {
     decreaseCartQuantity(productId)
   }
 

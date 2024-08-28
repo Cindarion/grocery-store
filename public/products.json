@@ -1,7 +1,8 @@
 [{
   "title": "Brown eggs",
   "type": "dairy",
-  "description": "Raw organic brown eggs in a basket",
+  "description": "Raw organic brown eggs",
+  "image_description": "Raw organic brown eggs in a basket",
   "filename": "0.jpg",
   "height": 600,
   "width": 400,
@@ -14,7 +15,8 @@
 }, {
   "title": "Sweet fresh stawberry",
   "type": "fruit",
-  "description": "Sweet fresh stawberry on the wooden table",
+  "description": "Sweet fresh stawberry",
+  "image_description": "Sweet fresh stawberry on the wooden table",
   "filename": "1.jpg",
   "height": 450,
   "width": 299,
@@ -27,7 +29,8 @@
 }, {
   "title": "Asparagus",
   "type": "vegetable",
-  "description": "Asparagus with ham on the wooden table",
+  "description": "Asparagus with ham",
+  "image_description": "Asparagus with ham on the wooden table",
   "filename": "2.jpg",
   "height": 450,
   "width": 299,
@@ -40,7 +43,8 @@
 }, {
   "title": "Green smoothie",
   "type": "dairy",
-  "description": "Glass of green smoothie with quail egg's yolk, served with cocktail tube, green apple and baby spinach leaves over tin surface.",
+  "description": "Healthy green spinach smoothie",
+  "image_description": "Glass of green smoothie with quail egg's yolk, served with cocktail tube, green apple and baby spinach leaves over tin surface.",
   "filename": "3.jpg",
   "height": 600,
   "width": 399,

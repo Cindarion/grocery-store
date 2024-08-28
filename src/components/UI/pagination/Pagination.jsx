@@ -8,7 +8,6 @@ const Pagination = ({
   siblingCount = 1,
   currentPage,
   pageSize,
-  className
 }) => {
   const paginationRange = usePagination({
     currentPage,

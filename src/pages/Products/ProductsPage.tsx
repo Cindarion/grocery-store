@@ -7,21 +7,26 @@ import RenderShopProducts from '../../components/RenderShopProducts'
 import Pagination from '../../components/UI/Pagination/Pagination'
 import { useFetch } from '../../hooks/useFetch'
 
+type dataProps = {
+  loading: boolean,
+  error: any | unknown,
+  data: [] | null
+}
 const ProductsPage = () => {
   const [sortOption, setSortOption] = useState("Default");
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState(1);
-  const { loading, error, data } = useFetch('./products.json'); 
+  const { loading, error, data }: dataProps = useFetch('./products.json'); 
   const sortProps = ["Default", "A-Z", "Price"];
   const currentDate = getCurrentDateFormatted();
-  const itemCount = data ? data.length : 50;
+  const itemCount = data? data.length : 50;
   const productsPerPage = 16;
 
-  const handleSearch = (query) => {
+  const handleSearch = (query: string) => {
     setSearchQuery(query);
   };
 
-  const handlePageChange = (pageNumber) => {
+  const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
 
@@ -56,7 +61,6 @@ const ProductsPage = () => {
       <main>
         <div className={classes.productsWrapper}>
           <RenderShopProducts
-            itemCount={itemCount}
             productsPerPage={productsPerPage}
             currentPage={currentPage}
             sortOption={sortOption}
