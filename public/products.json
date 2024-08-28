@@ -19,7 +19,7 @@
   "height": 450,
   "width": 299,
   "price": {
-    "price_per_unit": 4.99,
+    "price_per_unit": 3.99,
     "unit_measure": "lb"
   },
   "rating": 4,
@@ -32,7 +32,7 @@
   "height": 450,
   "width": 299,
   "price": {
-    "price_per_unit": 2.98,
+    "price_per_unit": 3.98,
     "unit_measure": "lb"
   },
   "rating": 3,
@@ -57,7 +57,10 @@
   "filename": "4.jpg",
   "height": 450,
   "width": 299,
-  "price": 17.11,
+  "price": {
+    "price_per_unit": 3.00,
+    "unit_measure": "lb"
+  },
   "rating": 2,
   "id": "000005"
 }, {
@@ -67,7 +70,10 @@
   "filename": "5.jpg",
   "height": 450,
   "width": 675,
-  "price": 11.14,
+  "price": {
+    "price_per_unit": 14.50,
+    "unit_measure": "serving"
+  },
   "rating": 4,
   "id": "000006"
 }, {
@@ -77,7 +83,10 @@
   "filename": "6.jpg",
   "height": 450,
   "width": 299,
-  "price": 18.19,
+  "price": {
+    "price_per_unit": 7.40,
+    "unit_measure": "jar"
+  },
   "rating": 2,
   "id": "000007"
 }, {
@@ -87,7 +96,10 @@
   "filename": "7.jpg",
   "height": 450,
   "width": 301,
-  "price": 27.35,
+  "price": {
+    "price_per_unit": 9.99,
+    "unit_measure": "oz"
+  },
   "rating": 0,
   "id": "000008"
 }, {
@@ -97,7 +109,10 @@
   "filename": "8.jpg",
   "height": 600,
   "width": 399,
-  "price": 28.59,
+  "price": {
+    "price_per_unit": 3.79,
+    "unit_measure": "lb"
+  },
   "rating": 4,
   "id": "000009"
 }, {
@@ -107,7 +122,10 @@
   "filename": "9.jpg",
   "height": 450,
   "width": 299,
-  "price": 15.79,
+  "price": {
+    "price_per_unit": 1.29,
+    "unit_measure": "serving"
+  },
   "rating": 5,
   "id": "000010"
 }, {
@@ -117,7 +135,10 @@
   "filename": "10.jpg",
   "height": 450,
   "width": 301,
-  "price": 17.48,
+  "price": {
+    "price_per_unit": 4.65,
+    "unit_measure": "loaf"
+  },
   "rating": 3,
   "id": "000011"
 }, {
@@ -127,7 +148,10 @@
   "filename": "11.jpg",
   "height": 600,
   "width": 399,
-  "price": 14.77,
+  "price": {
+    "price_per_unit": 3.15,
+    "unit_measure": "lb"
+  },
   "rating": 0,
   "id": "000012"
 }, {
@@ -137,7 +161,10 @@
   "filename": "12.jpg",
   "height": 600,
   "width": 903,
-  "price": 16.3,
+  "price": {
+    "price_per_unit": 3.49,
+    "unit_measure": "lb"
+  },
   "rating": 2,
   "id": "000013"
 }, {
@@ -147,7 +174,10 @@
   "filename": "13.jpg",
   "height": 450,
   "width": 350,
-  "price": 13.02,
+  "price": {
+    "price_per_unit": 9.15,
+    "unit_measure": "serving"
+  },
   "rating": 2,
   "id": "000014"
 }, {
@@ -157,7 +187,10 @@
   "filename": "14.jpg",
   "height": 450,
   "width": 300,
-  "price": 28.79,
+  "price": {
+    "price_per_unit": 3.00,
+    "unit_measure": "lb"
+  },
   "rating": 1,
   "id": "000015"
 }, {
@@ -167,7 +200,10 @@
   "filename": "15.jpg",
   "height": 600,
   "width": 400,
-  "price": 20.31,
+  "price": {
+    "price_per_unit": 12.20,
+    "unit_measure": "serving"
+  },
   "rating": 1,
   "id": "000016"
 }, {
@@ -177,7 +213,10 @@
   "filename": "16.jpg",
   "height": 400,
   "width": 600,
-  "price": 14.18,
+  "price": {
+    "price_per_unit": 5.19,
+    "unit_measure": "jar"
+  },
   "rating": 1,
   "id": "000017"
 }, {
@@ -187,7 +226,10 @@
   "filename": "17.jpg",
   "height": 600,
   "width": 398,
-  "price": 19.49,
+  "price": {
+    "price_per_unit": 4.85,
+    "unit_measure": "l"
+  },
   "rating": 4,
   "id": "000018"
 }, {
@@ -197,7 +239,10 @@
   "filename": "18.jpg",
   "height": 600,
   "width": 398,
-  "price": 15.12,
+  "price": {
+    "price_per_unit": 3.87,
+    "unit_measure": "lb"
+  },
   "rating": 5,
   "id": "000019"
 }, {
@@ -207,7 +252,10 @@
   "filename": "19.jpg",
   "height": 400,
   "width": 600,
-  "price": 16.76,
+  "price": {
+    "price_per_unit": 11.99,
+    "unit_measure": "serving"
+  },
   "rating": 5,
   "id": "000020"
 }, {
@@ -217,7 +265,10 @@
   "filename": "20.jpg",
   "height": 450,
   "width": 274,
-  "price": 21.48,
+  "price": {
+    "price_per_unit": 4.80,
+    "unit_measure": "lb"
+  },
   "rating": 4,
   "id": "000021"
 }, {
@@ -227,7 +278,10 @@
   "filename": "21.jpg",
   "height": 450,
   "width": 299,
-  "price": 29.66,
+  "price": {
+    "price_per_unit": 14.20,
+    "unit_measure": "serving"
+  },
   "rating": 4,
   "id": "000022"
 }, {
@@ -237,7 +291,10 @@
   "filename": "22.jpg",
   "height": 450,
   "width": 299,
-  "price": 22.7,
+  "price": {
+    "price_per_unit": 5.85,
+    "unit_measure": "serving"
+  },
   "rating": 2,
   "id": "000023"
 }, {
@@ -247,7 +304,10 @@
   "filename": "23.jpg",
   "height": 450,
   "width": 299,
-  "price": 17.01,
+  "price": {
+    "price_per_unit": 7.92,
+    "unit_measure": "lb"
+  },
   "rating": 2,
   "id": "000024"
 }, {
@@ -257,7 +317,10 @@
   "filename": "24.jpg",
   "height": 600,
   "width": 398,
-  "price": 14.05,
+  "price": {
+    "price_per_unit": 6.40,
+    "unit_measure": "serving"
+  },
   "rating": 1,
   "id": "000025"
 }, {
@@ -267,7 +330,10 @@
   "filename": "25.jpg",
   "height": 600,
   "width": 400,
-  "price": 28.86,
+  "price": {
+    "price_per_unit": 7.50,
+    "unit_measure": "serving"
+  },
   "rating": 2,
   "id": "000026"
 }, {
@@ -277,7 +343,10 @@
   "filename": "26.jpg",
   "height": 450,
   "width": 299,
-  "price": 26.21,
+  "price": {
+    "price_per_unit": 5.40,
+    "unit_measure": "serving"
+  },
   "rating": 4,
   "id": "000027"
 }, {
@@ -287,7 +356,10 @@
   "filename": "27.jpg",
   "height": 600,
   "width": 398,
-  "price": 27.81,
+  "price": {
+    "price_per_unit": 8.00,
+    "unit_measure": "lb"
+  },
   "rating": 5,
   "id": "000028"
 }, {
@@ -297,7 +369,10 @@
   "filename": "28.jpg",
   "height": 450,
   "width": 300,
-  "price": 18.5,
+  "price": {
+    "price_per_unit": 11.00,
+    "unit_measure": "serving"
+  },
   "rating": 4,
   "id": "000029"
 }, {
@@ -307,7 +382,10 @@
   "filename": "29.jpg",
   "height": 450,
   "width": 300,
-  "price": 29.97,
+  "price": {
+    "price_per_unit": 4.50,
+    "unit_measure": "cup"
+  },
   "rating": 3,
   "id": "000030"
 }, {
@@ -317,7 +395,10 @@
   "filename": "30.jpg",
   "height": 600,
   "width": 900,
-  "price": 25.26,
+  "price": {
+    "price_per_unit": 6.20,
+    "unit_measure": "serving"
+  },
   "rating": 5,
   "id": "000031"
 }, {
@@ -327,7 +408,10 @@
   "filename": "31.jpg",
   "height": 450,
   "width": 299,
-  "price": 27.61,
+  "price": {
+    "price_per_unit": 4.00,
+    "unit_measure": "cup"
+  },
   "rating": 4,
   "id": "000032"
 }, {
@@ -337,7 +421,10 @@
   "filename": "32.jpg",
   "height": 600,
   "width": 398,
-  "price": 22.48,
+  "price": {
+    "price_per_unit": 8.20,
+    "unit_measure": "serving"
+  },
   "rating": 5,
   "id": "000033"
 }, {
@@ -347,7 +434,10 @@
   "filename": "33.jpg",
   "height": 600,
   "width": 400,
-  "price": 14.35,
+  "price": {
+    "price_per_unit": 5.80,
+    "unit_measure": "lb"
+  },
   "rating": 5,
   "id": "000034"
 }, {
@@ -357,7 +447,10 @@
   "filename": "34.jpg",
   "height": 600,
   "width": 400,
-  "price": 22.97,
+  "price": {
+    "price_per_unit": 4.90,
+    "unit_measure": "lb"
+  },
   "rating": 4,
   "id": "000035"
 }, {
@@ -367,7 +460,10 @@
   "filename": "35.jpg",
   "height": 450,
   "width": 300,
-  "price": 13.55,
+  "price": {
+    "price_per_unit": 1.54,
+    "unit_measure": "ear"
+  },
   "rating": 2,
   "id": "000036"
 }, {
@@ -377,7 +473,10 @@
   "filename": "36.jpg",
   "height": 600,
   "width": 398,
-  "price": 28.96,
+  "price": {
+    "price_per_unit": 12.25,
+    "unit_measure": "serving"
+  },
   "rating": 5,
   "id": "000037"
 }, {
@@ -387,7 +486,10 @@
   "filename": "37.jpg",
   "height": 450,
   "width": 321,
-  "price": 21.01,
+  "price": {
+    "price_per_unit": 4.90,
+    "unit_measure": "pint"
+  },
   "rating": 4,
   "id": "000038"
 }, {
@@ -397,7 +499,10 @@
   "filename": "38.jpg",
   "height": 450,
   "width": 450,
-  "price": 25.88,
+  "price": {
+    "price_per_unit": 8.40,
+    "unit_measure": "serving"
+  },
   "rating": 0,
   "id": "000039"
 }, {
@@ -407,7 +512,10 @@
   "filename": "39.jpg",
   "height": 450,
   "width": 565,
-  "price": 15.18,
+  "price": {
+    "price_per_unit": 6.00,
+    "unit_measure": "loaf"
+  },
   "rating": 1,
   "id": "000040"
 }, {
@@ -417,7 +525,10 @@
   "filename": "40.jpg",
   "height": 450,
   "width": 307,
-  "price": 21.32,
+  "price": {
+    "price_per_unit": 8.76,
+    "unit_measure": "serving"
+  },
   "rating": 0,
   "id": "000041"
 }, {
@@ -427,7 +538,10 @@
   "filename": "41.jpg",
   "height": 600,
   "width": 900,
-  "price": 27.14,
+  "price": {
+    "price_per_unit": 2.49,
+    "unit_measure": "serving"
+  },
   "rating": 2,
   "id": "000042"
 }, {
@@ -437,7 +551,10 @@
   "filename": "42.jpg",
   "height": 450,
   "width": 299,
-  "price": 19.18,
+  "price": {
+    "price_per_unit": 4.00,
+    "unit_measure": "lb"
+  },
   "rating": 1,
   "id": "000043"
 }, {
@@ -447,7 +564,10 @@
   "filename": "43.jpg",
   "height": 600,
   "width": 400,
-  "price": 18.32,
+  "price": {
+    "price_per_unit": 3.90,
+    "unit_measure": "serving"
+  },
   "rating": 3,
   "id": "000044"
 }, {
@@ -457,7 +577,10 @@
   "filename": "44.jpg",
   "height": 450,
   "width": 352,
-  "price": 15.13,
+  "price": {
+    "price_per_unit": 3.50,
+    "unit_measure": "lb"
+  },
   "rating": 3,
   "id": "000045"
 }, {
@@ -467,7 +590,10 @@
   "filename": "45.jpg",
   "height": 450,
   "width": 675,
-  "price": 11.73,
+  "price": {
+    "price_per_unit": 10.20,
+    "unit_measure": "lb"
+  },
   "rating": 5,
   "id": "000046"
 }, {
@@ -477,7 +603,10 @@
   "filename": "46.jpg",
   "height": 450,
   "width": 675,
-  "price": 26.03,
+  "price": {
+    "price_per_unit": 4.20,
+    "unit_measure": "lb"
+  },
   "rating": 4,
   "id": "000047"
 }, {
@@ -487,7 +616,10 @@
   "filename": "47.jpg",
   "height": 450,
   "width": 678,
-  "price": 15.19,
+  "price": {
+    "price_per_unit": 2.98,
+    "unit_measure": "bunch"
+  },
   "rating": 4,
   "id": "000048"
 }, {
@@ -497,7 +629,10 @@
   "filename": "48.jpg",
   "height": 600,
   "width": 401,
-  "price": 18.18,
+  "price": {
+    "price_per_unit": 26.50,
+    "unit_measure": "serving"
+  },
   "rating": 1,
   "id": "000049"
 }, {
@@ -507,7 +642,10 @@
   "filename": "49.jpg",
   "height": 600,
   "width": 400,
-  "price": 25.62,
+  "price": {
+    "price_per_unit": 3.49,
+    "unit_measure": "lb"
+  },
   "rating": 3,
   "id": "000050"
 }]

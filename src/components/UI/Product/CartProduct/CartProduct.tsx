@@ -1,14 +1,12 @@
 import { useContext } from 'react'
 import classes from './CartProduct.module.css'
 import { CartContext } from "../../../context/cartContext";
-import storeProducts from '../../../../data/products.json'
 import { formatCurrency } from '../../../../utils/formatCurrency';
+import storeProducts from '../../../../data/products.json'
 
 type CartProductProps = {
   id: number;
   quantity: number;
-  removeFromCart?: (id: number) => void;
-  setCustomQuantity?: (id: number, newQuantity: number) => void;
 }
 
 const CartProduct = ({id, quantity}: CartProductProps) => {
@@ -27,7 +25,7 @@ const CartProduct = ({id, quantity}: CartProductProps) => {
     removeFromCart(productId)
   }
 
-  const handleSelect = (inputField: any) => {
+  const handleSelect = (inputField: React.BaseSyntheticEvent | any) => {
     inputField.select()
   }
 
