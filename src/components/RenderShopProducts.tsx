@@ -5,15 +5,15 @@ import { useSlice } from '../hooks/useSlice';
 import ShopProduct from './UI/Product/ShopProduct/ShopProduct';
 
 type renderShopProductsProps = {
-  data: object[]; 
+  initialProducstData: object[]; 
   sortOption: string; 
   searchQuery: string;  
   currentPage: number;  
   productsPerPage: number
 }
 
-const RenderShopProducts = ({data, sortOption, searchQuery, currentPage, productsPerPage}: renderShopProductsProps) => {
-  const sortedProducts = useSort(data, sortOption);
+const RenderShopProducts = ({initialProducstData, sortOption, searchQuery, currentPage, productsPerPage}: renderShopProductsProps) => {
+  const sortedProducts = useSort(initialProducstData, sortOption);
   const filteredSortedProducts = useFilter(sortedProducts, searchQuery);
   const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, productsPerPage);
 

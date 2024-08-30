@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export const useSlice = ([...data], currentPage, productsPerPage) => {
+export const useSlice = ([...data], currentPage: number, productsPerPage: number) => {
   const [slicedProducts, setSlicedProducts] = useState(data)
 
   function sliceData() {

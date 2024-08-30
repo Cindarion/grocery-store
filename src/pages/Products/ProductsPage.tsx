@@ -4,8 +4,8 @@ import { getCurrentDateFormatted } from '../../utils/currentDate'
 import SearchBar from '../../components/UI/SearchBar/SearchBar'
 import SortOptionButton from '../../components/UI/Buttons/SortButton/SortOptionButton'
 import RenderShopProducts from '../../components/RenderShopProducts'
-import Pagination from '../../components/UI/Pagination/Pagination'
 import { useFetch } from '../../hooks/useFetch'
+import Pagination from '../../components/UI/Pagination/Pagination'
 
 type dataProps = {
   loading: boolean,
@@ -15,22 +15,18 @@ type dataProps = {
 const ProductsPage = () => {
   const [sortOption, setSortOption] = useState("Default");
   const [searchQuery, setSearchQuery] = useState("")
-  const [currentPage, setCurrentPage] = useState(1);
-  const { loading, error, data }: dataProps = useFetch('./products.json'); 
-  const sortProps = ["Default", "A-Z", "Price"];
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const { loading, error, data: initialProducstData }: dataProps = useFetch('./products.json'); 
+  const itemCount = initialProducstData? initialProducstData.length : 0;
   const currentDate = getCurrentDateFormatted();
-  const itemCount = data? data.length : 50;
+  const sortProps = ["Default", "A-Z", "Price"];
   const productsPerPage = 16;
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
   };
 
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
-  };
-
-  if (!data) return <div>Loading...</div>;
+  if (!initialProducstData) return <div>Loading...</div>;
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -65,15 +61,15 @@ const ProductsPage = () => {
             currentPage={currentPage}
             sortOption={sortOption}
             searchQuery={searchQuery}
-            data={data}
+            initialProducstData={initialProducstData}
           />
         </div>
         <Pagination
-          onPageChange={handlePageChange}
-          totalCount={itemCount}
+          contentPerPage={productsPerPage}
+          count={itemCount}
           currentPage={currentPage}
-          siblingCount={1}
-          pageSize={productsPerPage}
+          setCurrentPage={setCurrentPage}
+          searchQuery={searchQuery}
         />
       </main>
     </div>

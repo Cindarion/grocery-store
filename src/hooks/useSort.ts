@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useSort = ([...data], sortOption) => {
+export const useSort = ([...data], sortOption: string) => {
   const [sortedProducts, setSortedProducts] = useState(data);
 
   function sortData() {
