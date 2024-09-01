@@ -3,12 +3,11 @@ import classes from "./Pagination.module.css"
 
 type paginationProps = {
   contentPerPage: number, 
-  count: number,
+  itemsCount: number,
   currentPage: number,
   setCurrentPage: (state: React.ComponentState) => void,
-  searchQuery: string
 }
-const Pagination = ({contentPerPage, count, currentPage, setCurrentPage, searchQuery}: paginationProps) => {
+const Pagination = ({contentPerPage, itemsCount, currentPage, setCurrentPage}: paginationProps) => {
   const {
     nextPage,
     prevPage,
@@ -16,16 +15,15 @@ const Pagination = ({contentPerPage, count, currentPage, setCurrentPage, searchQ
     totalPages,
   } = usePagination({
     contentPerPage,
-    count,
+    itemsCount,
     currentPage,
     setCurrentPage
 });
 
-  console.log(`Pagination component: ${searchQuery}`);
-    
+  if (itemsCount === 0) return 'Nothing found...'
 
   return (
-    <div className={classes.paginationContainer}>
+    <>
       <p className={classes.paginationText}>
         {currentPage}/{totalPages}
       </p>
@@ -60,7 +58,7 @@ const Pagination = ({contentPerPage, count, currentPage, setCurrentPage, searchQ
       >
         &rarr;
       </button>
-    </div>
+    </>
   )
 }
 

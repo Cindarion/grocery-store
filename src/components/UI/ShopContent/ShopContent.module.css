@@ -1,0 +1,16 @@
+.productsContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 25px;
+    column-gap: 25px;
+}
+
+.paginationContainer {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    flex-direction: row;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 32px;
+}

@@ -3,9 +3,8 @@ import classes from './ProductsPage.module.css'
 import { getCurrentDateFormatted } from '../../utils/currentDate'
 import SearchBar from '../../components/UI/SearchBar/SearchBar'
 import SortOptionButton from '../../components/UI/Buttons/SortButton/SortOptionButton'
-import RenderShopProducts from '../../components/RenderShopProducts'
+import RenderShopProducts from '../../components/UI/ShopContent/ShopContent'
 import { useFetch } from '../../hooks/useFetch'
-import Pagination from '../../components/UI/Pagination/Pagination'
 
 type dataProps = {
   loading: boolean,
@@ -17,10 +16,9 @@ const ProductsPage = () => {
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState<number>(1);
   const { loading, error, data: initialProducstData }: dataProps = useFetch('./products.json'); 
-  const itemCount = initialProducstData? initialProducstData.length : 0;
   const currentDate = getCurrentDateFormatted();
   const sortProps = ["Default", "A-Z", "Price"];
-  const productsPerPage = 16;
+  const maxProductsPerPage = 16;
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -55,21 +53,13 @@ const ProductsPage = () => {
       </section>
       <hr/>
       <main>
-        <div className={classes.productsWrapper}>
-          <RenderShopProducts
-            productsPerPage={productsPerPage}
-            currentPage={currentPage}
-            sortOption={sortOption}
-            searchQuery={searchQuery}
-            initialProducstData={initialProducstData}
-          />
-        </div>
-        <Pagination
-          contentPerPage={productsPerPage}
-          count={itemCount}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
+        <RenderShopProducts
+          initialProducstData={initialProducstData}
+          sortOption={sortOption}
           searchQuery={searchQuery}
+          currentPage={currentPage}
+          productsPerPage={maxProductsPerPage}
+          setCurrentPage={setCurrentPage}
         />
       </main>
     </div>

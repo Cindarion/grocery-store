@@ -1,4 +1,5 @@
 .productWrapper {
+    display: block;
     width: 266px;
     height: 296px;
     background-color: var(--background-color, #FAFAF5);
