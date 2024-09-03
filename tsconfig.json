@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
     //intellisense config for VSCode
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       //none-js-ts files is not supported by intellisense. Use 'path-intellisense.mappings' in .vscode/settings.json instead
       //this is should be sync with aliases in webpack
-      "@src/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@data/*": ["src/data/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
     },
     "target": "es5", // Target ECMAScript version
     "lib": ["dom", "dom.iterable", "esnext"], // Library files to include

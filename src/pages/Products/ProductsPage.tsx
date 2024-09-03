@@ -58,7 +58,7 @@ const ProductsPage = () => {
           sortOption={sortOption}
           searchQuery={searchQuery}
           currentPage={currentPage}
-          productsPerPage={maxProductsPerPage}
+          maxProductsPerPage={maxProductsPerPage}
           setCurrentPage={setCurrentPage}
         />
       </main>

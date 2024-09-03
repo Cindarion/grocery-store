@@ -1,13 +1,18 @@
 type usePaginationProps = {
-  contentPerPage: number,
   itemsCount: number,
+  maxContentPerPage: number,
   currentPage: number,
   setCurrentPage: (state: React.ComponentState) => void;
 }
-const usePagination = ({ contentPerPage, itemsCount, currentPage, setCurrentPage }: usePaginationProps) => {
-  const pageCount = Math.ceil(itemsCount / contentPerPage);
-  const lastProductIndex = currentPage * contentPerPage;
-  const firstProductIndex = lastProductIndex - contentPerPage;
+const usePagination = ({ 
+  itemsCount, 
+  maxContentPerPage,
+  currentPage, 
+  setCurrentPage 
+}: usePaginationProps) => {
+  const pageCount = Math.ceil(itemsCount / maxContentPerPage);
+  const lastProductIndex = currentPage * maxContentPerPage;
+  const firstProductIndex = lastProductIndex - maxContentPerPage;
 
   const changePage = (direction: boolean) => {
     setCurrentPage((state: number): number => {

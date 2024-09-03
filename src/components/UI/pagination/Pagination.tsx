@@ -1,21 +1,26 @@
-import usePagination from "../../../hooks/usePagination";
+import usePagination from "src/hooks/usePagination";
 import classes from "./Pagination.module.css"
 
 type paginationProps = {
-  contentPerPage: number, 
   itemsCount: number,
+  maxContentPerPage: number, 
   currentPage: number,
   setCurrentPage: (state: React.ComponentState) => void,
 }
-const Pagination = ({contentPerPage, itemsCount, currentPage, setCurrentPage}: paginationProps) => {
+const Pagination = ({
+  itemsCount, 
+  maxContentPerPage, 
+  currentPage, 
+  setCurrentPage
+}: paginationProps) => {
   const {
     nextPage,
     prevPage,
     setPage,
     totalPages,
   } = usePagination({
-    contentPerPage,
     itemsCount,
+    maxContentPerPage,
     currentPage,
     setCurrentPage
 });
