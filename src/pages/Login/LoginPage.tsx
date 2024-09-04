@@ -1,5 +1,5 @@
-import classes from './LoginPage.module.css'
 import { Link } from 'react-router-dom';
+import classes from './LoginPage.module.css'
 
 // Components
 import ActionButton from '../../components/UI/Buttons/ActionButton/ActionButton'

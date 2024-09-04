@@ -1,5 +1,5 @@
-import { CartProvider } from './components/context/cartContext';
-import AppRouter from './components/AppRouter';
+import { CartProvider } from 'src/components/context/cartContext';
+import AppRouter from 'src/components/AppRouter';
 import './styles/global.css'
 
 function App() {

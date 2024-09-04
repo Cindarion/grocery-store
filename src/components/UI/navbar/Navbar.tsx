@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
 import classes from "./Navbar.module.css"
-import ActionButton from '../Buttons/ActionButton/ActionButton'
-import { CartContext } from '../../context/cartContext'
+import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
+import { CartContext } from 'src/components/context/cartContext'
 
 const Navbar: React.FC = () => {
   const cartContext = useContext(CartContext);

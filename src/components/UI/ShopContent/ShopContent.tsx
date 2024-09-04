@@ -1,10 +1,10 @@
 import React from 'react' 
-import { useSort } from '../../../hooks/useSort';
+import classes from './ShopContent.module.css'
+import { useSort } from 'src/hooks/useSort';
 import { useFilter } from 'src/hooks/useFilter';
 import { useSlice } from 'src/hooks/useSlice'
-import ShopProduct from '../Product/ShopProduct/ShopProduct';
-import classes from './ShopContent.module.css'
-import Pagination from '../Pagination/Pagination';
+import ShopProduct from 'src/components/UI/Product/ShopProduct/ShopProduct';
+import Pagination from 'src/components/UI/Pagination/Pagination';
 
 type renderShopProductsProps = {
   initialProducstData: object[]; 

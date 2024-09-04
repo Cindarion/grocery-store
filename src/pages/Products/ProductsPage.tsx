@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import classes from './ProductsPage.module.css'
-import { getCurrentDateFormatted } from '../../utils/currentDate'
-import SearchBar from '../../components/UI/SearchBar/SearchBar'
-import SortOptionButton from '../../components/UI/Buttons/SortButton/SortOptionButton'
-import RenderShopProducts from '../../components/UI/ShopContent/ShopContent'
-import { useFetch } from '../../hooks/useFetch'
+import { getCurrentDateFormatted } from 'src/utils/currentDate'
+import { useFetch } from 'src/hooks/useFetch'
+import RenderShopProducts from 'src/components/UI/ShopContent/ShopContent'
+import SearchBar from 'src/components/UI/SearchBar/SearchBar'
+import SortOptionButton from 'src/components/UI/Buttons/SortButton/SortOptionButton'
 
 type dataProps = {
   loading: boolean,

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import classes from './SearchBar.module.css'
-import { useDebounce } from '../../../hooks/useDebounce';
+import { useDebounce } from 'src/hooks/useDebounce';
 
 const SearchBar = ( {onSearch}: {onSearch: Function} ) => {
   const [searchTerm, setSearchTerm] = useState('');

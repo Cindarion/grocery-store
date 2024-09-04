@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import classes from './CartProduct.module.css'
-import { CartContext } from "../../../context/cartContext";
-import { formatCurrency } from '../../../../utils/formatCurrency';
-import storeProducts from '../../../../data/products.json'
+import { CartContext } from 'src/components/context/cartContext';
+import { formatCurrency } from 'src/utils/formatCurrency';
+import storeProducts from 'src/data/products.json'
 
 type CartProductProps = {
   id: number;
