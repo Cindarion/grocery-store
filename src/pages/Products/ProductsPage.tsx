@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import classes from './ProductsPage.module.css'
 import { getCurrentDateFormatted } from 'src/utils/currentDate'
 import { useFetch } from 'src/hooks/useFetch'
+import { productsSortOptions } from 'src/constants/sortOptions'
 import RenderShopProducts from 'src/components/UI/ShopContent/ShopContent'
 import SearchBar from 'src/components/UI/SearchBar/SearchBar'
 import SortOptionButton from 'src/components/UI/Buttons/SortButton/SortOptionButton'
@@ -12,12 +13,12 @@ type dataProps = {
   data: [] | null
 }
 const ProductsPage = () => {
-  const [sortOption, setSortOption] = useState("Default");
+  const [selectedSortOption, setSelectedSortOption] = useState("Default");
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState<number>(1);
   const { loading, error, data: initialProducstData }: dataProps = useFetch('./products.json'); 
   const currentDate = getCurrentDateFormatted();
-  const sortProps = ["Default", "A-Z", "Price"];
+  const sortOptions = productsSortOptions;
   const maxProductsPerPage = 16;
 
   const handleSearch = (query: string) => {
@@ -40,11 +41,11 @@ const ProductsPage = () => {
         />
         <div className={classes.productSortWrapper}>
           <ul>
-            {sortProps.map((sort, index) => (
+            {sortOptions.map((sort, index) => (
               <SortOptionButton 
                 children={sort}
-                sortOption={sortOption}
-                setSortOption={setSortOption}
+                sortOption={selectedSortOption}
+                setSortOption={setSelectedSortOption}
                 key={index}
               />
             ))}
@@ -55,7 +56,7 @@ const ProductsPage = () => {
       <main>
         <RenderShopProducts
           initialProducstData={initialProducstData}
-          sortOption={sortOption}
+          sortOption={selectedSortOption}
           searchQuery={searchQuery}
           currentPage={currentPage}
           maxProductsPerPage={maxProductsPerPage}

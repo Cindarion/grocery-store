@@ -26,7 +26,9 @@ const ShopProduct = ({id, index, name, filename, price, unit_measure, descriptio
   const productQuantity = getItemQuantity(id);
 
   const handleIncreaseQuantity = (productId: number) => {
-    increaseCartQuantity(productId)
+    if (productQuantity < 99) {
+      increaseCartQuantity(productId)
+    }
   };
 
   const handleDecreaseQuantity = (productId: number) => {
