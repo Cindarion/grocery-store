@@ -2,7 +2,15 @@ import React, { useEffect, useState } from 'react'
 import classes from './SearchBar.module.css'
 import { useDebounce } from 'src/hooks/useDebounce';
 
-const SearchBar = ( {onSearch}: {onSearch: Function} ) => {
+type SearchBarProps = {
+  onSearch: Function
+  searchBarPlaceholder?: string
+}
+
+const SearchBar = ({
+  onSearch,  
+  searchBarPlaceholder
+}: SearchBarProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedSearchTerm = useDebounce(searchTerm, 300)
 
@@ -27,7 +35,7 @@ const SearchBar = ( {onSearch}: {onSearch: Function} ) => {
         type='search' 
         name='productSearch' 
         value={searchTerm}
-        placeholder='Search for products' 
+        placeholder={searchBarPlaceholder}
         className={classes.productSearchBar} 
         onChange={e => setSearchTerm(e.target.value)}
       />

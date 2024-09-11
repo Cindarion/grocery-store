@@ -10,16 +10,16 @@ import SortOptionButton from "src/components/UI/Buttons/SortButton/SortOptionBut
 
 type pageHeadingProps = {
   titleString: string
-  additionalTitle?: string
-  addSearchBar?: boolean
-  addSortOptions?: []
+  includeSecondTitle?: string
+  includeSearchBar?: string
+  includeSortOptions?: string[]
 };
 
 const PageHeading = ({
   titleString,
-  additionalTitle,
-  addSearchBar,
-  addSortOptions
+  includeSecondTitle: secondTitle,
+  includeSearchBar: searchBarPlaceholder,
+  includeSortOptions: sortOptions
 }:pageHeadingProps) => {
   const [selectedSortOption, setSelectedSortOption] = useState("Default");
 
@@ -28,19 +28,20 @@ const PageHeading = ({
   };
 
   const renderSearchBar = () => {
-    if (addSearchBar) {
+    if (searchBarPlaceholder) {
       return (
         <SearchBar
           onSearch={handleSearch}
+          searchBarPlaceholder={searchBarPlaceholder}
         />
       )
     }
   };
 
   const renderSortOptions = () => {
-    if (addSortOptions) {
+    if (sortOptions) {
       return (
-        addSortOptions.map((sort, index) => (
+        sortOptions.map((sort, index) => (
           <SortOptionButton 
             children={sort}
             sortOption={selectedSortOption}
@@ -56,7 +57,7 @@ const PageHeading = ({
     <section className={classes.pageHeading}>
       <div className={classes.headingTitleContainer}>
         <span className={classes.mainTitle}>{titleString}</span>
-        <span className={classes.additionalTitle}>{additionalTitle}</span>
+        <span className={classes.additionalTitle}>{secondTitle}</span>
       </div>
       {renderSearchBar()}
       <div className={classes.sortOptionsWrapper}>

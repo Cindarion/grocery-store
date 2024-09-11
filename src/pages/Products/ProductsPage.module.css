@@ -2,7 +2,7 @@
     font-family: Inter, sans-serif;
     display: flex;
     flex-direction: column;
-    padding-top: 36px;
+    margin-top: 36px;
 }
 
 .contentContainer section {

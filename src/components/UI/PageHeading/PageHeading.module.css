@@ -4,8 +4,8 @@
     align-items: center;
     align-content: center;
     justify-content: space-between;
-    margin: 0;
-    padding: 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--secondary-color, #E6E6E6);
 }
 
 .headingTitleContainer {

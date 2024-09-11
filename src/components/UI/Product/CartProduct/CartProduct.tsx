@@ -11,14 +11,12 @@ type CartProductProps = {
 
 const CartProduct = ({id, quantity}: CartProductProps) => {
   const cartContext = useContext(CartContext);
-
   if (!cartContext) {
     throw new Error('CartContext must be used within a TodoProvider');
   };
-  
   const { removeFromCart, setCustomQuantity } = cartContext;
-  const product: any = storeProducts.find(i => Number(i.id) == id);
 
+  const product: any = storeProducts.find(i => Number(i.id) == id);
   if (!product) return null;
 
   const handleDelete = (productId: number) => {

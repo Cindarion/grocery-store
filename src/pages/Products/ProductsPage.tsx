@@ -38,6 +38,7 @@ const ProductsPage = () => {
         </div>
         <SearchBar
           onSearch={handleSearch}
+          searchBarPlaceholder="Search for products"
         />
         <div className={classes.productSortWrapper}>
           <ul>

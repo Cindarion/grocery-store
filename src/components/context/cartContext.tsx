@@ -37,7 +37,7 @@ export const CartProvider: FC<{children: React.ReactNode}> = ({ children }) => {
         return [...currItems, {id, quantity: 1}]
       } else {
         return currItems.map((item: { id: number; quantity: number; }) => {
-          if (item.id === id) {
+          if (item.id === id && item.quantity < 99) {
             return {...item, quantity: item.quantity + 1}
           } else {
             return item
@@ -68,7 +68,7 @@ export const CartProvider: FC<{children: React.ReactNode}> = ({ children }) => {
       if (currItems.find((item: { id: number; }) => item.id === id) && newQuantity === 0) {
         return currItems.filter((item: { id: number; }) => item.id !== id)
       } else {
-        return currItems.map((item: { id: number; }) => {
+        return currItems.map((item: { id: number; quantity: number; }) => {
           if (item.id === id) {
             return {...item, quantity: newQuantity}
           } else { 
