@@ -44,7 +44,7 @@ const PageHeading = ({
         sortOptions.map((sort, index) => (
           <SortOptionButton 
             children={sort}
-            sortOption={selectedSortOption}
+            selectedSortOption={selectedSortOption}
             setSortOption={setSelectedSortOption}
             key={index}
           />
@@ -56,7 +56,7 @@ const PageHeading = ({
   return (
     <section className={classes.pageHeading}>
       <div className={classes.headingTitleContainer}>
-        <span className={classes.mainTitle}>{titleString}</span>
+        <span className={classes.firstTitle}>{titleString}</span>
         <span className={classes.additionalTitle}>{secondTitle}</span>
       </div>
       {renderSearchBar()}

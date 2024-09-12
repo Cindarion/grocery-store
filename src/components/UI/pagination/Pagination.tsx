@@ -34,7 +34,9 @@ const Pagination = ({
       </p>
       <button
         onClick={prevPage}
-        className={`${classes.paginationItem} ${currentPage === 1 
+        className={`
+        ${classes.paginationButton} 
+        ${currentPage === 1 
           ? classes.disabled
           : ''
         }`}
@@ -46,9 +48,11 @@ const Pagination = ({
         <button
           onClick={() => setPage(el + 1)}
           key={el}
-          className={`${classes.paginationItem} ${currentPage === el + 1 
-            ? classes.active 
-            : ''
+          className={`
+            ${classes.paginationButton} 
+            ${currentPage === el + 1 
+              ? classes.active 
+              : ''
           }`}
         >
           {el + 1}
@@ -56,9 +60,11 @@ const Pagination = ({
       ))}
       <button
         onClick={nextPage}
-        className={`${classes.paginationItem} ${currentPage === totalPages 
-          ? classes.disabled
-          : ''
+        className={`
+          ${classes.paginationButton} 
+          ${currentPage === totalPages 
+            ? classes.disabled
+            : ''
         }`}
       >
         &rarr;

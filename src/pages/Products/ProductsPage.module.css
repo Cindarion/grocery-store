@@ -1,102 +1,65 @@
 .contentContainer {
-    font-family: Inter, sans-serif;
     display: flex;
     flex-direction: column;
     margin-top: 36px;
 }
 
-.contentContainer section {
+.pageHeading {
     display: flex;
     flex-direction: row;
+    width: 100%;
     align-items: center;
-    align-content: center;
     justify-content: space-between;
-    margin: 0;
-    padding: 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--secondary-color, #E6E6E6);
+}   
+
+.headingTitleContainer {
+    display: flex;
 }
 
-.pageHeadingTitle {
-    display: flex;
-    justify-content: center;
+.headingTitleContainer span {
+    width: max-content;
 }
 
-.pageHeadingTitle .produceTitle{
+.mainTitle {
     display: flex;
-    justify-content: center;
     font-family: Newsreader, sans-serif;
     font-size: 54px;
-    padding-right: 16px;
 }
 
-.productSortWrapper ul {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0;
+.additionalTitle {
+    margin-left: 16px;
 }
 
-.productSortWrapper ul button {
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 24px;
-    margin-left: 12px;
-}
-
-.contentContainer hr {
-    width: 100%;
-    border: 0;
-    height: 2px;
-    background: var(--secondary-color, #E6E6E6);
+.productSortWrapper {
+    width: fit-content;
+    text-wrap: nowrap;
 }
 
 .contentContainer main {
     align-self: center;
-    padding: 20px;
+    margin: 28px 0;
 }
 
-
 @media (max-width: 1160px) {
-    .pageHeadingTitle {
+    .headingTitleContainer {
         flex-direction: column;
+    }
+
+    .additionalTitle {
+        margin-left: 0;
     }
 }
 
 @media (min-width: 1160px) {
-    .pageHeadingTitle {
+    .headingTitleContainer {
         align-items: center;
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1180px) {
-    .productsWrapper {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (min-width: 880px) and (max-width: 1024px) {
-    .productsWrapper {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 750px) and (max-width: 880px) {
-    .productsWrapper {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 @media (min-width: 0px) and (max-width: 750px) {
-    .productsWrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .productSortWrapper {
         display: none;
-    }
-}
-
-@media (max-width: 1050px) {
-    .pageHeadingTitle .produceTitle{
-        display: flex;
-        flex-direction: column;
     }
 }

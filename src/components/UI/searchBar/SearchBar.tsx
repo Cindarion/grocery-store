@@ -23,7 +23,7 @@ const SearchBar = ({
   }, [onSearch, debouncedSearchTerm]);
 
   return (
-    <div className={classes.productSearchContainer}>
+    <div className={classes.searchBarContainer}>
       <div className={classes.searchIconWrapper}>
         <img 
           alt='search-icon'

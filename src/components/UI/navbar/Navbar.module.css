@@ -1,8 +1,4 @@
-* {
-    outline: 0;
-}
-
-header {
+.navbarHeader {
     position: sticky;
     z-index: 100;
     background-color: var(--secondary-color-lighter, #ffffff);
@@ -10,8 +6,8 @@ header {
     display: flex;
     flex-direction: row;
     max-width: 1170px;
-    padding-top: 28px;
-    padding-bottom: 14px;
+    margin-top: 28px;
+    margin-bottom: 14px;
     justify-content: space-between;
     align-items: center;
     margin-right: auto; 
@@ -27,30 +23,33 @@ header {
     color: var(--main-text-color-green, #426B1F);
 }
 
-nav {
-    font-family: Inter, sans-serif;
+.navbarHeader nav {
     font-size: 20px;
     font-weight: 300;
 }
 
-ul {
+.navbarHeader nav ul {
     margin: 0;
+    padding: 0;
 }
 
-li {
+.navbarHeader li {
     display: inline-block;
     vertical-align: middle;
 }
 
-ul li a {
+.navbarHeader li + li {
     margin-left: 30px;
+}
+
+.navbarHeader ul li a {
     text-decoration: none;
     color: black;
     transition: 0.15s;
     position: relative;
 }
 
-ul li a:hover {
+.navbarHeader ul li a:hover {
     color: var(--main-text-color-green, #426B1F);
     transition: 0.2s;
     text-decoration: underline;
@@ -58,7 +57,7 @@ ul li a:hover {
     transition: 0.15s;
 }
 
-ul li a:active {
+.navbarHeader ul li a:active {
     opacity: 0.7;
     transition: 0.15s;
 }

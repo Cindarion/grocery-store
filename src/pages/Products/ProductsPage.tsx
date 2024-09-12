@@ -31,29 +31,26 @@ const ProductsPage = () => {
 
   return (
     <div className={classes.contentContainer}>
-      <section>
-        <div className={classes.pageHeadingTitle}>
-          <span className={classes.produceTitle}>Produce</span>
-          <span><b>Fresh</b> — {currentDate}</span>
+      <section className={classes.pageHeading}>
+        <div className={classes.headingTitleContainer}>
+          <span className={classes.mainTitle}>Produce</span>
+          <span className={classes.additionalTitle}><b>Fresh</b> — {currentDate}</span>
         </div>
         <SearchBar
           onSearch={handleSearch}
           searchBarPlaceholder="Search for products"
         />
         <div className={classes.productSortWrapper}>
-          <ul>
-            {sortOptions.map((sort, index) => (
-              <SortOptionButton 
-                children={sort}
-                sortOption={selectedSortOption}
-                setSortOption={setSelectedSortOption}
-                key={index}
-              />
-            ))}
-          </ul>
+          {sortOptions.map((sort, index) => (
+            <SortOptionButton 
+              children={sort}
+              selectedSortOption={selectedSortOption}
+              setSortOption={setSelectedSortOption}
+              key={index}
+            />
+          ))}
         </div>
       </section>
-      <hr/>
       <main>
         <RenderShopProducts
           initialProducstData={initialProducstData}

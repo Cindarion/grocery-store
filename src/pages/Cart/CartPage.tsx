@@ -14,7 +14,7 @@ const CartPage = () => {
   const { cartItems } = cartContext
   const { getCartQuantity } = cartContext;
   
-  const renderQuantityTitle = () => {
+  const renderQuantityAll = () => {
     if (getCartQuantity() > 0) {
       return (
         <span>{getCartQuantity()} items</span>
@@ -58,7 +58,7 @@ const CartPage = () => {
           <span className={classes.pageHeadingTitle}>
             Basket
           </span>
-          {renderQuantityTitle()}
+          {renderQuantityAll()}
         </div>
       </section>
       <hr/>

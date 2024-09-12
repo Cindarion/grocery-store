@@ -12,7 +12,15 @@ type ShopProductProps = {
   unit_measure: string, 
   description: string
 }
-const ShopProduct = ({id, index, name, filename, price, unit_measure, description}: ShopProductProps) => {
+const ShopProduct = ({
+  id, 
+  index, 
+  name, 
+  filename, 
+  price, 
+  unit_measure, 
+  description
+}: ShopProductProps) => {
   const cartContext = useContext(CartContext);
   if (!cartContext) {
     throw new Error('CartContext must be used within a TodoProvider');
@@ -67,7 +75,7 @@ const ShopProduct = ({id, index, name, filename, price, unit_measure, descriptio
   return (
     <div className={classes.productWrapper} key={index}>
       <div className={classes.imageWrapper}>
-        <img src={require(`../../../../data/images/${filename}`)} alt='product'/>
+        <img src={require(`src/data/images/${filename}`)} alt='product'/>
       </div>
       <div className={classes.titleWrapper}>
         <span className={classes.productName}>

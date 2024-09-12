@@ -3,11 +3,15 @@ import classes from './SortOptionButton.module.css'
 
 type sortOptionProps = {
   children: string, 
-  sortOption: string, 
+  selectedSortOption: string, 
   setSortOption: Function
 }
 
-const SortOptionButton = ({children, sortOption, setSortOption}: sortOptionProps) => {
+const SortOptionButton = ({
+  children, 
+  selectedSortOption,
+  setSortOption
+}: sortOptionProps) => {
   const SortOptionButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -24,14 +28,18 @@ const SortOptionButton = ({children, sortOption, setSortOption}: sortOptionProps
   }, [children, setSortOption]);
 
   return (
-    <button 
-      ref={SortOptionButtonRef} 
-      className={sortOption === children ? 
-      classes.ActiveSortButton : 
-      classes.SortButton}
-    >
-      {children}
-    </button>
+    <span className={classes.sortOptionWrapper}>
+      <button
+        ref={SortOptionButtonRef} 
+        className={selectedSortOption === children  
+          ? classes.activeSortButton  
+          : classes.sortButton
+        }
+      >
+        {children}
+      </button>
+    </span>
+    
   )
 }
 

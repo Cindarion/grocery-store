@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header>
+    <header className={classes.navbarHeader}>
       <div className={classes.companyTitle}>
         <Link to='/introduction'>
           <span>

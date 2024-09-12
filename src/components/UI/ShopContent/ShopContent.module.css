@@ -11,6 +11,35 @@
     font-size: 16px;
     flex-direction: row;
     font-weight: 500;
-    margin-top: 20px;
-    margin-bottom: 32px;
+    margin: 24px 0;
+}
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+    .productsContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 880px) and (max-width: 1024px) {
+    .productsContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 750px) and (max-width: 880px) {
+    .productsContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 366px) and (max-width: 750px) {
+    .productsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 0px) and (max-width: 366px) {
+    .productsContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
