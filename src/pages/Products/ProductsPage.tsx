@@ -19,7 +19,7 @@ const ProductsPage = () => {
   const { loading, error, data: initialProducstData }: dataProps = useFetch('./products.json'); 
   const currentDate = getCurrentDateFormatted();
   const sortOptions = productsSortOptions;
-  const maxProductsPerPage = 16;
+  const maxProductsPerPage = 20;
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
