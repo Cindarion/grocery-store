@@ -23,33 +23,33 @@
     color: var(--main-text-color-green, #426B1F);
 }
 
-.navbarHeader nav {
+.navigationPanel {
     font-size: 20px;
     font-weight: 300;
 }
 
-.navbarHeader nav ul {
+.navigationPanel ul {
     margin: 0;
     padding: 0;
 }
 
-.navbarHeader li {
+.navigationPanel li {
     display: inline-block;
     vertical-align: middle;
 }
 
-.navbarHeader li + li {
+.navigationPanel li + li {
     margin-left: 30px;
 }
 
-.navbarHeader ul li a {
+.navigationPanel ul li a {
     text-decoration: none;
     color: black;
     transition: 0.15s;
     position: relative;
 }
 
-.navbarHeader ul li a:hover {
+.navigationPanel ul li a:hover {
     color: var(--main-text-color-green, #426B1F);
     transition: 0.2s;
     text-decoration: underline;
@@ -57,7 +57,7 @@
     transition: 0.15s;
 }
 
-.navbarHeader ul li a:active {
+.navigationPanel ul li a:active {
     opacity: 0.7;
     transition: 0.15s;
 }
@@ -79,4 +79,10 @@
     right: -12px;
     transition: 0.25s;
     z-index: 1;
+}
+
+@media (min-width: 0px) and (max-width: 820px) { 
+    .navigationPanel {
+        display: none;
+    }
 }

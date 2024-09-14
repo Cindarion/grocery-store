@@ -16,6 +16,11 @@ const CartPage = () => {
   
   const renderQuantityAll = () => {
     if (getCartQuantity() > 0) {
+      if (getCartQuantity() === 1) {
+        return (
+          <span>{getCartQuantity()} item</span>
+        )
+      }
       return (
         <span>{getCartQuantity()} items</span>
       )
@@ -53,15 +58,16 @@ const CartPage = () => {
 
   return (
     <div className={classes.contentContainer}>
-      <section>
-        <div className={classes.pageHeadingTitleWrapper}>
-          <span className={classes.pageHeadingTitle}>
+      <section className={classes.pageHeading}>
+        <div className={classes.headingTitleContainer}>
+          <span className={classes.mainTitle}>
             Basket
           </span>
-          {renderQuantityAll()}
+          <span className={classes.additionalTitle}>
+            {renderQuantityAll()}
+          </span>
         </div>
       </section>
-      <hr/>
       <main>
         <div className={classes.cartContainer}>
           <div className={classes.cartProductsWrapper}>

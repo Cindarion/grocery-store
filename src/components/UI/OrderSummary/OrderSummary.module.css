@@ -38,3 +38,10 @@
     font-weight: 600;
     font-size: 16px;
 }
+
+
+@media (min-width: 0) and (max-width: 737px) {
+    .cartSummaryWrapper {
+        display: none;
+    }
+}

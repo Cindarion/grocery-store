@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
           </span>
         </Link>
       </div>
-      <nav>
+      <nav className={classes.navigationPanel}>
         <ul>
           <li><Link to="/products">Shop</Link> </li>
           <li><Link to="/news">Newstand</Link></li>

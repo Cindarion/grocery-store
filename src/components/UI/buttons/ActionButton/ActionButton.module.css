@@ -10,7 +10,8 @@
     padding: 7px 16px;
     white-space: nowrap;
     transition: 0.15s;
-}
+    user-select: none;
+}   
 
 .ActionButton_darker {
     color: var(--main-text-color-black, #000000);

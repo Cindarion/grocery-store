@@ -1,49 +1,56 @@
 .contentContainer {
-    font-family: Inter, sans-serif;
     display: flex;
+    width: 100%;
     flex-direction: column;
-    padding-top: 36px;
+    margin-top: 36px;
 }
 
-.contentContainer section {
+.pageHeading {
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    width: 100%;
+    align-items: center;
+    align-content: center;
     justify-content: space-between;
-    margin: 0;
-    padding: 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--secondary-color, #E6E6E6);
+}   
+
+.headingTitleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.pageHeadingTitleWrapper .pageHeadingTitle{
+.headingTitleContainer span {
+    width: max-content;
+}
+
+.mainTitle {
+    display: flex;
     font-family: Newsreader, sans-serif;
     font-size: 54px;
-    padding-right: 16px;
 }
 
-.pageHeadingTitleWrapper span {
+.additionalTitle {
     font-size: 24px;
-}
-
-.contentContainer hr {
-    width: 100%;
-    border: 0;
-    height: 2px;
-    background: #E6E6E6;
+    margin-left: 16px;
 }
 
 .contentContainer main {
-    padding-top: 20px;
+    margin-top: 28px;
 }
 
 .cartContainer {
     display: flex;
+    width: 100%;
     justify-content: space-between;
 }
 
 .cartProductsWrapper {
     display: flex;
     width: 100%;
-    min-width: 400px;
+    min-width: 200px;
     flex-direction: column;
     margin-right: 20px;
 }
@@ -64,4 +71,3 @@
 .emptyMessageContainer span {
     margin: 12px;
 }
-
