@@ -15,7 +15,9 @@ const DisplayNavbar = ({children}:{children:React.ReactNode}) => {
   }, [location])
 
   return (
-    <>{showNavbar && children}</>
+    <>
+      {showNavbar && children}
+    </>
   )
 }
 

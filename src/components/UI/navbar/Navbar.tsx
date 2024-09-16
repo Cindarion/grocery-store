@@ -1,10 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import {Link} from 'react-router-dom'
 import classes from "./Navbar.module.css"
-import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
 import { CartContext } from 'src/components/context/cartContext'
+import MobileNavbar from 'src/components/UI/Navbar/MobileNavbar/MobileNavbar'
+import DesktopNavbar from './DesktopNavbar/DesktopNavbar'
 
 const Navbar: React.FC = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const cartContext = useContext(CartContext);
   if (!cartContext) {
     throw new Error('CartContext must be used within a TodoProvider');
@@ -19,6 +21,10 @@ const Navbar: React.FC = () => {
     };
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  };
+
   return (
     <header className={classes.navbarHeader}>
       <div className={classes.companyTitle}>
@@ -28,19 +34,13 @@ const Navbar: React.FC = () => {
           </span>
         </Link>
       </div>
-      <nav className={classes.navigationPanel}>
-        <ul>
-          <li><Link to="/products">Shop</Link> </li>
-          <li><Link to="/news">Newstand</Link></li>
-          <li><Link to="/introduction">Who we are</Link></li>
-          <li><Link to="/login">My profile</Link></li>
-          <li><Link to="/cart">
-            <ActionButton children={"Basket"}/>
-            {renderCartQuantity()}
-          </Link>
-          </li>
-        </ul>
-      </nav>
+      <DesktopNavbar
+        renderCartQuantity={renderCartQuantity}
+      />
+      <MobileNavbar 
+        isOpen={isMobileMenuOpen}
+        toggleMenu={toggleMobileMenu}
+      />
     </header>
   )
 }
