@@ -12,14 +12,7 @@ const Navbar: React.FC = () => {
     throw new Error('CartContext must be used within a TodoProvider');
   };
   const { getCartQuantity } = cartContext;
-
-  const renderCartQuantity = () => {
-    if (getCartQuantity() > 0) {
-      return (
-       <span className={classes.cartQuantityContainer}>{getCartQuantity()}</span>
-      )
-    };
-  };
+  const cartQuantity = getCartQuantity();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -35,7 +28,7 @@ const Navbar: React.FC = () => {
         </Link>
       </div>
       <DesktopNavbar
-        renderCartQuantity={renderCartQuantity}
+        cartQuantity={cartQuantity}
       />
       <MobileNavbar 
         isOpen={isMobileMenuOpen}

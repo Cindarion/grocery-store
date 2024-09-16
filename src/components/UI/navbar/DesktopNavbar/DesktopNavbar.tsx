@@ -3,9 +3,19 @@ import ActionButton from "../../Buttons/ActionButton/ActionButton"
 import classes from "./DesktopNavbar.module.css"
 
 type desktopNavbarProps = {
-  renderCartQuantity: () => JSX.Element | undefined
+  cartQuantity: number
 }
-const DesktopNavbar = ({renderCartQuantity}: desktopNavbarProps) => {
+const DesktopNavbar = ({cartQuantity}: desktopNavbarProps) => {
+  const renderCartQuantity = () => {
+    if (cartQuantity > 0) { 
+      return (
+        <span className={classes.cartQuantityContainer}>
+          {cartQuantity}
+        </span>
+      )
+    }
+  }
+  
   return (
     <nav className={classes.navigationPanel}>
       <ul>
@@ -15,9 +25,7 @@ const DesktopNavbar = ({renderCartQuantity}: desktopNavbarProps) => {
         <li><Link to="/login">My profile</Link></li>
         <li><Link to="/cart">
           <ActionButton children={"Basket"}/>
-          <span className={classes.cartQuantityContainer}>
-            {renderCartQuantity()}
-          </span>
+          {renderCartQuantity()}
         </Link>
         </li>
       </ul>
