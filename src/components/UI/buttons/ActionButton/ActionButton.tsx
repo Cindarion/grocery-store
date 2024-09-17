@@ -6,7 +6,9 @@ type actionButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 const ActionButton = ({onClick, children}:actionButtonProps) => {
-  const buttonColor = children === "-" ? classes.ActionButton_darker : classes.ActionButton;
+  const buttonColor = children === "-" 
+  ? classes.ActionButton_darker 
+  : classes.ActionButton;
 
   return (
     <button 

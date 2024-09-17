@@ -9,7 +9,7 @@ const DesktopNavbar = ({cartQuantity}: desktopNavbarProps) => {
   const renderCartQuantity = () => {
     if (cartQuantity > 0) { 
       return (
-        <span className={classes.cartQuantityContainer}>
+        <span className={classes.cartQuantityWrapper}>
           {cartQuantity}
         </span>
       )

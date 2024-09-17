@@ -10,7 +10,7 @@ const OrderSummary = () => {
   if (!cartContext) {
     throw new Error('CartContext must be used within a TodoProvider');
   };
-  const {cartItems} = cartContext
+  const {cartItems} = cartContext;
 
   const getTotalPrice = (): string => {
     return formatCurrency (
@@ -42,6 +42,9 @@ const OrderSummary = () => {
         </span>
       </div>
       <ActionButton 
+      // classname needs to be here
+      // for inactive feature
+      // check ActionButton component to learn more...
         className={classes.paymentButton} 
         children={"Continue to payment ->"}
       />

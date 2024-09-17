@@ -5,25 +5,55 @@ import hamburgerIcon from "src/data/icons/hamburger-button.png"
 type mobileNavbarProps = {
   isOpen: boolean
   toggleMenu: () => void
+  cartQuantity: number
 }
-const MobileNavbar = ({isOpen, toggleMenu}:mobileNavbarProps) => {
+const MobileNavbar = ({isOpen, toggleMenu, cartQuantity}:mobileNavbarProps) => {
+  const toggleWithDelay = () => {
+    setTimeout(() => {
+      toggleMenu()
+    }, 150)
+  };
 
-  return (
-    <span className={classes.mobileNavbarContainer}>
-      <button 
-        className={classes.burgerButton} 
-        onClick={toggleMenu}
-      >
-        <img 
-          src={hamburgerIcon} 
-          className={classes.BurgerIcon} 
-          alt="open navigation list"
-        />
-      </button>
-      {isOpen?
-        <span className={classes.mobileNavContainer}>
-          <ul className={classes.mobileNavList}>
-            <li><Link to="/cart">Basket</Link></li>
+  const renderCartQuantity = () => {
+    if (cartQuantity > 0) { 
+      return (
+        <span className={classes.cartQuantityWrapper}>
+          {cartQuantity}
+        </span>
+      )
+    }
+  };
+
+  const renderBasketLink = () => {
+    if (cartQuantity > 0) {
+      return (
+        <li className={classes.greenBackground}>
+          <Link to="/cart">
+            Basket
+            <span className={classes.quantityNearLink}>
+              {cartQuantity}
+            </span>
+          </Link>
+        </li>
+      )
+    }
+    return (
+      <li>
+        <Link to="/cart">Basket</Link>
+      </li>
+    )
+  };
+
+  const renderNavigationMenu = () => {
+    if (isOpen) {
+      return (
+        <span 
+          onClick={toggleMenu}
+          className={classes.navbarModalWindow}>
+          <ul 
+            onClick={toggleWithDelay} 
+            className={classes.navbarLinksContainer}>
+            {renderBasketLink()}
             <li><Link to="/products">Shop</Link></li>
             <li><Link to="/news">Newstand</Link></li>
             <li><Link to="/introduction">Who we are</Link></li>
@@ -31,9 +61,25 @@ const MobileNavbar = ({isOpen, toggleMenu}:mobileNavbarProps) => {
             <li><a href="#">Quit</a></li>
           </ul>
         </span>
-      : ""
-      }
-    </span>
+      )
+    }  
+  };
+
+  return (
+    <nav className={classes.mobileNavbar}>
+      <button 
+        className={classes.burgerButton} 
+        onClick={toggleMenu}
+      >
+        <img 
+          src={hamburgerIcon} 
+          className={classes.BurgerIcon} 
+          alt="open navigation menu"
+        />
+        {renderCartQuantity()}
+      </button>
+      {renderNavigationMenu()}
+    </nav>
   )
 }
 

@@ -33,6 +33,7 @@ const Navbar: React.FC = () => {
       <MobileNavbar 
         isOpen={isMobileMenuOpen}
         toggleMenu={toggleMobileMenu}
+        cartQuantity={cartQuantity}
       />
     </header>
   )
