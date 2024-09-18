@@ -33,7 +33,7 @@
     height: 45px;
 }
 
-.cartQuantityWrapper {
+.cartQuantityWrapper, .quantityNearLink {
     display: flex;
     font-size: 14px;
     font-weight: 400;
@@ -49,29 +49,17 @@
     transition: 0.25s;
     user-select: none;
     z-index: 1;
-
     top: 8px;
     right: -8px;
 }
 
 .quantityNearLink {
-    display: flex;
     font-size: 14px;
-    font-weight: 400;
-    width: 28px;
-    height: 28px;
-    color: var(--main-text-color-black, #000000);
-    background-color: var(--secondary-color-lighter, #d7d7d7);
-    border: 1px solid var(--secondary-color, #E6E6E6);;
-    border-radius: 80px;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    transition: 0.25s;
-    user-select: none;
-
+    width: 20px;
+    height: 20px;
+    padding: 10px;
     top: 6px;
-    left: 80px;
+    left: 85px;
 }
 
 .navbarModalWindow {
@@ -104,18 +92,18 @@
     to { transform: translateX(0); }
 }
 
-.navbarLinksContainer li {
+.linkWrapper, .linkWrapperCurrent{
     width: 100%;
     list-style-type: none;
     transition: 0.1s;
 }
 
-.navbarLinksContainer li:active {
+.linkWrapper:active, .linkWrapperCurrent:active {
     opacity: 0.85;
     transition: 0.1s;
 }
 
-.navbarLinksContainer a {
+.linkWrapper a, .linkWrapperCurrent a {
     display: flex;
     width: 100%;
     padding: 20px 26px;
@@ -124,12 +112,12 @@
     transition: 0.1s;
 }
 
-.navbarLinksContainer a:hover {
+.linkWrapper a:hover, .linkWrapperCurrent a:hover {
     background-color: var(--main-text-color-green, #426B1F);
     color: white;
     transition: 0.05s;
 }
 
-.greenBackground {
+.linkWrapperCurrent {
     background-color: #dbf5c4eb;
 }
