@@ -73,8 +73,8 @@ const CartPage = () => {
           <div className={classes.cartProductsWrapper}>
             {getCartQuantity() ? renderCartProducts() : renderEmptyMessage()}
           </div>
-          {getCartQuantity() ? renderOrderSummary() : ""}
         </div>
+        <div className={classes.orderSummaryWrapper}>{getCartQuantity() ? renderOrderSummary() : ""}</div>
       </main>
     </div> 
   )

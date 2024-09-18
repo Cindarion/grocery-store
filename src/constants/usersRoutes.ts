@@ -1,9 +1,9 @@
 interface RouteConfig {
   path: any,
   name: string
-}
+};
 
-type AppRoutes = Record<string, RouteConfig>
+type AppRoutes = Record<string, RouteConfig>;
 
 export const notAuthUser: AppRoutes = {
   cart: {

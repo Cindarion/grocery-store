@@ -1,17 +1,13 @@
 .cartSummaryWrapper {
     display: flex;
-    position: sticky;
-    top: 10%;
-    font-size: 20px;
     flex-direction: column;
-    width: 30%;
-    min-width: 30%;
-    max-height: 286px;
+    position: sticky;
+    font-size: 20px;
+    top: 10%;
     padding: 16px;
-    background-color: #FAFAF5;
     border: 2px solid #E6E6E6;
+    background-color: #FAFAF5;
     border-radius: 10px;
-    z-index: 5;
 }
 
 .orderSummaryHeader {
@@ -23,24 +19,25 @@
     font-size: 16px;
     flex-direction: column;
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
-.orderDetailsWrapper span{
-    padding-bottom: 12px;
+.orderDetailsWrapper span + span{
+    margin-top: 12px;
 }
 
 .orderTotal {
     font-weight: 600;
 }
 
-.orderTotal button {
-    font-weight: 600;
+.cartSummaryWrapper button {
     font-size: 16px;
+    font-weight: 400;
+    margin-top: 20px;
+    text-wrap: pretty;
 }
 
 
-@media (min-width: 0) and (max-width: 737px) {
+@media (min-width: 0) and (max-width: 685px) {
     .cartSummaryWrapper {
         display: none;
     }
