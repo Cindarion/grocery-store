@@ -1,7 +1,6 @@
 .cartSummaryWrapper {
     display: flex;
     flex-direction: column;
-    position: sticky;
     font-size: 20px;
     top: 10%;
     padding: 16px;
@@ -21,7 +20,12 @@
     margin-top: 20px;
 }
 
-.orderDetailsWrapper span + span{
+.orderDetailsWrapper div {
+    display: flex;
+    flex-direction: column;
+}
+
+.orderDetailsWrapper div > span {
     margin-top: 12px;
 }
 
@@ -36,9 +40,14 @@
     text-wrap: pretty;
 }
 
+@media (min-width: 0) and (max-width: 716px) {
+    .orderDetailsWrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-@media (min-width: 0) and (max-width: 685px) {
-    .cartSummaryWrapper {
-        display: none;
+    .orderDetailsWrapper div {
+        display: flex;
+        flex-direction: column;
     }
 }

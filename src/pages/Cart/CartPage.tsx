@@ -69,7 +69,7 @@ const CartPage = () => {
         </div>
       </section>
       <main>
-        <div className={classes.cartContainer}>
+        <div className={classes.cartProductsContainer}>
           <div className={classes.cartProductsWrapper}>
             {getCartQuantity() ? renderCartProducts() : renderEmptyMessage()}
           </div>

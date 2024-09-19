@@ -66,7 +66,7 @@ const CartProduct = ({id, quantity}: CartProductProps) => {
             />
           </span>
         </div>
-        <div className={classes.productRigthInfoWrapper}>
+        <div className={classes.productRightInfoWrapper}>
           <span className={classes.productTotalPrice}>
             {formatCurrency(quantity * product?.price.price_per_unit || 0)}
           </span>

@@ -27,19 +27,23 @@ const OrderSummary = () => {
         Order summary
       </span>
       <div className={classes.orderDetailsWrapper}>
-        <span>
-          Subtotal:
-        </span>
-        <span>
-          Shipping:
-        </span>
-        <span>
-          Tax:
-        </span>
-        <span className={classes.orderTotal}>
-          Total: {" "} 
-          {getTotalPrice()}
-        </span>
+        <div>
+          <span>
+            Subtotal:
+          </span>
+          <span>
+            Shipping:
+          </span>
+        </div>
+        <div>
+          <span>
+            Tax:
+          </span>
+          <span className={classes.orderTotal}>
+            Total: {" "} 
+            {getTotalPrice()}
+          </span>
+        </div>
       </div>
       <ActionButton 
       // classname needs to be here
