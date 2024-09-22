@@ -2,9 +2,5 @@
     font-family: Inter, sans-serif;
     display: flex;
     flex-direction: column;
-    margin-top: 36px;
-}
-
-.contentContainer main {
-    
+    margin-top: 42px;
 }

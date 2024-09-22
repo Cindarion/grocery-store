@@ -33,6 +33,10 @@
     --main-text-color-white: #ffffff;
     --main-text-color-white-darker: #CFD9E0;
     --main-text-color-green: #426B1F;
+
+    --main-header-margin-top: 16px;
+    --main-header-padding-top-bot: 18px;
+    --main-header-height: 45.438px;
 }
 
 * {

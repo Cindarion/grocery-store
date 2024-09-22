@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin-top: 36px;
+    margin-top: 42px;
 }
 
 .pageHeading {
@@ -39,9 +39,11 @@
 
 .contentContainer main {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     width: 100%;
     margin-top: 28px;
+    position: relative;
 }
 
 .cartProductsContainer {
@@ -52,8 +54,12 @@
 }
 
 .orderSummaryWrapper {
+    display: block;
     width: 30%;
+    height: 100%;
     margin-left: 60px;
+    position: sticky;
+    right: 0;
 }
 
 .cartProductsWrapper {
@@ -83,6 +89,16 @@
     margin: 12px;
 }
 
+@media (min-width: 716px) {
+    .orderSummaryWrapper {
+        top: calc(
+            var(--main-header-margin-top) 
+            + 2 * var(--main-header-padding-top-bot) 
+            + var(--main-header-height)
+        );
+    }
+}
+
 @media (min-width: 0) and (max-width: 716px) {
     .cartProductsContainer {
         display: flex;
@@ -92,16 +108,15 @@
     }
 
     .contentContainer main {
-        display: flex;
         flex-direction: column;
-        margin-bottom: 240px;
     }
 
     .orderSummaryWrapper {
-        position: fixed;
         width: 100%;
+        top: auto;
         left: 0;
         bottom: 0;
-        margin: 0;
+        margin: 20px 0 0 0;
+        padding: 0;
     }
 }

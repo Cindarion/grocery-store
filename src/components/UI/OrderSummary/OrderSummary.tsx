@@ -22,7 +22,7 @@ const OrderSummary = () => {
   };
 
   return (
-    <span className={classes.cartSummaryWrapper}>
+    <div className={classes.cartSummaryWrapper}>
       <span className={classes.orderSummaryHeader}>
         Order summary
       </span>
@@ -52,7 +52,7 @@ const OrderSummary = () => {
         className={classes.paymentButton} 
         children={"Continue to payment ->"}
       />
-    </span>
+    </div>
   )
 }
 

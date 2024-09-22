@@ -1,10 +1,11 @@
 .contentContainer {
-    padding-top: 128px;
+    margin-top: 42px;
 }
 
 .contentContainer main {
     display: flex;
     flex-direction: column;
+    padding-top: 86px;
 }
 
 .contentContainer section {

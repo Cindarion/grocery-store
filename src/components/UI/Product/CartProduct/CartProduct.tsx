@@ -74,7 +74,7 @@ const CartProduct = ({id, quantity}: CartProductProps) => {
             alt='delete product'
             onClick={() => handleDelete(product.id)}
             className={classes.deleteProductIcon} 
-            src={require("../../../../data/icons/remove-from-cart-dark-gray.png")}
+            src={require("../../../../data/icons/remove-from-cart.png")}
           />
         </div>
       </div>

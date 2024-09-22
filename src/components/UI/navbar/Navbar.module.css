@@ -8,11 +8,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 18px;
-    padding-bottom: 12px;
-    margin-top: 16px;
-    margin-right: auto; 
-    margin-left: auto;
+    padding: var(--main-header-padding-top-bot, 18px) 0;
+    margin-top: var(--main-header-margin-top, 16px);
     transition: transform 0.3s ease-in-out;
 }
 
