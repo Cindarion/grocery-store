@@ -13,7 +13,8 @@ const IntroductionPage = () => {
           <div className={classes.titleWrapper}>
             <div className={classes.titleText}>
               <span>
-                We’re <i>farmers</i>, <i>purveyors</i>, and <i>eaters</i><br/>of organically grown food.
+                We’re <i>farmers</i>, <i>purveyors</i>,
+                and <i>eaters</i><br/>of organically grown food.
               </span>
             </div>
             <div>
@@ -25,7 +26,7 @@ const IntroductionPage = () => {
             </div>
           </div>
         </section>
-        <div className={classes.imagesWrapper}>
+        <div className={classes.imagesContainer}>
           <div className={classes.leftImageWrapper}>
             <img
               alt='chard'

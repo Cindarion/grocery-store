@@ -64,3 +64,17 @@
         margin-top: 12px;
     }
 }
+
+@media (min-width: 0) and (max-width: 470px) {
+    .orderSummaryHeader {
+        font-size: 16px;
+    }
+
+    .orderDetailsWrapper {
+        font-size: 14px;
+    }
+
+    .cartSummaryWrapper button {
+        font-size: 14px;
+    }
+}
