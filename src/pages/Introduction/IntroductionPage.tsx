@@ -8,33 +8,31 @@ import foodArtPNG from 'src/data/images/foodArt.png'
 const IntroductionPage = () => {
   return (  
     <div className={classes.contentContainer}>
+      <section>
+        <div className={classes.titleContainer}>
+          <span className={classes.titleText}>
+            We’re <i>farmers</i>, <i>purveyors</i>,
+            and <i>eaters</i><br/>of organically grown food.
+          </span>
+          <span>
+            <Link to="/products">
+              <ActionButton 
+                children={"Browse our shop"}
+              />
+            </Link>
+          </span>
+        </div>
+      </section>
       <main>
-        <section>
-          <div className={classes.titleWrapper}>
-            <div className={classes.titleText}>
-              <span>
-                We’re <i>farmers</i>, <i>purveyors</i>,
-                and <i>eaters</i><br/>of organically grown food.
-              </span>
-            </div>
-            <div>
-              <Link to="/products">
-                <ActionButton 
-                  children={"Browse our shop"}
-                />
-              </Link>
-            </div>
-          </div>
-        </section>
         <div className={classes.imagesContainer}>
-          <div className={classes.leftImageWrapper}>
+          <span className={classes.leftImageWrapper}>
             <img
               alt='chard'
               src={chardPNG} 
               className={classes.leftImage}
             />
-          </div>
-          <div className={classes.rightImageWrapper}>
+          </span>
+          <span className={classes.rightImageWrapper}>
             <img 
               alt='food preview'
               src={foodArtPNG} 
@@ -43,7 +41,7 @@ const IntroductionPage = () => {
             <span>
               <b>Central California</b> — The person who grew these was located in Central California and, er, hopefully very well-compensated.
             </span>
-          </div>
+          </span>
         </div>
         <div className={classes.footerContainer}>
           <div className={classes.footerLeftTitle}>

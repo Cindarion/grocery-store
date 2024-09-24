@@ -10,16 +10,15 @@
 
 .burgerButton {
     display: flex;
-    width: 45px;
-    height: 45px;
     justify-content: center;
     align-items: center;
+    padding: 0;
     background: none;
     border: none;
-    opacity: 0.65;
     cursor: pointer;
     transition: 0.15s;
     user-select: none;
+    position: relative;
 }
 
 .burgerButton:active {
@@ -31,11 +30,12 @@
     object-fit: contain;
     width: 45px;
     height: 45px;
+    opacity: 0.65;
 }
 
 .cartQuantityWrapper, .quantityNearLink {
     display: flex;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 400;
     width: 28px;
     height: 28px;
@@ -49,17 +49,15 @@
     transition: 0.25s;
     user-select: none;
     z-index: 1;
-    top: 8px;
+    top: -8px;
     right: -8px;
 }
 
 .quantityNearLink {
-    font-size: 14px;
-    width: 20px;
-    height: 20px;
+    font-size: 1.4rem;
     padding: 10px;
-    top: 6px;
-    left: 85px;
+    top: -14px;
+    right: -28px;
 }
 
 .navbarModalWindow {
@@ -103,11 +101,15 @@
     transition: 0.1s;
 }
 
+.linkWrapper, .linkWrapperCurrent {
+    padding: 20px 26px;
+}
+
 .linkWrapper a, .linkWrapperCurrent a {
     display: flex;
-    width: 100%;
-    padding: 20px 26px;
+    width: fit-content;
     color: var(--main-text-color-green, #426B1F);
+    position: relative;
     text-decoration: none;
     transition: 0.1s;
 }

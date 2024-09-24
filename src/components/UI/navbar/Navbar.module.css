@@ -1,21 +1,20 @@
 .navbarHeader {
-    position: sticky;
-    z-index: 100;
-    background-color: var(--secondary-color-lighter, #ffffff);
-    max-width: 1190px;
-    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: var(--main-header-padding-top-bot, 18px) 0;
+    max-width: 1190px;
+    background-color: var(--secondary-color-lighter, #ffffff);
     margin-top: var(--main-header-margin-top, 16px);
-    transition: transform 0.3s ease-in-out;
+    padding: var(--main-header-padding-top-bot, 18px) 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .companyTitle a {
     font-family: Newsreader, sans-serif;
-    font-size: 32px;
+    font-size: 3.2em;
     font-weight: 500;
     color: var(--main-text-color-green, #426B1F);
     letter-spacing: -0.5px;
@@ -24,3 +23,19 @@
 }
 
 
+@media (min-width: 0px) and (max-width: 425px) {
+    .companyTitle {
+        font-size: 2.5vw;
+    }
+
+    .navbarHeader button img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .navbarHeader button span {
+        font-size: 3vw;
+        width: 6vw;
+        height: 6vw;
+    }
+}

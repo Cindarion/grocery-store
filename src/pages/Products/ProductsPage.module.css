@@ -26,10 +26,11 @@
 .mainTitle {
     display: flex;
     font-family: Newsreader, sans-serif;
-    font-size: 54px;
+    font-size: 5.4rem;
 }
 
 .additionalTitle {
+    font-size: 1.4rem;
     margin-left: 16px;
 }
 

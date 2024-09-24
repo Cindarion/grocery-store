@@ -77,7 +77,7 @@ const ShopProduct = ({
       <div className={classes.imageWrapper}>
         <img src={require(`src/data/images/${filename}`)} alt='product'/>
       </div>
-      <div className={classes.titleWrapper}>
+      <div className={classes.infoWrapper}>
         <span className={classes.productName}>
           {name}
         </span>

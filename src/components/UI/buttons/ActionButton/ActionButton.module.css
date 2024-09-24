@@ -1,6 +1,6 @@
 .ActionButton, .ActionButton_darker, .inactiveActionButton {
     font-family: Inter, sans-serif;;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 300;
     color: var(--secondary-color-lighter, #ffffff);
     background-color: var(--primary-color, #426B1F);
