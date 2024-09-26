@@ -1,0 +1,166 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.companyLogo {
+    font-size: 3rem;
+    font-family: Newsreader, sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.companyLogo a {
+    text-decoration: none;
+    color: var(--main-text-color-green, #426B1F);
+}
+
+.authContentWrapper {
+    color: var(--third-color, #6D6D6D);
+    margin: 20px 24px;
+}
+
+.authContentWrapper a {
+    color: var(--main-text-color-green, #426B1F);
+    transition: 0.2s;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: 0.15s;
+}
+
+.authContentWrapper form {
+    margin-top: 14px;
+}
+
+.authContentWrapper a:hover {
+    opacity: 0.85;
+    transition: 0.15s;
+}
+
+.authContentWrapper a:active {
+    opacity: 0.7;
+    transition: 0.15s;
+}
+
+.formTitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.formTitle h1 {
+    color: var(--main-text-color-black, #000000);
+    margin: 0 0 12px 0;
+}
+
+.dontHaveAccountWrapper span {
+    margin-right: 4px;
+}
+
+.inputsContainer > div + div {
+    margin-top: 18px;
+}
+
+.inputsContainer input {
+    font-size: 1.6rem;
+    width: 100%;
+    height: 38px;
+    border: var(--main-input-border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-top: 8px;
+    transition: 0.15s;
+}
+
+.inputsContainer input:focus {
+    border-color: var(--main-text-color-green, #426B1F);
+    transition: 0.15s;
+}
+
+.SignInButtonWrapper button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.passwordInputContainer > span {
+    position: relative;
+}
+
+.hidePasswordWrapper {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    right: 12px;
+}
+
+.hidePasswordIcon {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 100%;
+}
+
+.authOptionsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.rememberMeOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 4px;
+}
+
+.rememberMeOption > input {
+    cursor: pointer;
+}
+
+.orDivider {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 18px 2px 0 2px;
+}
+
+.orDivider::before {
+    margin-right: 6px;
+}
+
+.orDivider::after {
+    margin-left: 6px;
+}
+
+.orDivider::before, .orDivider::after {
+    content: "";
+    display: inline-block;
+    width: 50%;
+    height: 1px;
+    background: var(--third-color, #6D6D6D);
+}
+
+.otherAuthMethods button {
+    width: 100%;
+    font-weight: 500;
+    color: var(--third-color, #6D6D6D);
+    border: 1px solid var(--third-color, #6D6D6D);
+    background-color: transparent;
+    border-radius: 24px;
+    margin-top: 18px;
+}
+
+@media (min-width: 0px) and (max-width: 440px) {
+    .SignInButtonWrapper button {
+        font-size: 1.25rem;
+    }
+
+    .otherAuthMethods button {
+        font-size: 1.25rem;
+    }
+}

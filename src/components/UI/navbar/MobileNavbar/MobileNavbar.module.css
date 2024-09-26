@@ -56,8 +56,8 @@
 .quantityNearLink {
     font-size: 1.4rem;
     padding: 10px;
-    top: -14px;
-    right: -28px;
+    top: 8%;
+    right: 28%;
 }
 
 .navbarModalWindow {
@@ -101,13 +101,9 @@
     transition: 0.1s;
 }
 
-.linkWrapper, .linkWrapperCurrent {
-    padding: 20px 26px;
-}
-
 .linkWrapper a, .linkWrapperCurrent a {
     display: flex;
-    width: fit-content;
+    padding: 20px 26px;
     color: var(--main-text-color-green, #426B1F);
     position: relative;
     text-decoration: none;
