@@ -7,7 +7,7 @@ import foodArtPNG from 'src/data/images/foodArt.png'
 
 const IntroductionPage = () => {
   return (  
-    <div className={classes.contentContainer}>
+    <div className={classes.pageContainer}>
       <section>
         <div className={classes.titleContainer}>
           <span className={classes.titleText}>

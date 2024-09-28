@@ -6,7 +6,7 @@ const NewsPage = () => {
   const newsSortProps = newsSortOptions;
 
   return (
-    <div className={classes.contentContainer}>
+    <div className={classes.pageContainer}>
       <PageHeading
         titleString="News"
         includeSearchBar="Search for news"

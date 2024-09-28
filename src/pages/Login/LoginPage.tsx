@@ -18,7 +18,7 @@ const LoginPage = () => {
   }
 
   return (
-    <div className={classes.mainContainer}>
+    <div className={classes.pageContainer}>
       <div className={classes.contentWrapper}>
         <div className={classes.formWrapper}>
           {renderAuthForm()}

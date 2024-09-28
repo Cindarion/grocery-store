@@ -32,12 +32,12 @@
     border-radius: 10px;
     padding: 6px;
     padding-left: 38px;
-    transition: 0.25s;
+    transition: border 0.25s;
     background-color: transparent;
     z-index: 90;
 }
 
 .productSearchBar:hover, .productSearchBar:focus {
     border: var(--hover-focus-outline);
-    transition: 0.25s;
+    transition: border 0.25s;
 }

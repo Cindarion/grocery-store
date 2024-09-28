@@ -9,7 +9,7 @@
     cursor: pointer;
     padding: 7px 16px;
     white-space: nowrap;
-    transition: 0.15s;
+    transition: opacity 0.15s;
     user-select: none;
 }   
 
@@ -26,15 +26,15 @@
 
 .ActionButton:hover {
     opacity: 0.9;
-    transition: 0.15s;
+    transition: opacity 0.15s;
 }
 
 .ActionButton_darker:hover {
     filter: brightness(90%);
-    transition: 0.15s;
+    transition: filter 0.15s;
 }
 
 .ActionButton:active, .ActionButton_darker:active {
-    opacity: 0.78;
-    transition: 0.15s;
+    opacity: 0.8;
+    transition: opacity 0.15s;
 }

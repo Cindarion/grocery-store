@@ -30,7 +30,7 @@ const ProductsPage = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className={classes.contentContainer}>
+    <div className={classes.pageContainer}>
       <section className={classes.pageHeading}>
         <div className={classes.headingTitleContainer}>
           <span className={classes.mainTitle}>Produce</span>

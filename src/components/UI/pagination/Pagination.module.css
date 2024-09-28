@@ -14,14 +14,14 @@
   border-radius: 8px;
   background-color: transparent;
   cursor: pointer;
-  transition: ease 0.25s;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
 .paginationButton.active,
 .paginationButton:hover {
-  background-color: var(--primary-color, #426B1F);
   color: var(--main-text-color-white, #ffffff);
-  transition: ease 0.1s;
+  background-color: var(--primary-color, #426B1F);
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .paginationButton.disabled {

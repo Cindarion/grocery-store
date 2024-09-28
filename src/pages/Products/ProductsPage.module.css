@@ -1,4 +1,4 @@
-.contentContainer {
+.pageContainer {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -39,7 +39,7 @@
     text-wrap: nowrap;
 }
 
-.contentContainer main {
+.pageContainer main {
     width: 100%;
     margin: 28px 0;
 }

@@ -5,12 +5,12 @@
     background-color: var(--background-color, #FAFAF5);
     border: 2px solid var(--secondary-color, #E6E6E6);
     border-radius: 12px;
-    transition: 0.25s;
+    transition: transform 0.25s ease;
 }
 
 .productContainer:hover {
     transform: scale(1.01);
-    transition: 0.25s;
+    transition: transform 0.25s ease;
 }
 
 .imageWrapper {
@@ -86,12 +86,12 @@
     border: 1.25px solid var(--secondary-color, #E6E6E6);
     border-radius: 16px;
     padding: 14px 12px;
-    transition: 0.25s;
+    transition: border 0.25s;
 }
 
 .productQuantityInput:hover, .productQuantityInput:focus {
     border: 1.25px solid var(--primary-color-lighter, #436b1feb);
-    transition: 0.25s;
+    transition: border 0.25s;
 }
 
 .editQuantityIcon {
@@ -125,13 +125,13 @@
     height: 22px;
     opacity: 0.65;
     cursor: pointer;
-    transition: 0.1s;
+    transition: opacity 0.1s;
 }
 
 .deleteProductIcon:hover,
 .deleteProductIcon:focus {
     opacity: 1;
-    transition: 0.1s;
+    transition: opacity 0.1s;
 }
 
 @media (min-width: 0px) and (max-width: 1024px) {

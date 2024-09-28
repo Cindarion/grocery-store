@@ -1,4 +1,4 @@
-.contentContainer {
+.pageContainer {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -37,7 +37,7 @@
     margin-left: 16px;
 }
 
-.contentContainer main {
+.pageContainer main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -100,15 +100,15 @@
 }
 
 @media (min-width: 0) and (max-width: 716px) {
+    .pageContainer main {
+        flex-direction: column;
+    }
+
     .cartProductsContainer {
         display: flex;
         width: 100%;
         min-width: 200px;
         margin-bottom: 0;
-    }
-
-    .contentContainer main {
-        flex-direction: column;
     }
 
     .orderSummaryWrapper {

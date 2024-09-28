@@ -1,8 +1,8 @@
-.contentContainer {
+.pageContainer {
     margin-top: 128px;
 }
 
-.contentContainer main {
+.pageContainer main {
     display: flex;
     flex-direction: column;
 }
@@ -83,7 +83,7 @@
 }
 
 @media (min-width: 0px) and (max-width: 860px) {
-    .contentContainer {
+    .pageContainer {
         margin-top: 10vw;
     }
 

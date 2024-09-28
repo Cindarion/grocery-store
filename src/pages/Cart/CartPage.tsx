@@ -57,7 +57,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className={classes.contentContainer}>
+    <div className={classes.pageContainer}>
       <section className={classes.pageHeading}>
         <div className={classes.headingTitleContainer}>
           <span className={classes.mainTitle}>
