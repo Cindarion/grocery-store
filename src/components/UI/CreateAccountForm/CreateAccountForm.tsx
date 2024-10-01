@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
 import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
-import classes from "./AuthForm.module.css"
+import classes from "./CreateAccountForm.module.css"
 
-const AuthForm = ({setCurrentForm}:any) => {
+
+
+const CreateAccountForm = ({setCurrentForm}:any) => {
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
   };
 
   const changeForm = () => {
-    setCurrentForm("create")
+    setCurrentForm("auth")
   }
 
   return (
@@ -20,14 +22,18 @@ const AuthForm = ({setCurrentForm}:any) => {
       </div>
       <div className={classes.authContentWrapper}>
         <div className={classes.formTitle}>
-          <h1>Sign in</h1>
+          <h1>Create an account</h1>
           <span className={classes.dontHaveAccountWrapper}>
-            <span>Don’t have an account?</span>
-            <a href="#" onClick={changeForm}>Create new</a> 
+            <span>Already have an account?</span>
+            <a href="#" onClick={changeForm}>Sign in</a> 
           </span>
         </div>
         <form onSubmit={handleSubmit}>
           <div className={classes.inputsContainer}>
+            <div className={classes.nameInputContainer}>
+              <label htmlFor="userEmail">Name</label>
+              <input type="text" id="userName" required/>
+            </div>
             <div className={classes.emailInputContainer}>
               <label htmlFor="userEmail">E-mail</label>
               <input type="email" id="userEmail" required/>
@@ -45,15 +51,6 @@ const AuthForm = ({setCurrentForm}:any) => {
                   />
                 </div>
               </span>
-            </div>
-          </div>
-          <div className={classes.authOptionsContainer}>
-            <label className={classes.rememberMeOption}>
-              <input type="checkbox" id="rememberMe" />
-              <span>Remember me</span>
-            </label>
-            <div>
-              <a href="#">Forgot password?</a>
             </div>
           </div>
           <div className={classes.SignInButtonWrapper}>
@@ -76,4 +73,4 @@ const AuthForm = ({setCurrentForm}:any) => {
   )
 }
 
-export default AuthForm
+export default CreateAccountForm

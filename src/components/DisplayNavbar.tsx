@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 
 const DisplayNavbar = ({children}:{children:React.ReactNode}) => {
