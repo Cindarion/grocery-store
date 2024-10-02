@@ -7,39 +7,50 @@ import CreateAccountForm from 'src/components/UI/CreateAccountForm/CreateAccount
 import NewsPreview from 'src/components/UI/NewsPreview/NewsPreview';
 
 const LoginPage = () => {
-  const [currentForm, setCurrentForm] = useState("auth");
-  
-  const renderAuthForm = () => {
-    return (
-      <AuthForm
-        setCurrentForm = {setCurrentForm}
-      />
-    )
-  };
+  const [isToggled, setIsToggled] = useState(false);
 
-  const renderCreateAccountForm = () => {
-    return (
-      <CreateAccountForm 
-        setCurrentForm = {setCurrentForm}
-      />
-    )
+  const renderForm = () => {
+    if (isToggled) {
+      return (
+        <div className={`${classes.formWrapper} ${classes.formWrapperActive}`} key={classes.formWrapperActive} >
+          <CreateAccountForm 
+            setIsToggled={setIsToggled}
+          />
+        </div> 
+      )
+    } else {
+      return (
+        <div className={classes.formWrapper}>
+          <AuthForm 
+            setIsToggled={setIsToggled}
+          />
+        </div> 
+      )
+    }
   };
  
   const renderNewsPreview = () => {
-    return (
-      <NewsPreview />
-    )
+    if (isToggled) {
+      return (
+        <div className={`${classes.newsPreviewWrapper} ${classes.newsPreviewWrapperActive}`}>
+          <NewsPreview />
+        </div> 
+      )
+    } else {
+      return (
+        <div className={classes.newsPreviewWrapper}>
+          <NewsPreview />
+        </div> 
+      )
+    }
   };
+  
 
   return (
     <div className={classes.pageContainer}>
       <div className={classes.contentWrapper}>
-        <div className={classes.formWrapper}>
-          {currentForm === "auth" ? renderAuthForm() : renderCreateAccountForm()}
-        </div>
-        <div className={classes.newsPreviewWrapper}>
-          {renderNewsPreview()}
-        </div>  
+        {renderForm()}
+        {renderNewsPreview()}
       </div>
     </div>
   );

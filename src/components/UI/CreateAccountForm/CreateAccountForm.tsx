@@ -4,13 +4,13 @@ import classes from "./CreateAccountForm.module.css"
 
 
 
-const CreateAccountForm = ({setCurrentForm}:any) => {
+const CreateAccountForm = ({setIsToggled}:any) => {
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
   };
 
   const changeForm = () => {
-    setCurrentForm("auth")
+    setIsToggled(false)
   }
 
   return (
@@ -31,7 +31,7 @@ const CreateAccountForm = ({setCurrentForm}:any) => {
         <form onSubmit={handleSubmit}>
           <div className={classes.inputsContainer}>
             <div className={classes.nameInputContainer}>
-              <label htmlFor="userEmail">Name</label>
+              <label htmlFor="userName">Name</label>
               <input type="text" id="userName" required/>
             </div>
             <div className={classes.emailInputContainer}>

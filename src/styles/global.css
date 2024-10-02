@@ -24,8 +24,8 @@
     --secondary-color-lighter: #ffffff;
     --third-color: #6D6D6D;
     --background-color: #FAFAF5;
+    --hover-focus-outline: 1.5px solid var(--primary-color-lighter, #436b1feb);
 
-    --hover-focus-outline: 1.5px solid var(--primary-color-lighter);
     --warning-color: #fa9a14;
     --attention-color: #E32636;
     --main-input-border: 1.5px solid var(--secondary-color, #E6E6E6);
