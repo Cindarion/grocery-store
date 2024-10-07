@@ -40,8 +40,8 @@ const LoginPage = () => {
       return (
         <div className={classes.newsPreviewWrapper}>
           <NewsPreview />
-        </div> 
-      )
+        </div>
+      );
     }
   };
   

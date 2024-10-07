@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
 import classes from "./CreateAccountForm.module.css"
 
-
-
 const CreateAccountForm = ({setIsToggled}:any) => {
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
@@ -16,16 +14,16 @@ const CreateAccountForm = ({setIsToggled}:any) => {
   return (
     <div className={classes.formContainer}>
       <div className={classes.companyLogo}>
-        <Link to='/introduction'>
-          BloomBasket
-        </Link>
+        <Link to='/introduction'>BloomBasket</Link>
       </div>
       <div className={classes.authContentWrapper}>
         <div className={classes.formTitle}>
           <h1>Create an account</h1>
           <span className={classes.dontHaveAccountWrapper}>
             <span>Already have an account?</span>
-            <a href="#" onClick={changeForm}>Sign in</a> 
+            <a href="#" onClick={changeForm}>
+              Sign in
+            </a> 
           </span>
         </div>
         <form onSubmit={handleSubmit}>

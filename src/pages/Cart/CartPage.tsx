@@ -13,26 +13,35 @@ const CartPage = () => {
   };
   const { cartItems } = cartContext
   const { getCartQuantity } = cartContext;
+  const cartQuantity = getCartQuantity()
   
-  const renderQuantityAll = () => {
-    if (getCartQuantity() > 0) {
-      if (getCartQuantity() === 1) {
+  const renderQuantity = () => {
+    if (cartQuantity > 0) {
+      if (cartQuantity === 1) {
         return (
-          <span>{getCartQuantity()} item</span>
+          <span>{cartQuantity} item</span>
         )
       }
       return (
-        <span>{getCartQuantity()} items</span>
+        <span>{cartQuantity} items</span>
       )
     } 
   };
 
   const renderCartProducts = () => {
-    return (
-      cartItems.map((product: { id: number; quantity: number }) => <CartProduct
-        key={product.id} {...product}
-      />)
-    )
+    if (cartQuantity) {
+      return (
+        <div className={classes.cartProductsContainer}>
+          {cartItems.map((product: { id: number; quantity: number }) => <CartProduct
+            key={product.id} {...product}
+          />)}
+        </div>
+      )
+    } else {
+      return (
+        renderEmptyMessage()
+      )
+    }
   };
 
   const renderEmptyMessage = () => {
@@ -51,9 +60,13 @@ const CartPage = () => {
   };
 
   const renderOrderSummary = () => {
-    return (
-      <OrderSummary/>
-    )
+    if (cartQuantity) {
+      return (
+        <div className={classes.orderSummaryWrapper}>
+          <OrderSummary/>
+        </div>
+      )
+    }
   };
 
   return (
@@ -64,17 +77,13 @@ const CartPage = () => {
             Basket
           </span>
           <span className={classes.additionalTitle}>
-            {renderQuantityAll()}
+            {renderQuantity()}
           </span>
         </div>
       </section>
       <main>
-        <div className={classes.cartProductsContainer}>
-          <div className={classes.cartProductsWrapper}>
-            {getCartQuantity() ? renderCartProducts() : renderEmptyMessage()}
-          </div>
-        </div>
-        <div className={classes.orderSummaryWrapper}>{getCartQuantity() ? renderOrderSummary() : ""}</div>
+        {renderCartProducts()}
+        {renderOrderSummary()}
       </main>
     </div> 
   )

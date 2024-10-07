@@ -48,33 +48,30 @@
 
 .cartProductsContainer {
     display: flex;
+    flex-direction: column;
     width: 70%;
     min-width: 200px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+}
+
+.cartProductsContainer > div + div {
+    margin-top: 16px;
 }
 
 .orderSummaryWrapper {
     display: block;
     width: 30%;
     height: 100%;
-    margin-left: 60px;
+    margin-left: 40px;
     position: sticky;
     right: 0;
-}
-
-.cartProductsWrapper {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-}
-
-.cartProductsWrapper > div + div {
-    margin-top: 16px;
 }
 
 .emptyMessageContainer {
     display: flex;
     flex-direction: column;
+    font-size: 1.6rem;
+    width: 100%;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
@@ -105,7 +102,6 @@
     }
 
     .cartProductsContainer {
-        display: flex;
         width: 100%;
         min-width: 200px;
         margin-bottom: 0;

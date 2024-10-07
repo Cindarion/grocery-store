@@ -56,14 +56,13 @@ body {
 body > div {
     overscroll-behavior: none;
     width: 100%;
-    min-height: 100vh;
     height: 100%;
 }
 
 .mainContainer {
     font-family: Inter, sans-serif;
     max-width: 1170px;
-    min-height: 100vh;
+    min-height: 98vh;
     margin-right: auto;
     margin-left: auto;
     padding-right: 15px;
