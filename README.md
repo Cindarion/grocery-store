@@ -1,5 +1,27 @@
-# BloomBasket online grocery store
+# BloomBasket - online grocery store
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut nisi sit amet dolor consectetur euismod. Fusce mi massa, accumsan quis eros non, tristique facilisis metus.
+Simple E-commerce App Built with React TypeScript.
 
-Proin vehicula malesuada mi, interdum feugiat ipsum iaculis nec. Vivamus augue justo, lobortis at turpis nec, fringilla consequat velit. Aliquam aliquam tortor felis, non molestie nibh aliquet sit amet. Vivamus sed purus condimentum, iaculis ipsum a, molestie ante. Morbi dictum nisi ac metus pellentesque aliquam sed ut est. Donec non consectetur velit. Donec ornare convallis pulvinar.
+## This app allows you to:
+* Add new products to the cart;
+* Change the quantity of products and see the total cost;
+* Use search and sort functions;
+* Use most of the functionality on the mobile screen;
+* Register a new account (under development);
+* ...
+
+Please note that the project is still under development. New functionality will be added gradually.
+
+<p align="center">
+  <img src="src/data/images/screen-1.png">
+  <img src="src/data/images/screen-2.png">
+  <img src="src/data/images/screen-3.png">
+  <img src="src/data/images/screen-4.png">
+</p>
+
+## Run Locally
+_will be added soon..._
+
+## Credits
+* This project is inspired by the design from the standard Figma guide;
+* [supermarket-web-example](https://github.com/wedeploy-examples/supermarket-web-example) for the material (JSON with products, images of these products)
