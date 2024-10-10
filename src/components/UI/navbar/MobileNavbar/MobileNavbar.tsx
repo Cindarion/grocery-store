@@ -1,17 +1,17 @@
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 import classes from "./MobileNavbar.module.css"
 import hamburgerIcon from "src/data/icons/hamburger-button.png"
-import { notAuthUser } from "src/constants/usersRoutes"
+import { notAuthUserMobile } from "src/constants/usersRoutes"
 
 type mobileNavbarProps = {
   isOpen: boolean
   toggleMenu: () => void
   cartQuantity: number
+  location: string
 }
 
-const MobileNavbar = ({isOpen, toggleMenu, cartQuantity}:mobileNavbarProps) => {
-  const routesArray = Object.values(notAuthUser);
-  const location = useLocation();
+const MobileNavbar = ({isOpen, toggleMenu, cartQuantity, location}:mobileNavbarProps) => {
+  const routesArray = Object.values(notAuthUserMobile);
   
   const toggleWithDelay = () => {
     setTimeout(() => {
@@ -36,7 +36,7 @@ const MobileNavbar = ({isOpen, toggleMenu, cartQuantity}:mobileNavbarProps) => {
           <ul onClick={toggleWithDelay} className={classes.navbarLinksContainer}>
             {routesArray.map((rout, index) => {
               return (
-                <li key={index} className={location.pathname === rout.path ? classes.linkWrapperCurrent : classes.linkWrapper}>
+                <li key={index} className={location === rout.path ? classes.linkWrapperCurrent : classes.linkWrapper}>
                   <Link to={rout.path}>
                     {rout.name}
                     {rout.name === "Basket" 

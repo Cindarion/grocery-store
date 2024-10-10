@@ -5,7 +5,30 @@ interface RouteConfig {
 
 type AppRoutes = Record<string, RouteConfig>;
 
-export const notAuthUser: AppRoutes = {
+export const notAuthUserDesktop: AppRoutes = {
+  products: {
+    path: "/products",
+    name: "Shop"
+  },
+  news: {
+    path: "/news",
+    name: "Newstand"
+  },
+  introduction: {
+    path: "/introduction",
+    name: "Who we are"
+  },
+  login: {
+    path: "/login",
+    name: "Log in"
+  },
+  cart: {
+    path: "/cart",
+    name: "Basket"
+  },
+};
+
+export const notAuthUserMobile: AppRoutes = {
   cart: {
     path: "/cart",
     name: "Basket"

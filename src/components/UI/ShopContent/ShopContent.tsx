@@ -12,8 +12,8 @@ type renderShopProductsProps = {
   searchQuery: string;  
   currentPage: number;  
   maxProductsPerPage: number;
-  setCurrentPage: any;
-}
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+};
 
 const RenderShopProducts = ({
   initialProducstData, 
@@ -24,7 +24,7 @@ const RenderShopProducts = ({
   setCurrentPage
 }: renderShopProductsProps) => {
   const sortedProducts = useSort(initialProducstData, sortOption);
-  const filteredSortedProducts = useFilter(sortedProducts, searchQuery);
+  const filteredSortedProducts = useFilter(sortedProducts, searchQuery, setCurrentPage);
   const productsCount = filteredSortedProducts? filteredSortedProducts.length : 0;
   const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, maxProductsPerPage);
 

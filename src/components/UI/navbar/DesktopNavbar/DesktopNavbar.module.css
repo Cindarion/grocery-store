@@ -3,35 +3,38 @@
     font-weight: 300;
 }
 
-.navigationPanel ul {
+.navbarLinksContainer {
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
 }
 
-.navigationPanel li {
+.navbarLinksContainer li {
     display: inline-block;
-    vertical-align: middle;
-}
-
-.navigationPanel li + li {
     margin-left: 30px;
 }
 
-.navigationPanel ul li a {
+.pageLinkWrapper a {
     position: relative;
     color: black;
     text-decoration: none;
     transition: color 0.15s, opacity 0.15s;
 }
 
-.navigationPanel ul li a:hover {
+.pageLinkWrapperCurrent a, 
+.pageLinkWrapper a:hover {
     color: var(--main-text-color-green, #426B1F);
     text-decoration: underline;
-    text-underline-offset: 8px;
+    text-underline-offset: 6px;
     transition: color 0.15s;
 }
 
-.navigationPanel ul li a:active {
+.pageLinkWrapperCurrent a:hover {
+    opacity: 0.85;
+}
+
+.navigationPanel a:active {
     opacity: 0.7;
     transition: opacity 0.15s;
 }
