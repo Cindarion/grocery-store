@@ -44,7 +44,6 @@ const LoginPage = () => {
       );
     }
   };
-  
 
   return (
     <div className={classes.pageContainer}>

@@ -1,17 +1,38 @@
+import SortOptionButton from "src/components/UI/Buttons/SortButton/SortOptionButton";
 import classes from "./NewsPage.module.css"
-import PageHeading from "src/components/UI/PageHeading/PageHeading"
+import SearchBar from "src/components/UI/SearchBar/SearchBar";
 import { newsSortOptions } from "src/constants/sortOptions"
+import { useState } from "react";
 
 const NewsPage = () => {
-  const newsSortProps = newsSortOptions;
+  const [selectedSortOption, setSelectedSortOption] = useState("Default");
+  const sortOptions = newsSortOptions;
+
+  const handleSearch = () => {
+    // ...
+  }
 
   return (
     <div className={classes.pageContainer}>
-      <PageHeading
-        titleString="News"
-        includeSearchBar="Search for news"
-        includeSortOptions={newsSortProps}
-      />
+      <section className={classes.pageHeading}>
+        <div className={classes.headingTitleContainer}>
+          <span className={classes.mainTitle}>News</span>
+        </div>
+        <SearchBar
+          onSearch={handleSearch}
+          searchBarPlaceholder="Search for products"
+        />
+        <div className={classes.sortOptionsContainer}>
+          {sortOptions.map((sort, index) => (
+            <SortOptionButton 
+              children={sort}
+              selectedSortOption={selectedSortOption}
+              setSortOption={setSelectedSortOption}
+              key={index}
+            />
+          ))}
+        </div>
+      </section>
       <main>
         <div>
           

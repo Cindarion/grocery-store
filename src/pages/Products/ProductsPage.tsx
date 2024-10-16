@@ -40,7 +40,7 @@ const ProductsPage = () => {
           onSearch={handleSearch}
           searchBarPlaceholder="Search for products"
         />
-        <div className={classes.productSortWrapper}>
+        <div className={classes.sortOptionsContainer}>
           {sortOptions.map((sort, index) => (
             <SortOptionButton 
               children={sort}

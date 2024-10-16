@@ -1,15 +1,37 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
 import classes from "./CreateAccountForm.module.css"
 
-const CreateAccountForm = ({setIsToggled}:any) => {
-  const handleSubmit = (event: React.SyntheticEvent) => {
-    event.preventDefault();
+type CreateAccountFormProps = {
+  setIsToggled: React.Dispatch<React.SetStateAction<boolean>>
+};
+
+const CreateAccountForm = ({setIsToggled}: CreateAccountFormProps) => {
+  const [input, setInput] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleSubmitEvent = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    if (input.username !== "" && input.password !== "") {
+      //!!!dispatch action from hooks!!!
+    }
+    alert("please provide a valid input");
   };
 
-  const changeForm = () => {
+  const handleInput = (e: React.SyntheticEvent) => {
+    const { name, value }: any = e.target;
+    setInput((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleChangeForm = () => {
     setIsToggled(false)
-  }
+  };
 
   return (
     <div className={classes.formContainer}>
@@ -21,26 +43,46 @@ const CreateAccountForm = ({setIsToggled}:any) => {
           <h1>Create an account</h1>
           <span className={classes.dontHaveAccountWrapper}>
             <span>Already have an account?</span>
-            <a href="#" onClick={changeForm}>
+            <a href="#" onClick={handleChangeForm}>
               Sign in
             </a> 
           </span>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmitEvent}>
           <div className={classes.inputsContainer}>
             <div className={classes.nameInputContainer}>
               <label htmlFor="userName">Name</label>
-              <input type="text" id="userName" required/>
+              <input 
+                type="text" 
+                id="userName" 
+                onChange={handleInput}
+                required
+              />
             </div>
             <div className={classes.emailInputContainer}>
               <label htmlFor="userEmail">E-mail</label>
-              <input type="email" id="userEmail" required/>
+              <input 
+                type="email" 
+                id="userEmail" 
+                aria-describedby="user-email"
+                aria-invalid="false"
+                onChange={handleInput}
+                required
+              />
             </div>
             <div className={classes.passwordInputContainer}>
               <label htmlFor="userPassword">Password</label>
               <span>
-                <input type="password" id="userPassword" minLength={6} maxLength={54} required >
-                </input>
+                <input 
+                  type="password" 
+                  id="userPassword" 
+                  minLength={6} 
+                  maxLength={54} 
+                  aria-describedby="user-password"
+                  aria-invalid="false"
+                  onChange={handleInput}
+                  required 
+                />
                 <div className={classes.hidePasswordWrapper}>
                   <img 
                     alt='hide-password'

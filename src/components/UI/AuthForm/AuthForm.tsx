@@ -2,14 +2,18 @@ import { Link } from 'react-router-dom';
 import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
 import classes from "./AuthForm.module.css"
 
-const AuthForm = ({setIsToggled}:any) => {
+type AuthFormProps = {
+  setIsToggled: React.Dispatch<React.SetStateAction<boolean>>
+};
+
+const AuthForm = ({setIsToggled}:AuthFormProps) => {
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
   };
 
   const changeForm = () => {
     setIsToggled(true)
-  }
+  };
 
   return (
     <div className={classes.formContainer}>

@@ -22,11 +22,15 @@
     transition: color 0.15s, opacity 0.15s;
 }
 
-.pageLinkWrapperCurrent a, 
-.pageLinkWrapper a:hover {
+.pageLinkWrapperCurrent a {
     color: var(--main-text-color-green, #426B1F);
     text-decoration: underline;
     text-underline-offset: 6px;
+    transition: color 0.15s;
+}
+
+.pageLinkWrapper a:hover {
+    color: var(--main-text-color-green, #426B1F);
     transition: color 0.15s;
 }
 

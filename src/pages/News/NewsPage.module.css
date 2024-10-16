@@ -4,3 +4,43 @@
     flex-direction: column;
     margin-top: 42px;
 }
+
+.pageHeading {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--secondary-color, #E6E6E6);
+}   
+
+.headingTitleContainer {
+    display: flex;
+}
+
+.headingTitleContainer span {
+    width: max-content;
+}
+
+.mainTitle {
+    display: flex;
+    font-family: Newsreader, sans-serif;
+    font-size: 5.4rem;
+}
+
+.additionalTitle {
+    font-size: 1.4rem;
+    margin-left: 16px;
+}
+
+.sortOptionsContainer {
+    width: fit-content;
+    text-wrap: nowrap;
+}
+
+@media (min-width: 0px) and (max-width: 750px) {
+    .sortOptionsContainer {
+        display: none;
+    }
+}
