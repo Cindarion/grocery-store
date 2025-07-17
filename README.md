@@ -20,7 +20,7 @@ Please note that the project is still under development. New functionality will 
 </p>
 
 ## Run Locally
-_will be added soon..._
+_working on that..._
 
 ## Credits
 * This project is inspired by the design from the standard Figma guide;
