@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import classes from './CartPage.module.css'
-import { CartContext } from "src/components/context/cartContext"
-import CartProduct from 'src/components/UI/Product/CartProduct/CartProduct'
-import OrderSummary from 'src/components/UI/OrderSummary/OrderSummary'
-import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
+import { CartContext } from "@/components/context/cartContext"
+import CartProduct from '@/components/UI/Product/CartProduct/CartProduct'
+import OrderSummary from '@/components/UI/OrderSummary/OrderSummary'
+import ActionButton from '@/components/UI/buttons/ActionButton/ActionButton'
 
 const CartPage = () => {
   const cartContext = useContext(CartContext);

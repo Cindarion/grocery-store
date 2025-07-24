@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import classes from './SearchBar.module.css'
-import { useDebounce } from 'src/hooks/useDebounce';
+import { useDebounce } from '@/hooks/useDebounce';
 
 type SearchBarProps = {
   onSearch: Function

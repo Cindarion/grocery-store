@@ -1,8 +1,8 @@
-import SortOptionButton from "src/components/UI/Buttons/SortButton/SortOptionButton";
-import classes from "./NewsPage.module.css"
-import SearchBar from "src/components/UI/SearchBar/SearchBar";
-import { newsSortOptions } from "src/constants/sortOptions"
 import { useState } from "react";
+import classes from "./NewsPage.module.css"
+import { newsSortOptions } from "@/constants/sortOptions"
+import SortOptionButton from "@/components/UI/buttons/SortButton/SortOptionButton";
+import SearchBar from "@/components/UI/searchBar/SearchBar";
 
 const NewsPage = () => {
   const [selectedSortOption, setSelectedSortOption] = useState("Default");

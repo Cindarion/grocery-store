@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "target": "es5", // Target ECMAScript version
     "lib": ["dom", "dom.iterable", "esnext"], // Library files to include
     "allowJs": true, // Allow JavaScript files to be compiled

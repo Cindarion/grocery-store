@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import classes from './ShopProduct.module.css'
-import { CartContext } from 'src/components/context/cartContext';
-import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton';
+import { CartContext } from '@/components/context/cartContext';
+import ActionButton from '@/components/UI/buttons/ActionButton/ActionButton';
 
 type ShopProductProps = {
   id: number,

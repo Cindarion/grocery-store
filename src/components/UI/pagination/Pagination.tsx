@@ -1,4 +1,4 @@
-import usePagination from "src/hooks/usePagination";
+import usePagination from "@/hooks/usePagination";
 import classes from "./Pagination.module.css"
 
 type paginationProps = {

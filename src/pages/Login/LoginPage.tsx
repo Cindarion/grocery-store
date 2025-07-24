@@ -2,9 +2,9 @@ import { useState } from 'react';
 import classes from './LoginPage.module.css'
 
 // Components
-import AuthForm from 'src/components/UI/AuthForm/AuthForm';
-import CreateAccountForm from 'src/components/UI/CreateAccountForm/CreateAccountForm'
-import NewsPreview from 'src/components/UI/NewsPreview/NewsPreview';
+import AuthForm from '@/components/UI/AuthForm/AuthForm';
+import CreateAccountForm from '@/components/UI/CreateAccountForm/CreateAccountForm'
+import NewsPreview from '@/components/UI/NewsPreview/NewsPreview';
 
 const LoginPage = () => {
   const [isToggled, setIsToggled] = useState(false);

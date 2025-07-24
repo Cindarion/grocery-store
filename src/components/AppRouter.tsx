@@ -1,16 +1,16 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 
 // pages
-import IntroductionPage from 'src/pages/Introduction/IntroductionPage'
-import ProductsPage from 'src/pages/Products/ProductsPage'
-import NewsPage from 'src/pages/News/NewsPage'
-import ProfilePage from 'src/pages/Profile/ProfilePage'
-import CartPage from 'src/pages/Cart/CartPage'
-import LoginPage from 'src/pages/Login/LoginPage'
+import IntroductionPage from '@/pages/Introduction/IntroductionPage'
+import ProductsPage from '@/pages/Products/ProductsPage'
+import NewsPage from '@/pages/News/NewsPage'
+import ProfilePage from '@/pages/Profile/ProfilePage'
+import CartPage from '@/pages/Cart/CartPage'
+import LoginPage from '@/pages/Login/LoginPage'
 
 //components
-import DisplayNavbar from './DisplayNavbar'
-import Navbar from './UI/Navbar/Navbar'
+import DisplayNavbar from '@/components/DisplayNavbar'
+import Navbar from '@/components/UI/navbar/Navbar'
 
 const AppRouter = () => {
   return (

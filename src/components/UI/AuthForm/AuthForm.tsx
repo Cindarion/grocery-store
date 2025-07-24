@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
+import ActionButton from '@/components/UI/buttons/ActionButton/ActionButton';
 import classes from "./AuthForm.module.css"
 
 type AuthFormProps = {

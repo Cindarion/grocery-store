@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import classes from "./MobileNavbar.module.css"
-import hamburgerIcon from "src/data/icons/hamburger-button.png"
-import { notAuthUserMobile } from "src/constants/usersRoutes"
+import hamburgerIcon from "@/data/icons/hamburger-button.png"
+import { notAuthUserMobile } from "@/constants/usersRoutes"
 
 type mobileNavbarProps = {
   isOpen: boolean

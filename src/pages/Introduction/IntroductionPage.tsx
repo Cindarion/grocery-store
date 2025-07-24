@@ -1,8 +1,8 @@
 import {Link} from 'react-router-dom'
 import classes from './IntroductionPage.module.css'
-import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
-import chardPNG from 'src/data/images/chard.png'
-import foodArtPNG from 'src/data/images/foodArt.png'
+import ActionButton from '@/components/UI/buttons/ActionButton/ActionButton'
+import chardPNG from '@/data/images/chard.png'
+import foodArtPNG from '@/data/images/foodArt.png'
 
 
 const IntroductionPage = () => {
