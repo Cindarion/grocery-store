@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import classes from './LoginPage.module.css'
+import classes from './AuthPage.module.css'
 
 // Components
-import AuthForm from '@/components/UI/AuthForm/AuthForm';
 import CreateAccountForm from '@/components/UI/CreateAccountForm/CreateAccountForm'
 import NewsPreview from '@/components/UI/NewsPreview/NewsPreview';
+import LoginFrom from '@/components/UI/AuthForm/AuthForm';
 
 const LoginPage = () => {
   const [isToggled, setIsToggled] = useState(false);
@@ -21,7 +21,7 @@ const LoginPage = () => {
     } else {
       return (
         <div className={classes.formWrapper}>
-          <AuthForm 
+          <LoginFrom
             setIsToggled={setIsToggled}
           />
         </div> 

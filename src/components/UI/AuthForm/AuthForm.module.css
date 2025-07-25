@@ -72,7 +72,7 @@
     transition: border-color 0.15s;
 }
 
-.inputsContainer input:focus {
+.inputsContainer input:focus-visible {
     border-color: var(--main-text-color-green, #426B1F);
     transition: border-color 0.15s;
 }
@@ -117,8 +117,9 @@
     margin-right: 4px;
 }
 
-.rememberMeOption > input {
+.rememberMeOption > input:focus {
     cursor: pointer;
+    outline: auto;
 }
 
 .orDivider {

@@ -6,7 +6,7 @@ import ProductsPage from '@/pages/Products/ProductsPage'
 import NewsPage from '@/pages/News/NewsPage'
 import ProfilePage from '@/pages/Profile/ProfilePage'
 import CartPage from '@/pages/Cart/CartPage'
-import LoginPage from '@/pages/Login/LoginPage'
+import AuthPage from '@/pages/Auth/AuthPage'
 
 //components
 import DisplayNavbar from '@/components/DisplayNavbar'
@@ -24,7 +24,7 @@ const AppRouter = () => {
         <Route path="/products" element={<ProductsPage/>}/>
         <Route path="/news" element={<NewsPage/>}/>
         <Route path="/profile" element={<ProfilePage/>}/>
-        <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/login" element={<AuthPage/>}/>
         <Route path="/cart" element={<CartPage/>}/>
         <Route path="/" element={<Navigate to="introduction" replace/>}/>
       </Routes>

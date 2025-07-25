@@ -3,11 +3,11 @@ import ActionButton from '@/components/UI/buttons/ActionButton/ActionButton';
 import classes from "./AuthForm.module.css";
 import hide_password_true from "@/data/icons/hide-password-true.png";
 
-type AuthFormProps = {
+type LoginFromProps = {
   setIsToggled: React.Dispatch<React.SetStateAction<boolean>>
 };
 
-const AuthForm = ({setIsToggled}:AuthFormProps) => {
+const LoginFrom = ({setIsToggled}:LoginFromProps) => {
   const handleSubmit = (event: React.SyntheticEvent) => {
     event.preventDefault();
   };
@@ -81,4 +81,4 @@ const AuthForm = ({setIsToggled}:AuthFormProps) => {
   )
 }
 
-export default AuthForm
+export default LoginFrom
