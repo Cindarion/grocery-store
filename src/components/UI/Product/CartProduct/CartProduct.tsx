@@ -1,8 +1,10 @@
 import { useContext } from 'react'
 import classes from './CartProduct.module.css'
-import { CartContext } from 'src/components/context/cartContext';
-import { formatCurrency } from 'src/utils/formatCurrency';
-import storeProducts from 'src/data/products.json'
+import { CartContext } from '@/components/context/cartContext';
+import { formatCurrency } from '@/utils/formatCurrency';
+import storeProducts from '@/data/products.json'
+import edit_input_gray from "@/data/icons/edit-input-gray.png"
+import remove_from_cart from "@/data/icons/remove-from-cart.png"
 
 type CartProductProps = {
   id: number;
@@ -40,7 +42,7 @@ const CartProduct = ({id, quantity}: CartProductProps) => {
       <div className={classes.imageWrapper}>
         <img 
           alt='product'
-          src={require(`../../../../data/images/${product.filename}`)}
+          src={require(`@/data/images/${product.filename}`)}
         />
       </div>
       <div className={classes.productInfoWrapper}>
@@ -62,7 +64,7 @@ const CartProduct = ({id, quantity}: CartProductProps) => {
             <img 
               alt='edit input'
               className={classes.editQuantityIcon} 
-              src={require("../../../../data/icons/edit-input-gray.png")}
+              src={edit_input_gray}
             />
           </span>
         </div>
@@ -74,7 +76,7 @@ const CartProduct = ({id, quantity}: CartProductProps) => {
             alt='delete product'
             onClick={() => handleDelete(product.id)}
             className={classes.deleteProductIcon} 
-            src={require("../../../../data/icons/remove-from-cart.png")}
+            src={remove_from_cart}
           />
         </div>
       </div>

@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react'
 import {Link, useLocation} from 'react-router-dom'
 import classes from "./Navbar.module.css"
-import { CartContext } from 'src/components/context/cartContext'
-import MobileNavbar from 'src/components/UI/Navbar/MobileNavbar/MobileNavbar'
-import DesktopNavbar from './DesktopNavbar/DesktopNavbar'
+import { CartContext } from '@/components/context/cartContext'
+import MobileNavbar from '@/components/UI/navbar/MobileNavbar/MobileNavbar'
+import DesktopNavbar from '@/components/UI/navbar/DesktopNavbar/DesktopNavbar'
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

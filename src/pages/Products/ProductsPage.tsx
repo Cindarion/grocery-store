@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import classes from './ProductsPage.module.css'
-import { getCurrentDateFormatted } from 'src/utils/currentDate'
-import { useFetch } from 'src/hooks/useFetch'
-import { productsSortOptions } from 'src/constants/sortOptions'
-import RenderShopProducts from 'src/components/UI/ShopContent/ShopContent'
-import SearchBar from 'src/components/UI/SearchBar/SearchBar'
-import SortOptionButton from 'src/components/UI/Buttons/SortButton/SortOptionButton'
+import { getCurrentDateFormatted } from '@/utils/currentDate'
+import { useFetch } from '@/hooks/useFetch'
+import { productsSortOptions } from '@/constants/sortOptions'
+import RenderShopProducts from '@/components/UI/ShopContent/ShopContent'
+import SearchBar from '@/components/UI/searchBar/SearchBar'
+import SortOptionButton from '@/components/UI/buttons/SortButton/SortOptionButton'
 
 type dataProps = {
   loading: boolean,
@@ -16,7 +16,7 @@ const ProductsPage = () => {
   const [selectedSortOption, setSelectedSortOption] = useState("Default");
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const { loading, error, data: initialProducstData }: dataProps = useFetch('./products.json'); 
+  const { loading, error, data: initialProductsData }: dataProps = useFetch('./products.json'); 
   const currentDate = getCurrentDateFormatted();
   const sortOptions = productsSortOptions;
   const maxProductsPerPage = 20;
@@ -25,7 +25,7 @@ const ProductsPage = () => {
     setSearchQuery(query);
   };
 
-  if (!initialProducstData) return <div>Loading...</div>;
+  if (!initialProductsData) return <div>Loading...</div>;
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
@@ -53,7 +53,7 @@ const ProductsPage = () => {
       </section>
       <main>
         <RenderShopProducts
-          initialProducstData={initialProducstData}
+          initialProductsData={initialProductsData}
           sortOption={selectedSortOption}
           searchQuery={searchQuery}
           currentPage={currentPage}

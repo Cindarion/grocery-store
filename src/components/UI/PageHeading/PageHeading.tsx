@@ -5,8 +5,8 @@ import React, { useState } from "react";
 import classes from "./PageHeading.module.css"
 
 // Components imports
-import SearchBar from "src/components/UI/SearchBar/SearchBar"
-import SortOptionButton from "src/components/UI/Buttons/SortButton/SortOptionButton";
+import SearchBar from "@/components/UI/searchBar/SearchBar";
+import SortOptionButton from "@/components/UI/buttons/SortButton/SortOptionButton";
 
 type pageHeadingProps = {
   titleString: string

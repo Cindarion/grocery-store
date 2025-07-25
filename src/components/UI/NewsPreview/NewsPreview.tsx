@@ -1,7 +1,7 @@
 import classes from "./NewsPreview.module.css"
 
 // Test
-import news_test_img from 'src/data/images/news-img.png'
+import news_test_img from '@/data/images/news-img.png'
 
 const NewsPreview = () => {
   return (

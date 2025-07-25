@@ -1,13 +1,13 @@
 import React from 'react' 
 import classes from './ShopContent.module.css'
-import { useSort } from 'src/hooks/useSort';
-import { useFilter } from 'src/hooks/useFilter';
-import { useSlice } from 'src/hooks/useSlice'
-import ShopProduct from 'src/components/UI/Product/ShopProduct/ShopProduct';
-import Pagination from 'src/components/UI/Pagination/Pagination';
+import { useSort } from '@/hooks/useSort';
+import { useFilter } from '@/hooks/useFilter';
+import { useSlice } from '@/hooks/useSlice'
+import ShopProduct from '@/components/UI/Product/ShopProduct/ShopProduct';
+import Pagination from '@/components/UI/pagination/Pagination';
 
 type renderShopProductsProps = {
-  initialProducstData: object[]; 
+  initialProductsData: object[]; 
   sortOption: string; 
   searchQuery: string;  
   currentPage: number;  
@@ -16,14 +16,14 @@ type renderShopProductsProps = {
 };
 
 const RenderShopProducts = ({
-  initialProducstData, 
+  initialProductsData, 
   sortOption, 
   searchQuery, 
   currentPage, 
   maxProductsPerPage, 
   setCurrentPage
 }: renderShopProductsProps) => {
-  const sortedProducts = useSort(initialProducstData, sortOption);
+  const sortedProducts = useSort(initialProductsData, sortOption);
   const filteredSortedProducts = useFilter(sortedProducts, searchQuery, setCurrentPage);
   const productsCount = filteredSortedProducts? filteredSortedProducts.length : 0;
   const slicedFilteredSortedProducts = useSlice(filteredSortedProducts, currentPage, maxProductsPerPage);

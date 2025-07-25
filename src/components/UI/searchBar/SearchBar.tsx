@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import classes from './SearchBar.module.css'
-import { useDebounce } from 'src/hooks/useDebounce';
+import { useDebounce } from '@/hooks/useDebounce';
+import search_dark_gray_icon from "@/data/icons/search-dark-gray-icon.png"
 
 type SearchBarProps = {
   onSearch: Function
@@ -28,7 +29,7 @@ const SearchBar = ({
         <img 
           alt='search-icon'
           className={classes.searchIcon} 
-          src={require("../../../data/icons/search-dark-gray-icon.png")}
+          src={search_dark_gray_icon}
         />
       </div>
       <input 

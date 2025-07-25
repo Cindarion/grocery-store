@@ -1,5 +1,5 @@
 import React, { createContext, FC } from "react";
-import { useLocalStorage } from "src/hooks/useLocalStorage";
+import { useLocalStorage } from "@/hooks/useLocalStorage"; 
 
 interface CartContextType {
   cartItems: [];

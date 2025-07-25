@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import ActionButton from 'src/components/UI/Buttons/ActionButton/ActionButton'
-import classes from "./AuthForm.module.css"
+import ActionButton from '@/components/UI/buttons/ActionButton/ActionButton';
+import classes from "./AuthForm.module.css";
+import hide_password_true from "@/data/icons/hide-password-true.png";
 
 type AuthFormProps = {
   setIsToggled: React.Dispatch<React.SetStateAction<boolean>>
@@ -45,7 +46,7 @@ const AuthForm = ({setIsToggled}:AuthFormProps) => {
                   <img 
                     alt='hide-password'
                     className={classes.hidePasswordIcon} 
-                    src={require("src/data/icons/hide-password-true.png")}
+                    src={hide_password_true}
                   />
                 </div>
               </span>

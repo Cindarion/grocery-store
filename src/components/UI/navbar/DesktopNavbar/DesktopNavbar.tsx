@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import classes from "./DesktopNavbar.module.css"
-import { notAuthUserDesktop } from "src/constants/usersRoutes"
-import ActionButton from "../../Buttons/ActionButton/ActionButton"
+import { notAuthUserDesktop } from "@/constants/usersRoutes"
+import ActionButton from "@/components/UI/buttons/ActionButton/ActionButton"
 
 type desktopNavbarProps = {
   cartQuantity: number
