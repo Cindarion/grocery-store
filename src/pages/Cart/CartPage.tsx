@@ -5,6 +5,7 @@ import { CartContext } from "@/components/context/cartContext"
 import CartProduct from '@/components/UI/Product/CartProduct/CartProduct'
 import OrderSummary from '@/components/UI/OrderSummary/OrderSummary'
 import ActionButton from '@/components/UI/buttons/ActionButton/ActionButton'
+import cart_is_empty from "@/data/icons/cart-is-empty.png"
 
 const CartPage = () => {
   const cartContext = useContext(CartContext);
@@ -48,7 +49,7 @@ const CartPage = () => {
     return (
       <div className={classes.emptyMessageContainer}>
         <img 
-          src={require("../../data/icons/cart-is-empty.png")}
+          src={cart_is_empty}
           alt='cart is empty'
           />
         <span>Your cart is empty...</span>

@@ -75,7 +75,7 @@ const ShopProduct = ({
   return (
     <div className={classes.productWrapper} key={index}>
       <div className={classes.imageWrapper}>
-        <img src={require(`src/data/images/${filename}`)} alt='product'/>
+        <img src={require(`@/data/images/${filename}`)} alt='product'/>
       </div>
       <div className={classes.infoWrapper}>
         <span className={classes.productName}>

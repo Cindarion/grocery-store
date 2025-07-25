@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import ActionButton from '@/components/UI/buttons/ActionButton/ActionButton';
 import classes from "./CreateAccountForm.module.css"
+import hide_password_true from "@/data/icons/hide-password-true.png";
 
 type CreateAccountFormProps = {
   setIsToggled: React.Dispatch<React.SetStateAction<boolean>>
@@ -87,7 +88,7 @@ const CreateAccountForm = ({setIsToggled}: CreateAccountFormProps) => {
                   <img 
                     alt='hide-password'
                     className={classes.hidePasswordIcon} 
-                    src={require("src/data/icons/hide-password-true.png")}
+                    src={hide_password_true}
                   />
                 </div>
               </span>

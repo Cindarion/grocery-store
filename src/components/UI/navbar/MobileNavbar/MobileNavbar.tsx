@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import classes from "./MobileNavbar.module.css"
-import hamburgerIcon from "@/data/icons/hamburger-button.png"
+import hamburger_icon from "@/data/icons/hamburger-button.png"
 import { notAuthUserMobile } from "@/constants/usersRoutes"
 
 type mobileNavbarProps = {
@@ -59,7 +59,7 @@ const MobileNavbar = ({isOpen, toggleMenu, cartQuantity, location}:mobileNavbarP
         onClick={toggleMenu}
       >
         <img 
-          src={hamburgerIcon} 
+          src={hamburger_icon} 
           className={classes.BurgerIcon} 
           alt="open navigation menu"
         />
